@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Cambridge Kids" />
+  <title>Cambridge Kids — Cổng Học Tiếng Anh Cho Bé</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --text: #182230;
+      --muted: #5c6b7f;
+      --border: #e3e9f2;
+      --primary: #2563eb;
+      --primary-soft: #eff6ff;
+      --success: #059669;
+      --success-soft: #ecfdf5;
+      --amber: #d97706;
+      --amber-soft: #fffbeb;
+      --purple: #7c3aed;
+      --purple-soft: #f5f3ff;
+      --shadow: 0 10px 30px rgba(24, 34, 48, 0.06);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at top right, #e0ecff 0%, var(--bg) 45%, #eef2ff 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.55;
+      padding: 24px 16px 48px;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+    }
+
+    .stats-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.6rem, 3.5vw, 2.35rem);
+      line-height: 1.22;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card.active:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(24, 34, 48, 0.1);
+      border-color: #93c5fd;
+    }
+
+    .card.locked {
+      opacity: 0.78;
+      background: #fafbfd;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .level-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .icon-starters { background: var(--amber-soft); }
+    .icon-movers { background: var(--purple-soft); }
+    .icon-flyers { background: var(--primary-soft); }
+
+    .status {
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .status-ready {
+      background: var(--success-soft);
+      color: var(--success);
+    }
+
+    .status-soon {
+      background: #f1f5f9;
+      color: #64748b;
+    }
+
+    .card h2 {
+      font-size: 1.22rem;
+      margin-bottom: 4px;
+    }
+
+    .card-sub {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .card.locked .card-sub {
+      color: var(--muted);
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 13px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-disabled {
+      background: #e2e8f0;
+      color: #64748b;
+      cursor: not-allowed;
+    }
+
+    .info-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .info-box strong {
+      color: var(--text);
+    }
+
+    .info-box code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      color: #0f172a;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-badge">🎓</span>
+        <span>Cambridge Kids</span>
+      </div>
+      <div class="stats-pill" id="starCounter">
+        <span>⭐</span>
+        <span id="starText">Tổng sao: 0</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <span class="hero-tag">GÓC HỌC TẬP TIẾNG ANH CHO BÉ</span>
+      <h1>Chọn cấp độ để bắt đầu học hôm nay</h1>
+      <p>
+        Mỗi cấp độ được tách riêng thành một ứng dụng độc lập để dễ quản lý và mở rộng dần.
+        Hãy chọn <strong>A2 Flyers</strong> để vào thẳng ứng dụng học từ vựng và ngữ pháp tại <code>/FlyerKids/index.html</code>.
+      </p>
+    </section>
+
+    <h2 class="section-title">Danh sách cấp độ</h2>
+    <main class="grid" id="levelsGrid"></main>
+
+    <aside class="info-box">
+      <strong>Mẹo mở rộng sau này:</strong> Khi làm xong ứng dụng cho <strong>Starters</strong> hoặc <strong>Movers</strong>,
+      bạn chỉ cần đặt thư mục (ví dụ <code>StarterKids/index.html</code> hoặc <code>MoverKids/index.html</code>) và đổi
+      <code>enabled: true</code> cùng đường dẫn <code>url</code> trong mảng <code>LEVELS</code> ở cuối file <code>index.html</code> này.
+    </aside>
+  </div>
+
+  <script>
+    // Cấu hình đường dẫn từng cấp độ tại đây
+    const LEVELS = [
+      {
+        id: "starters",
+        title: "Pre A1 Starters",
+        subtitle: "Bước khởi đầu làm quen",
+        description: "Từ vựng cơ bản, màu sắc, con vật, đồ chơi và mẫu câu ngắn dễ nhớ cho bé mới bắt đầu.",
+        icon: "🐣",
+        iconClass: "icon-starters",
+        url: "./StarterKids/index.html",
+        enabled: false
+      },
+      {
+        id: "movers",
+        title: "A1 Movers",
+        subtitle: "Mở rộng phản xạ giao tiếp",
+        description: "Bổ sung từ vựng đời sống, hoạt động hàng ngày và cấu trúc câu đơn giản cho bé.",
+        icon: "🦊",
+        iconClass: "icon-movers",
+        url: "./MoverKids/index.html",
+        enabled: false
+      },
+      {
+        id: "flyers",
+        title: "A2 Flyers",
+        subtitle: "Từ vựng & Ngữ pháp trọng tâm",
+        description: "Luyện flashcard, đố vui định nghĩa, chính tả, ghép câu và ngữ pháp chuẩn A2 Flyers.",
+        icon: "🚀",
+        iconClass: "icon-flyers",
+        url: "./FlyerKids/index.html",
+        enabled: true
+      }
+    ];
+
+    function renderLevels() {
+      const grid = document.getElementById("levelsGrid");
+      grid.innerHTML = LEVELS.map((lvl) => {
+        const isReady = Boolean(lvl.enabled && lvl.url);
+        return `
+          <article class="card ${isReady ? "active" : "locked"}">
+            <div>
+              <div class="card-top">
+                <div class="level-icon ${lvl.iconClass}" aria-hidden="true">${lvl.icon}</div>
+                <span class="status ${isReady ? "status-ready" : "status-soon"}">
+                  ${isReady ? "Sẵn sàng" : "Sắp ra mắt"}
+                </span>
+              </div>
+              <h2>${lvl.title}</h2>
+              <div class="card-sub">${lvl.subtitle}</div>
+              <p>${lvl.description}</p>
+            </div>
+            ${
+              isReady
+                ? `<a class="btn btn-primary" href="${lvl.url}">Vào học ${lvl.title} →</a>`
+                : `<button class="btn btn-disabled" type="button" disabled aria-disabled="true">Đang chuẩn bị nội dung</button>`
+            }
+          </article>
+        `;
+      }).join("");
+    }
+
+    function readSavedStars() {
+      try {
+        let total = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (!key) continue;
+          const raw = localStorage.getItem(key);
+          if (!raw) continue;
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed.stars === "number") {
+            total += parsed.stars;
+          } else if (parsed && parsed.stats && typeof parsed.stats.stars === "number") {
+            total += parsed.stats.stars;
+          }
+        }
+        document.getElementById("starText").textContent = `Tổng sao: ${total}`;
+      } catch (e) {
+        document.getElementById("starText").textContent = "Tổng sao: 0";
+      }
+    }
+
+    renderLevels();
+    readSavedStars();
+  </script>
+</body>
+</html>
