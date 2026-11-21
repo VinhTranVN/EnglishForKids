@@ -3,229 +3,1084 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>English Starter App — Từ Vựng & Ngữ Pháp</title>
+  <title>StarterKids • Học Tiếng Anh Pre A1 Starters Cho Bé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
-      --text: #0f172a;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --accent-bg: #eff6ff;
+      --bg-cream: #FFFDF5;
+      --bg-sky: #EAF7FF;
+      --card-white: #FFFFFF;
+      --ink-dark: #1E293B;
+      --ink-soft: #475569;
+      --sun-yellow: #FFC928;
+      --sun-shadow: #E09F00;
+      --mint-green: #22C55E;
+      --mint-shadow: #15803D;
+      --berry-pink: #FF5C8A;
+      --berry-shadow: #C81E56;
+      --sky-blue: #38BDF8;
+      --sky-shadow: #0284C7;
+      --grape-purple: #A855F7;
+      --grape-shadow: #7E22CE;
+      --border-soft: #E2E8F0;
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --shadow-card: 0 10px 25px -8px rgba(15, 23, 42, 0.08), 0 4px 10px -4px rgba(15, 23, 42, 0.04);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 24px 16px 60px;
+      font-family: 'Nunito', sans-serif;
+      color: var(--ink-dark);
+      background:
+        radial-gradient(circle at 12% 10%, #FFF3B0 0%, transparent 32%),
+        radial-gradient(circle at 88% 14%, #D8F3FF 0%, transparent 35%),
+        radial-gradient(circle at 80% 90%, #FFE4EC 0%, transparent 34%),
+        var(--bg-cream);
+      min-height: 100vh;
+      padding-bottom: 56px;
     }
-    .container {
-      max-width: 900px;
+
+    h1, h2, h3, .kid-title {
+      font-family: 'Fredoka', 'Nunito', sans-serif;
+    }
+
+    .app-shell {
+      max-width: 1060px;
       margin: 0 auto;
+      padding: 18px 16px 0;
     }
-    header {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    header h1 {
-      font-size: 1.9rem;
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
-    header p {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-    .tabs {
+
+    .kid-header {
+      background: var(--card-white);
+      border: 3px solid #FEF08A;
+      border-radius: var(--radius-xl);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-card);
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .mascot-badge {
+      width: 64px;
+      height: 64px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #FFE66D, #FF9F1C);
+      display: grid;
+      place-items: center;
+      font-size: 36px;
+      box-shadow: 0 5px 0 #D97706;
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-size: clamp(1.45rem, 3vw, 1.95rem);
+      line-height: 1.15;
+      color: #0F172A;
+    }
+
+    .brand-text p {
+      font-size: 0.96rem;
+      color: var(--ink-soft);
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .stats-row {
+      display: flex;
+      align-items: center;
       gap: 10px;
-      justify-content: center;
-      margin-bottom: 24px;
+      flex-wrap: wrap;
     }
-    .tab-btn {
-      padding: 10px 20px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--text);
+
+    .star-pill, .voice-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
       border-radius: 999px;
+      font-weight: 800;
+      font-size: 1rem;
+      border: 2px solid transparent;
+    }
+
+    .star-pill {
+      background: #FFFBEB;
+      border-color: #FCD34D;
+      color: #92400E;
+    }
+
+    .voice-pill {
+      background: #F0F9FF;
+      border-color: #7DD3FC;
+      color: #0369A1;
       cursor: pointer;
+      font-family: inherit;
+      transition: transform 0.12s ease;
+    }
+
+    .voice-pill:active {
+      transform: translateY(2px);
+    }
+
+    .kid-nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    @media (max-width: 760px) {
+      .kid-nav {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .nav-btn {
+      font-family: 'Fredoka', 'Nunito', sans-serif;
+      font-size: 1.08rem;
       font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
+      padding: 14px 12px;
+      border-radius: var(--radius-lg);
+      border: none;
+      cursor: pointer;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.12s ease, filter 0.15s ease;
+      text-align: center;
     }
-    .tab-btn.active {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
+
+    .nav-btn:hover {
+      filter: brightness(1.04);
     }
-    .search-box {
+
+    .nav-btn:active {
+      transform: translateY(3px);
+    }
+
+    .nav-btn[data-tab="vocab"] {
+      background: var(--sky-blue);
+      box-shadow: 0 5px 0 var(--sky-shadow);
+    }
+    .nav-btn[data-tab="grammar"] {
+      background: var(--grape-purple);
+      box-shadow: 0 5px 0 var(--grape-shadow);
+    }
+    .nav-btn[data-tab="play"] {
+      background: var(--mint-green);
+      box-shadow: 0 5px 0 var(--mint-shadow);
+    }
+    .nav-btn[data-tab="build"] {
+      background: var(--berry-pink);
+      box-shadow: 0 5px 0 var(--berry-shadow);
+    }
+
+    .nav-btn.active {
+      outline: 4px solid #0F172A;
+      outline-offset: 2px;
+    }
+
+    .panel {
+      background: var(--card-white);
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      box-shadow: var(--shadow-card);
+      border: 2px solid #F1F5F9;
       margin-bottom: 20px;
     }
-    .search-box input {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      font-size: 1rem;
-      outline: none;
-    }
-    .search-box input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px var(--accent-bg);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
-    }
-    .word-row {
+
+    .section-head {
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
       justify-content: space-between;
-      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-head h2 {
+      font-size: 1.45rem;
+      color: #0F172A;
+    }
+
+    .section-sub {
+      color: var(--ink-soft);
+      font-weight: 700;
+      font-size: 0.96rem;
+    }
+
+    .topic-strip {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+      scrollbar-width: thin;
+    }
+
+    .topic-chip {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 2px solid #CBD5E1;
+      background: #F8FAFC;
+      color: #1E293B;
+      font-weight: 800;
+      font-size: 0.96rem;
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+
+    .topic-chip.active {
+      background: var(--sun-yellow);
+      border-color: var(--sun-shadow);
+      color: #1E293B;
+      box-shadow: 0 3px 0 var(--sun-shadow);
+    }
+
+    .flashcard-wrap {
+      background: linear-gradient(160deg, #F0F9FF 0%, #FFFBEB 100%);
+      border: 3px dashed #7DD3FC;
+      border-radius: var(--radius-xl);
+      padding: 26px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .big-emoji {
+      font-size: clamp(4.2rem, 11vw, 6.2rem);
+      line-height: 1.1;
+      margin-bottom: 10px;
+      display: inline-block;
+      animation: floatSoft 2.8s ease-in-out infinite;
+    }
+
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .word-en {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(2.1rem, 5vw, 3rem);
+      color: #0F172A;
+      letter-spacing: 0.4px;
+    }
+
+    .word-ipa {
+      font-size: 1.1rem;
+      color: #0284C7;
+      font-weight: 800;
+      margin: 4px 0 8px;
+    }
+
+    .word-vi {
+      display: inline-block;
+      background: #DCFCE7;
+      color: #166534;
+      font-weight: 800;
+      font-size: 1.22rem;
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .example-box {
+      max-width: 620px;
+      margin: 0 auto 18px;
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .kid-btn {
+      font-family: 'Fredoka', 'Nunito', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.12s ease;
+    }
+
+    .kid-btn:active {
+      transform: translateY(3px);
+    }
+
+    .btn-listen {
+      background: var(--sky-blue);
+      color: #FFFFFF;
+      box-shadow: 0 4px 0 var(--sky-shadow);
+    }
+
+    .btn-next {
+      background: var(--sun-yellow);
+      color: #1E293B;
+      box-shadow: 0 4px 0 var(--sun-shadow);
+    }
+
+    .btn-star {
+      background: var(--mint-green);
+      color: #FFFFFF;
+      box-shadow: 0 4px 0 var(--mint-shadow);
+    }
+
+    .word-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .mini-word-card {
+      background: #F8FAFC;
+      border: 2px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 12px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.12s ease, border-color 0.14s ease, background 0.14s ease;
+    }
+
+    .mini-word-card:hover {
+      transform: translateY(-2px);
+      border-color: #38BDF8;
+      background: #F0F9FF;
+    }
+
+    .mini-word-card.selected {
+      border-color: #0284C7;
+      background: #E0F2FE;
+    }
+
+    .mini-emoji {
+      font-size: 2rem;
+      display: block;
       margin-bottom: 4px;
     }
-    .word {
-      font-size: 1.25rem;
+
+    .mini-en {
+      font-weight: 800;
+      color: #0F172A;
+      font-size: 1.02rem;
+    }
+
+    .mini-vi {
+      color: #64748B;
+      font-size: 0.88rem;
       font-weight: 700;
-      color: var(--primary);
     }
-    .phonetic {
-      font-size: 0.9rem;
-      color: var(--muted);
+
+    .grammar-lesson-card {
+      background: #FAF5FF;
+      border: 2px solid #E9D5FF;
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      margin-bottom: 16px;
     }
-    .meaning {
-      font-weight: 600;
-      margin-bottom: 10px;
+
+    .grammar-lesson-card h3 {
+      font-size: 1.25rem;
+      color: #581C87;
+      margin-bottom: 8px;
     }
-    .example {
-      background: var(--accent-bg);
-      padding: 10px 12px;
-      border-radius: 8px;
-      font-size: 0.92rem;
-    }
-    .example-vi {
-      color: var(--muted);
-      font-size: 0.86rem;
-      margin-top: 2px;
-    }
-    .formula {
+
+    .formula-tag {
       display: inline-block;
-      background: var(--accent-bg);
-      color: var(--primary);
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: #FFFFFF;
+      border: 2px solid #D8B4FE;
+      color: #6B21A8;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-size: 0.98rem;
+      margin-bottom: 8px;
+    }
+
+    .grammar-tip {
+      color: #334155;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .grammar-ex {
+      background: #FFFFFF;
+      border-left: 5px solid var(--grape-purple);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 800;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .quiz-box {
+      background: #F8FAFC;
+      border: 2px solid #E2E8F0;
+      border-radius: var(--radius-lg);
+      padding: 18px;
+    }
+
+    .quiz-q {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 14px;
+    }
+
+    .opts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .opt-btn {
+      font-family: 'Fredoka', 'Nunito', sans-serif;
+      font-size: 1.08rem;
+      padding: 13px 14px;
+      border-radius: var(--radius-md);
+      border: 2px solid #CBD5E1;
+      background: #FFFFFF;
+      color: #0F172A;
+      cursor: pointer;
       font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 6px;
-      margin: 8px 0;
-      font-size: 0.9rem;
+      transition: all 0.12s ease;
     }
-    .usage {
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin-bottom: 10px;
+
+    .opt-btn:hover {
+      border-color: #38BDF8;
+      background: #F0F9FF;
     }
-    .hidden { display: none; }
+
+    .opt-btn.correct {
+      background: #DCFCE7;
+      border-color: #22C55E;
+      color: #14532D;
+    }
+
+    .opt-btn.wrong {
+      background: #FFE4E6;
+      border-color: #F43F5E;
+      color: #881337;
+    }
+
+    .feedback-banner {
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      display: none;
+    }
+
+    .feedback-banner.show {
+      display: block;
+    }
+
+    .feedback-banner.ok {
+      background: #DCFCE7;
+      color: #166534;
+      border: 2px solid #86EFAC;
+    }
+
+    .feedback-banner.try-again {
+      background: #FEF3C7;
+      color: #92400E;
+      border: 2px solid #FDE68A;
+    }
+
+    .builder-target {
+      background: #FDF2F8;
+      border: 2px solid #FBCFE8;
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .builder-vi {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #9D174D;
+      margin-top: 6px;
+    }
+
+    .slot-area {
+      min-height: 62px;
+      background: #F8FAFC;
+      border: 3px dashed #CBD5E1;
+      border-radius: var(--radius-md);
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .tile-btn {
+      font-family: 'Fredoka', 'Nunito', sans-serif;
+      font-size: 1.05rem;
+      padding: 10px 15px;
+      border-radius: 14px;
+      border: 2px solid #93C5FD;
+      background: #EFF6FF;
+      color: #1E3A8A;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 3px 0 #60A5FA;
+    }
+
+    .tile-btn:active {
+      transform: translateY(2px);
+    }
+
+    .tile-btn.used {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>English Starter App</h1>
-      <p>Ôn tập từ vựng &amp; ngữ pháp tiếng Anh cơ bản</p>
+  <div class="app-shell">
+    <header class="kid-header">
+      <div class="brand-box">
+        <div class="mascot-badge" aria-hidden="true">🐣</div>
+        <div class="brand-text">
+          <h1>StarterKids • Pre A1 Starters</h1>
+          <p>Học từ vựng & ngữ pháp vui nhộn cùng chú gà con Starters</p>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="star-pill">⭐ Sao của bé: <span id="starCount">0</span></div>
+        <button class="voice-pill" id="voiceBtn" type="button" title="Đổi tốc độ đọc">🔊 Đọc chậm: Bật</button>
+      </div>
     </header>
 
-    <div class="tabs">
-      <button id="tab-vocab" class="tab-btn active" onclick="switchTab('vocab')">Từ vựng (Vocab)</button>
-      <button id="tab-grammar" class="tab-btn" onclick="switchTab('grammar')">Ngữ pháp (Grammar)</button>
-    </div>
+    <nav class="kid-nav" aria-label="Menu chính cho bé">
+      <button class="nav-btn active" data-tab="vocab" type="button">🃏 Thẻ Từ Vựng</button>
+      <button class="nav-btn" data-tab="grammar" type="button">📘 Ngữ Pháp Vui</button>
+      <button class="nav-btn" data-tab="play" type="button">🎮 Trò Chơi Đố</button>
+      <button class="nav-btn" data-tab="build" type="button">🧩 Ghép Câu Xinh</button>
+    </nav>
 
-    <div class="search-box">
-      <input id="search-input" type="text" placeholder="Tìm kiếm từ vựng, nghĩa hoặc cấu trúc ngữ pháp..." oninput="render()" />
-    </div>
+    <section class="panel" id="tab-vocab">
+      <div class="section-head">
+        <h2>🃏 Khám Phá Từ Vựng Starters</h2>
+        <span class="section-sub" id="vocabSummary">12 chủ đề • 237 từ</span>
+      </div>
 
-    <section id="vocab-section" class="grid"></section>
-    <section id="grammar-section" class="grid hidden"></section>
+      <div class="topic-strip" id="vocabTopicStrip"></div>
+
+      <div class="flashcard-wrap">
+        <div class="big-emoji" id="fcEmoji">👶</div>
+        <div class="word-en" id="fcWord">baby</div>
+        <div class="word-ipa" id="fcIpa">/ˈbeɪ.bi/</div>
+        <div><span class="word-vi" id="fcMeaning">em bé</span></div>
+        <div class="example-box" id="fcExample">The cute baby is sleeping in the cot.</div>
+        <div class="card-actions">
+          <button class="kid-btn btn-listen" id="fcSpeakWordBtn" type="button">🔊 Nghe từ</button>
+          <button class="kid-btn btn-listen" id="fcSpeakExBtn" type="button">💬 Nghe câu ví dụ</button>
+          <button class="kid-btn btn-star" id="fcEarnStarBtn" type="button">⭐ Bé đã thuộc (+1 sao)</button>
+          <button class="kid-btn btn-next" id="fcNextBtn" type="button">Từ tiếp theo ➡️</button>
+        </div>
+      </div>
+
+      <div class="word-grid" id="vocabMiniGrid"></div>
+    </section>
+
+    <section class="panel hidden" id="tab-grammar">
+      <div class="section-head">
+        <h2>📘 Ngữ Pháp Nền Tảng Pre A1 Starters</h2>
+        <span class="section-sub" id="grammarSummary">8 chuyên đề dễ hiểu</span>
+      </div>
+
+      <div class="topic-strip" id="grammarTopicStrip"></div>
+
+      <div class="grammar-lesson-card" id="grammarLessonBox"></div>
+
+      <div class="quiz-box">
+        <div class="section-head" style="margin-bottom: 8px;">
+          <h3>✏️ Thử Tài Chọn Đáp Án</h3>
+          <span class="section-sub" id="grammarQCounter">Câu 1/3</span>
+        </div>
+        <div class="quiz-q" id="grammarQText"></div>
+        <div class="opts-grid" id="grammarOpts"></div>
+        <div class="feedback-banner" id="grammarFeedback"></div>
+        <button class="kid-btn btn-next" id="grammarNextQBtn" type="button">Câu hỏi tiếp theo ➡️</button>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="tab-play">
+      <div class="section-head">
+        <h2>🎮 Đố Vui Tìm Từ Theo Gợi Ý</h2>
+        <span class="section-sub">Đoán đúng nhận ngay +2 sao!</span>
+      </div>
+
+      <div class="flashcard-wrap" style="border-color: #86EFAC; background: linear-gradient(160deg, #F0FDF4 0%, #FEF9C3 100%);">
+        <div class="section-sub" id="riddleTopicLabel" style="margin-bottom: 6px;">Chủ đề: Con vật ngộ nghĩnh</div>
+        <div class="quiz-q" id="riddlePrompt" style="font-size: 1.28rem;">A friendly pet that barks.</div>
+        <button class="kid-btn btn-listen" id="riddleSpeakBtn" type="button" style="margin-bottom: 14px;">🔊 Nghe gợi ý tiếng Anh</button>
+        <div class="opts-grid" id="riddleChoices"></div>
+        <div class="feedback-banner" id="riddleFeedback"></div>
+        <button class="kid-btn btn-star" id="riddleNextBtn" type="button">Câu đố mới 🎲</button>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="tab-build">
+      <div class="section-head">
+        <h2>🧩 Ghép Từ Thành Câu Tiếng Anh</h2>
+        <span class="section-sub">Chạm vào các thẻ từ để xếp thành câu đúng</span>
+      </div>
+
+      <div class="builder-target">
+        <div class="section-sub" id="builderTopicTag">Chủ đề: To be</div>
+        <div class="builder-vi" id="builderViPrompt">Tôi là một học sinh vui vẻ.</div>
+      </div>
+
+      <div class="slot-area" id="builderSelectedSlot" aria-label="Câu bé đang ghép"></div>
+      <div class="slot-area" id="builderPoolSlot" style="background: #FFFBEB; border-style: solid; border-color: #FDE68A;" aria-label="Các từ gợi ý"></div>
+
+      <div class="feedback-banner" id="builderFeedback"></div>
+
+      <div class="card-actions" style="justify-content: flex-start;">
+        <button class="kid-btn btn-star" id="builderCheckBtn" type="button">✅ Kiểm tra câu</button>
+        <button class="kid-btn btn-listen" id="builderResetBtn" type="button">🔄 Xếp lại</button>
+        <button class="kid-btn btn-next" id="builderNextBtn" type="button">Câu mới ➡️</button>
+      </div>
+    </section>
   </div>
 
   <script src="vocab_starters.js"></script>
   <script src="grammar_starters.js"></script>
   <script>
-    let currentTab = 'vocab';
+    (function () {
+      const STORAGE_STARS_KEY = "starterkids_stars_v1";
+      const topics = Array.isArray(window.STARTERS_VOCAB_TOPICS) ? window.STARTERS_VOCAB_TOPICS : [];
+      const lessons = Array.isArray(window.STARTERS_GRAMMAR_LESSONS) ? window.STARTERS_GRAMMAR_LESSONS : [];
+      const sentences = Array.isArray(window.STARTERS_GRAMMAR_SENTENCES) ? window.STARTERS_GRAMMAR_SENTENCES : [];
 
-    function switchTab(tab) {
-      currentTab = tab;
-      document.getElementById('tab-vocab').classList.toggle('active', tab === 'vocab');
-      document.getElementById('tab-grammar').classList.toggle('active', tab === 'grammar');
-      document.getElementById('vocab-section').classList.toggle('hidden', tab !== 'vocab');
-      document.getElementById('grammar-section').classList.toggle('hidden', tab !== 'grammar');
-      render();
-    }
+      let stars = Number(localStorage.getItem(STORAGE_STARS_KEY) || 0);
+      let slowVoice = true;
 
-    function render() {
-      const q = (document.getElementById('search-input').value || '').trim().toLowerCase();
+      let activeTopicIdx = 0;
+      let activeWordIdx = 0;
 
-      const vocabList = (typeof VOCAB_STARTERS !== 'undefined' ? VOCAB_STARTERS : []).filter(item =>
-        !q ||
-        item.word.toLowerCase().includes(q) ||
-        item.meaning.toLowerCase().includes(q) ||
-        item.example.toLowerCase().includes(q)
-      );
+      let activeLessonIdx = 0;
+      let activeQIdx = 0;
 
-      document.getElementById('vocab-section').innerHTML = vocabList.length
-        ? vocabList.map(item => `
-          <article class="card">
-            <div class="word-row">
-              <span class="word">${item.word}</span>
-              <span class="phonetic">${item.phonetic}</span>
-            </div>
-            <div class="meaning">${item.meaning}</div>
-            <div class="example">
-              <div>"${item.example}"</div>
-              <div class="example-vi">${item.exampleVi}</div>
-            </div>
-          </article>
-        `).join('')
-        : '<p>Không tìm thấy từ vựng phù hợp.</p>';
+      let currentRiddle = null;
+      let riddleAnswered = false;
 
-      const grammarList = (typeof GRAMMAR_STARTERS !== 'undefined' ? GRAMMAR_STARTERS : []).filter(item =>
-        !q ||
-        item.title.toLowerCase().includes(q) ||
-        item.formula.toLowerCase().includes(q) ||
-        item.usage.toLowerCase().includes(q)
-      );
+      let builderIdx = 0;
+      let builderPicked = [];
 
-      document.getElementById('grammar-section').innerHTML = grammarList.length
-        ? grammarList.map(item => `
-          <article class="card">
-            <h3>${item.title}</h3>
-            <div class="formula">${item.formula}</div>
-            <p class="usage">${item.usage}</p>
-            <div class="example">
-              ${item.examples.map(ex => `
-                <div style="margin-bottom:6px;">
-                  <div>"${ex.en}"</div>
-                  <div class="example-vi">${ex.vi}</div>
-                </div>
-              `).join('')}
-            </div>
-          </article>
-        `).join('')
-        : '<p>Không tìm thấy điểm ngữ pháp phù hợp.</p>';
-    }
+      const starCountEl = document.getElementById("starCount");
+      const voiceBtn = document.getElementById("voiceBtn");
 
-    render();
+      function addStars(amount) {
+        stars += amount;
+        localStorage.setItem(STORAGE_STARS_KEY, String(stars));
+        starCountEl.textContent = String(stars);
+      }
+
+      function speakEn(text) {
+        if (!("speechSynthesis" in window) || !text) return;
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = "en-US";
+        utter.rate = slowVoice ? 0.78 : 0.98;
+        utter.pitch = 1.12;
+        window.speechSynthesis.speak(utter);
+      }
+
+      starCountEl.textContent = String(stars);
+
+      voiceBtn.addEventListener("click", () => {
+        slowVoice = !slowVoice;
+        voiceBtn.textContent = slowVoice ? "🔊 Đọc chậm: Bật" : "🔊 Đọc vừa: Bật";
+      });
+
+      const navButtons = document.querySelectorAll(".nav-btn");
+      const tabPanels = {
+        vocab: document.getElementById("tab-vocab"),
+        grammar: document.getElementById("tab-grammar"),
+        play: document.getElementById("tab-play"),
+        build: document.getElementById("tab-build")
+      };
+
+      navButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = btn.dataset.tab;
+          navButtons.forEach((b) => b.classList.toggle("active", b === btn));
+          Object.keys(tabPanels).forEach((key) => {
+            tabPanels[key].classList.toggle("hidden", key !== target);
+          });
+          if (target === "play" && !currentRiddle) {
+            setupRiddle();
+          }
+          if (target === "build") {
+            setupBuilder();
+          }
+        });
+      });
+
+      const vocabTopicStrip = document.getElementById("vocabTopicStrip");
+      const vocabMiniGrid = document.getElementById("vocabMiniGrid");
+      const vocabSummary = document.getElementById("vocabSummary");
+
+      const totalWordsCount = topics.reduce((sum, t) => sum + (t.words ? t.words.length : 0), 0);
+      vocabSummary.textContent = `${topics.length} chủ đề • ${totalWordsCount} từ`;
+
+      function renderVocabTopics() {
+        vocabTopicStrip.innerHTML = "";
+        topics.forEach((topic, idx) => {
+          const chip = document.createElement("button");
+          chip.type = "button";
+          chip.className = "topic-chip" + (idx === activeTopicIdx ? " active" : "");
+          chip.textContent = `${topic.icon} ${topic.name} (${topic.words.length})`;
+          chip.addEventListener("click", () => {
+            activeTopicIdx = idx;
+            activeWordIdx = 0;
+            renderVocabTopics();
+            renderFlashcard();
+            renderMiniGrid();
+          });
+          vocabTopicStrip.appendChild(chip);
+        });
+      }
+
+      function renderFlashcard() {
+        const topic = topics[activeTopicIdx];
+        if (!topic || !topic.words.length) return;
+        const item = topic.words[activeWordIdx % topic.words.length];
+        document.getElementById("fcEmoji").textContent = item.emoji;
+        document.getElementById("fcWord").textContent = item.word;
+        document.getElementById("fcIpa").textContent = item.ipa;
+        document.getElementById("fcMeaning").textContent = item.meaning;
+        document.getElementById("fcExample").textContent = item.example;
+      }
+
+      function renderMiniGrid() {
+        const topic = topics[activeTopicIdx];
+        if (!topic) return;
+        vocabMiniGrid.innerHTML = "";
+        topic.words.forEach((w, idx) => {
+          const card = document.createElement("button");
+          card.type = "button";
+          card.className = "mini-word-card" + (idx === activeWordIdx ? " selected" : "");
+          card.innerHTML = `<span class="mini-emoji">${w.emoji}</span><div class="mini-en">${w.word}</div><div class="mini-vi">${w.meaning}</div>`;
+          card.addEventListener("click", () => {
+            activeWordIdx = idx;
+            renderFlashcard();
+            renderMiniGrid();
+            speakEn(w.word);
+          });
+          vocabMiniGrid.appendChild(card);
+        });
+      }
+
+      document.getElementById("fcSpeakWordBtn").addEventListener("click", () => {
+        const w = topics[activeTopicIdx]?.words[activeWordIdx];
+        if (w) speakEn(w.word);
+      });
+
+      document.getElementById("fcSpeakExBtn").addEventListener("click", () => {
+        const w = topics[activeTopicIdx]?.words[activeWordIdx];
+        if (w) speakEn(w.example);
+      });
+
+      document.getElementById("fcEarnStarBtn").addEventListener("click", () => {
+        addStars(1);
+        const btn = document.getElementById("fcEarnStarBtn");
+        const prev = btn.textContent;
+        btn.textContent = "🎉 Tuyệt vời! +1 sao";
+        setTimeout(() => { btn.textContent = prev; }, 900);
+      });
+
+      document.getElementById("fcNextBtn").addEventListener("click", () => {
+        const list = topics[activeTopicIdx]?.words || [];
+        if (!list.length) return;
+        activeWordIdx = (activeWordIdx + 1) % list.length;
+        renderFlashcard();
+        renderMiniGrid();
+      });
+
+      const grammarTopicStrip = document.getElementById("grammarTopicStrip");
+      const grammarLessonBox = document.getElementById("grammarLessonBox");
+      const grammarSummary = document.getElementById("grammarSummary");
+      grammarSummary.textContent = `${lessons.length} chuyên đề dễ hiểu`;
+
+      function renderGrammarTabs() {
+        grammarTopicStrip.innerHTML = "";
+        lessons.forEach((lesson, idx) => {
+          const chip = document.createElement("button");
+          chip.type = "button";
+          chip.className = "topic-chip" + (idx === activeLessonIdx ? " active" : "");
+          chip.textContent = lesson.title;
+          chip.addEventListener("click", () => {
+            activeLessonIdx = idx;
+            activeQIdx = 0;
+            renderGrammarTabs();
+            renderGrammarLesson();
+            renderGrammarQuestion();
+          });
+          grammarTopicStrip.appendChild(chip);
+        });
+      }
+
+      function renderGrammarLesson() {
+        const lesson = lessons[activeLessonIdx];
+        if (!lesson) return;
+        grammarLessonBox.innerHTML = `
+          <h3>${lesson.title}</h3>
+          <div class="formula-tag">Công thức: ${lesson.formula}</div>
+          <p class="grammar-tip">💡 Mẹo cho bé: ${lesson.tip}</p>
+          <div class="grammar-ex">
+            <span>📌 Ví dụ: "${lesson.example}"</span>
+            <button class="kid-btn btn-listen" id="grammarSpeakExBtn" type="button" style="padding: 8px 14px; font-size: 0.95rem;">🔊 Nghe</button>
+          </div>
+        `;
+        document.getElementById("grammarSpeakExBtn").addEventListener("click", () => speakEn(lesson.example));
+      }
+
+      function renderGrammarQuestion() {
+        const lesson = lessons[activeLessonIdx];
+        const qs = lesson?.questions || [];
+        if (!qs.length) return;
+        const qItem = qs[activeQIdx % qs.length];
+
+        document.getElementById("grammarQCounter").textContent = `Câu ${(activeQIdx % qs.length) + 1}/${qs.length}`;
+        document.getElementById("grammarQText").textContent = qItem.q;
+
+        const optsWrap = document.getElementById("grammarOpts");
+        const fb = document.getElementById("grammarFeedback");
+        fb.className = "feedback-banner";
+        fb.textContent = "";
+        optsWrap.innerHTML = "";
+
+        qItem.opts.forEach((opt, idx) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "opt-btn";
+          b.textContent = opt;
+          b.addEventListener("click", () => {
+            optsWrap.querySelectorAll(".opt-btn").forEach((el) => el.classList.remove("correct", "wrong"));
+            if (idx === qItem.ans) {
+              b.classList.add("correct");
+              fb.className = "feedback-banner show ok";
+              fb.textContent = `🌟 Giỏi quá! ${qItem.exp} (+1 sao)`;
+              addStars(1);
+            } else {
+              b.classList.add("wrong");
+              fb.className = "feedback-banner show try-again";
+              fb.textContent = `💪 Bé thử lại nhé! Gợi ý: ${qItem.exp}`;
+            }
+          });
+          optsWrap.appendChild(b);
+        });
+      }
+
+      document.getElementById("grammarNextQBtn").addEventListener("click", () => {
+        const qs = lessons[activeLessonIdx]?.questions || [];
+        if (!qs.length) return;
+        activeQIdx = (activeQIdx + 1) % qs.length;
+        renderGrammarQuestion();
+      });
+
+      const allWordsFlat = [];
+      topics.forEach((t) => {
+        (t.words || []).forEach((w) => {
+          allWordsFlat.push({ ...w, topicName: t.name });
+        });
+      });
+
+      function setupRiddle() {
+        if (allWordsFlat.length < 4) return;
+        riddleAnswered = false;
+        const target = allWordsFlat[Math.floor(Math.random() * allWordsFlat.length)];
+        const pool = [target];
+        while (pool.length < 4) {
+          const cand = allWordsFlat[Math.floor(Math.random() * allWordsFlat.length)];
+          if (!pool.some((p) => p.word === cand.word)) {
+            pool.push(cand);
+          }
+        }
+        pool.sort(() => Math.random() - 0.5);
+        currentRiddle = { target, pool };
+
+        document.getElementById("riddleTopicLabel").textContent = `Chủ đề: ${target.topicName}`;
+        document.getElementById("riddlePrompt").textContent = target.riddle;
+        const fb = document.getElementById("riddleFeedback");
+        fb.className = "feedback-banner";
+        fb.textContent = "";
+
+        const choicesBox = document.getElementById("riddleChoices");
+        choicesBox.innerHTML = "";
+        pool.forEach((item) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "opt-btn";
+          btn.innerHTML = `<span style="font-size:1.5rem; margin-right:6px;">${item.emoji}</span>${item.word}`;
+          btn.addEventListener("click", () => {
+            speakEn(item.word);
+            if (item.word === target.word) {
+              btn.classList.add("correct");
+              fb.className = "feedback-banner show ok";
+              fb.textContent = `🎉 Đúng rồi! "${target.word}" (${target.meaning})! ${!riddleAnswered ? "+2 sao ⭐" : ""}`;
+              if (!riddleAnswered) {
+                addStars(2);
+                riddleAnswered = true;
+              }
+            } else {
+              btn.classList.add("wrong");
+              fb.className = "feedback-banner show try-again";
+              fb.textContent = "🎈 Chưa đúng rồi, bé nghe lại gợi ý và chọn lại nhé!";
+            }
+          });
+          choicesBox.appendChild(btn);
+        });
+      }
+
+      document.getElementById("riddleSpeakBtn").addEventListener("click", () => {
+        if (currentRiddle?.target) speakEn(currentRiddle.target.riddle);
+      });
+
+      document.getElementById("riddleNextBtn").addEventListener("click", setupRiddle);
+
+      function setupBuilder() {
+        if (!sentences.length) return;
+        const item = sentences[builderIdx % sentences.length];
+        document.getElementById("builderTopicTag").textContent = `Chủ đề: ${item.topic}`;
+        document.getElementById("builderViPrompt").textContent = item.vi;
+        const fb = document.getElementById("builderFeedback");
+        fb.className = "feedback-banner";
+        fb.textContent = "";
+
+        const cleanWords = item.en.replace(/[.?!]/g, "").split(/\s+/).filter(Boolean);
+        const shuffled = cleanWords.map((w, i) => ({ id: i, text: w })).sort(() => Math.random() - 0.5);
+        builderPicked = [];
+
+        const selectedSlot = document.getElementById("builderSelectedSlot");
+        const poolSlot = document.getElementById("builderPoolSlot");
+
+        function refreshSlots() {
+          selectedSlot.innerHTML = "";
+          poolSlot.innerHTML = "";
+
+          builderPicked.forEach((tok, pIdx) => {
+            const b = document.createElement("button");
+            b.type = "button";
+            b.className = "tile-btn";
+            b.textContent = tok.text;
+            b.addEventListener("click", () => {
+              builderPicked.splice(pIdx, 1);
+              refreshSlots();
+            });
+            selectedSlot.appendChild(b);
+          });
+
+          shuffled.forEach((tok) => {
+            const isUsed = builderPicked.some((p) => p.id === tok.id);
+            const b = document.createElement("button");
+            b.type = "button";
+            b.className = "tile-btn" + (isUsed ? " used" : "");
+            b.textContent = tok.text;
+            b.addEventListener("click", () => {
+              if (isUsed) return;
+              builderPicked.push(tok);
+              speakEn(tok.text);
+              refreshSlots();
+            });
+            poolSlot.appendChild(b);
+          });
+        }
+
+        refreshSlots();
+
+        document.getElementById("builderCheckBtn").onclick = () => {
+          const guess = builderPicked.map((p) => p.text).join(" ").toLowerCase();
+          const expected = cleanWords.join(" ").toLowerCase();
+          if (guess === expected) {
+            fb.className = "feedback-banner show ok";
+            fb.textContent = `🌟 Tuyệt vời! Câu hoàn chỉnh: "${item.en}" (+2 sao ⭐)`;
+            addStars(2);
+            speakEn(item.en);
+          } else {
+            fb.className = "feedback-banner show try-again";
+            fb.textContent = "🧩 Sắp đúng rồi! Bé bấm 'Xếp lại' hoặc chạm vào thẻ từ để đổi vị trí nhé.";
+          }
+        };
+
+        document.getElementById("builderResetBtn").onclick = () => {
+          builderPicked = [];
+          fb.className = "feedback-banner";
+          refreshSlots();
+        };
+      }
+
+      document.getElementById("builderNextBtn").addEventListener("click", () => {
+        if (!sentences.length) return;
+        builderIdx = (builderIdx + 1) % sentences.length;
+        setupBuilder();
+      });
+
+      renderVocabTopics();
+      renderFlashcard();
+      renderMiniGrid();
+      renderGrammarTabs();
+      renderGrammarLesson();
+      renderGrammarQuestion();
+      setupRiddle();
+      setupBuilder();
+    })();
   </script>
 </body>
 </html>
