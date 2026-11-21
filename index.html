@@ -118,7 +118,7 @@
 
     .hero p {
       color: var(--muted);
-      max-width: 680px;
+      max-width: 720px;
       font-size: 1rem;
     }
 
@@ -246,6 +246,16 @@
       background: #1d4ed8;
     }
 
+    .btn-starters {
+      background: #f59e0b;
+      color: #182230;
+    }
+
+    .btn-starters:hover {
+      background: #d97706;
+      color: #fff;
+    }
+
     .btn-disabled {
       background: #e2e8f0;
       color: #64748b;
@@ -299,7 +309,8 @@
       <h1>Chọn cấp độ để bắt đầu học hôm nay</h1>
       <p>
         Mỗi cấp độ được tách riêng thành một ứng dụng độc lập để dễ quản lý và mở rộng dần.
-        Hãy chọn <strong>A2 Flyers</strong> để vào thẳng ứng dụng học từ vựng và ngữ pháp tại <code>/FlyerKids/index.html</code>.
+        Bạn có thể chọn <strong>Pre A1 Starters</strong> tại <code>./StarterKids/index.html</code> hoặc
+        <strong>A2 Flyers</strong> tại <code>./FlyerKids/index.html</code> để bắt đầu ngay.
       </p>
     </section>
 
@@ -307,9 +318,9 @@
     <main class="grid" id="levelsGrid"></main>
 
     <aside class="info-box">
-      <strong>Mẹo mở rộng sau này:</strong> Khi làm xong ứng dụng cho <strong>Starters</strong> hoặc <strong>Movers</strong>,
-      bạn chỉ cần đặt thư mục (ví dụ <code>StarterKids/index.html</code> hoặc <code>MoverKids/index.html</code>) và đổi
-      <code>enabled: true</code> cùng đường dẫn <code>url</code> trong mảng <code>LEVELS</code> ở cuối file <code>index.html</code> này.
+      <strong>Mẹo mở rộng sau này:</strong> Khi thêm cấp độ mới (ví dụ <code>MoverKids/index.html</code>),
+      bạn chỉ cần đặt thư mục đúng đường dẫn và cập nhật <code>enabled: true</code> cùng <code>url</code>
+      trong mảng <code>LEVELS</code> ở cuối file <code>index.html</code> này.
     </aside>
   </div>
 
@@ -323,8 +334,9 @@
         description: "Từ vựng cơ bản, màu sắc, con vật, đồ chơi và mẫu câu ngắn dễ nhớ cho bé mới bắt đầu.",
         icon: "🐣",
         iconClass: "icon-starters",
+        btnClass: "btn-starters",
         url: "./StarterKids/index.html",
-        enabled: false
+        enabled: true
       },
       {
         id: "movers",
@@ -333,6 +345,7 @@
         description: "Bổ sung từ vựng đời sống, hoạt động hàng ngày và cấu trúc câu đơn giản cho bé.",
         icon: "🦊",
         iconClass: "icon-movers",
+        btnClass: "btn-primary",
         url: "./MoverKids/index.html",
         enabled: false
       },
@@ -343,6 +356,7 @@
         description: "Luyện flashcard, đố vui định nghĩa, chính tả, ghép câu và ngữ pháp chuẩn A2 Flyers.",
         icon: "🚀",
         iconClass: "icon-flyers",
+        btnClass: "btn-primary",
         url: "./FlyerKids/index.html",
         enabled: true
       }
@@ -352,6 +366,7 @@
       const grid = document.getElementById("levelsGrid");
       grid.innerHTML = LEVELS.map((lvl) => {
         const isReady = Boolean(lvl.enabled && lvl.url);
+        const btnStyle = lvl.btnClass || "btn-primary";
         return `
           <article class="card ${isReady ? "active" : "locked"}">
             <div>
@@ -367,7 +382,7 @@
             </div>
             ${
               isReady
-                ? `<a class="btn btn-primary" href="${lvl.url}">Vào học ${lvl.title} →</a>`
+                ? `<a class="btn ${btnStyle}" href="${lvl.url}">Vào học ${lvl.title} →</a>`
                 : `<button class="btn btn-disabled" type="button" disabled aria-disabled="true">Đang chuẩn bị nội dung</button>`
             }
           </article>
@@ -383,6 +398,11 @@
           if (!key) continue;
           const raw = localStorage.getItem(key);
           if (!raw) continue;
+          const numVal = Number(raw);
+          if (!Number.isNaN(numVal) && Number.isFinite(numVal)) {
+            total += numVal;
+            continue;
+          }
           const parsed = JSON.parse(raw);
           if (parsed && typeof parsed.stars === "number") {
             total += parsed.stars;
