@@ -558,223 +558,34 @@
         <h1 id="heroTitle">Kho Từ Vựng Cambridge A2 Flyers</h1>
         <p id="heroSubtitle">Luyện nghe phát âm, đoán từ qua định nghĩa và ghép chính tả chuẩn đề thi Flyers.</p>
       </div>
-      <div class="badge-count" id="totalWordBadge">📦 Đang tải kho từ...</div>
+      <div class="badge-count" id="totalWordBadge">📦 Đang tải dữ liệu...</div>
     </section>
 
     <div id="modeBar" class="mode-bar"></div>
     <div id="appContent"></div>
 
     <div class="footer-tools">
-      <span id="dataSourceStatus">Nguồn dữ liệu: Từ vựng lõi + vocab_flyers.js</span>
+      <span id="dataSourceStatus">Dữ liệu tách riêng trong vocab_flyers.js &amp; grammar_flyers.js</span>
       <button class="btn btn-ghost" onclick="resetProgress()">🔄 Đặt lại tiến độ</button>
     </div>
   </main>
 
-  <!-- Nạp gói từ vựng mở rộng cùng thư mục FlyerKids/ -->
   <script src="./vocab_flyers.js"></script>
   <script src="./grammar_flyers.js"></script>
 
   <script>
-    // 1. 5 chủ đề cốt lõi (45 từ)
-    const BASE_TOPICS = [
-      {
-        id: "jobs",
-        name: "Nghề nghiệp",
-        en: "Jobs & Work",
-        icon: "👩‍🚀",
-        color: "#2563eb",
-        words: [
-          { word: "actor", ipa: "/ˈæk.tər/", meaning: "diễn viên", emoji: "🎭", example: "The actor performed in a funny play at the theatre.", riddle: "A person who acts in films, plays, or TV programmes." },
-          { word: "artist", ipa: "/ˈɑː.tɪst/", meaning: "họa sĩ / nghệ sĩ", emoji: "🎨", example: "The artist painted a picture of the blue sea.", riddle: "Someone who draws, paints, or makes sculptures." },
-          { word: "astronaut", ipa: "/ˈæs.trə.nɔːt/", meaning: "phi hành gia", emoji: "👩‍🚀", example: "An astronaut travels into space in a rocket.", riddle: "A person who flies into space in a spaceship." },
-          { word: "businesswoman", ipa: "/ˈbɪz.nɪsˌwʊm.ən/", meaning: "nữ doanh nhân", emoji: "💼", example: "The businesswoman works in a tall glass office.", riddle: "A woman who works in business or runs a company." },
-          { word: "designer", ipa: "/dɪˈzaɪ.nər/", meaning: "nhà thiết kế", emoji: "📐", example: "A fashion designer draws ideas for new clothes.", riddle: "Someone who plans how new clothes, websites, or buildings will look." },
-          { word: "engineer", ipa: "/ˌen.dʒɪˈnɪər/", meaning: "kỹ sư", emoji: "👷", example: "The engineer helped build the new bridge.", riddle: "A person who designs and builds machines, bridges, or roads." },
-          { word: "firefighter", ipa: "/ˈfaɪəˌfaɪ.tər/", meaning: "lính cứu hỏa", emoji: "🚒", example: "The brave firefighter put out the fire quickly.", riddle: "Someone whose job is to stop fires and rescue people." },
-          { word: "journalist", ipa: "/ˈdʒɜː.nə.lɪst/", meaning: "nhà báo", emoji: "📰", example: "The journalist wrote an interesting story for the newspaper.", riddle: "A person who writes news reports for newspapers, TV, or websites." },
-          { word: "mechanic", ipa: "/məˈkæn.ɪk/", meaning: "thợ sửa xe / máy", emoji: "🔧", example: "The mechanic repaired our car engine yesterday.", riddle: "Someone whose job is to repair cars and machines." }
-        ]
-      },
-      {
-        id: "travel",
-        name: "Du lịch & Phương tiện",
-        en: "Travel & Transport",
-        icon: "✈️",
-        color: "#0ea5e9",
-        words: [
-          { word: "adventure", ipa: "/ədˈven.tʃər/", meaning: "cuộc phiêu lưu", emoji: "🗺️", example: "Camping in the jungle was an exciting adventure.", riddle: "An exciting and unusual experience or journey." },
-          { word: "ambulance", ipa: "/ˈæm.bjə.ləns/", meaning: "xe cứu thương", emoji: "🚑", example: "The ambulance took the hurt player to hospital.", riddle: "A special vehicle that takes sick or injured people to hospital." },
-          { word: "bicycle", ipa: "/ˈbaɪ.sɪ.kəl/", meaning: "xe đạp", emoji: "🚲", example: "I ride my bicycle to school every morning.", riddle: "A vehicle with two wheels that you push with your feet." },
-          { word: "helicopter", ipa: "/ˈhel.ɪˌkɒp.tər/", meaning: "máy bay trực thăng", emoji: "🚁", example: "A rescue helicopter landed on top of the mountain.", riddle: "An aircraft with large spinning blades on top instead of wings." },
-          { word: "journey", ipa: "/ˈdʒɜː.ni/", meaning: "chuyến đi dài", emoji: "🧳", example: "The train journey to Hanoi took three hours.", riddle: "Travelling from one place to another, especially far away." },
-          { word: "passenger", ipa: "/ˈpæs.ən.dʒər/", meaning: "hành khách", emoji: "💺", example: "Every passenger on the plane must wear a seatbelt.", riddle: "Someone who travels in a car, bus, train, or plane but is not driving." },
-          { word: "passport", ipa: "/ˈpɑːs.pɔːt/", meaning: "hộ chiếu", emoji: "🛂", example: "Show your passport at the airport before flying abroad.", riddle: "A small official book with your photo needed to travel to other countries." },
-          { word: "rocket", ipa: "/ˈrɒk.ɪt/", meaning: "tên lửa", emoji: "🚀", example: "The silver rocket blasted off towards the moon.", riddle: "A space vehicle shaped like a tube that flies very fast into space." },
-          { word: "suitcase", ipa: "/ˈsuːt.keɪs/", meaning: "va li", emoji: "🧳", example: "Pack your clothes and shoes into your suitcase.", riddle: "A large rectangular bag with a handle used for carrying clothes on holiday." }
-        ]
-      },
-      {
-        id: "weather_nature",
-        name: "Thời tiết & Thiên nhiên",
-        en: "Weather & Nature",
-        icon: "⛈️",
-        color: "#10b981",
-        words: [
-          { word: "desert", ipa: "/ˈdez.ət/", meaning: "sa mạc", emoji: "🏜️", example: "It very rarely rains in the hot sandy desert.", riddle: "A huge dry area covered with sand and very few plants." },
-          { word: "environment", ipa: "/ɪnˈvaɪ.rən.mənt/", meaning: "môi trường", emoji: "🌱", example: "Planting trees helps protect our environment.", riddle: "The air, water, land, and nature around us." },
-          { word: "fog", ipa: "/fɒɡ/", meaning: "sương mù", emoji: "🌫️", example: "Drivers must go slowly when there is thick fog.", riddle: "Thick cloud close to the ground that makes it hard to see." },
-          { word: "hill", ipa: "/hɪl/", meaning: "ngọn đồi", emoji: "⛰️", example: "We walked up the green hill to fly our kites.", riddle: "An area of land that is higher than the land around it, but smaller than a mountain." },
-          { word: "ocean", ipa: "/ˈəʊ.ʃən/", meaning: "đại dương", emoji: "🌊", example: "Whales and sharks live in the deep blue ocean.", riddle: "A very large area of salt water covering most of the Earth." },
-          { word: "planet", ipa: "/ˈplæn.ɪt/", meaning: "hành tinh", emoji: "🪐", example: "Earth is the planet that we live on.", riddle: "A huge round object in space that moves around the sun, like Earth or Mars." },
-          { word: "storm", ipa: "/stɔːm/", meaning: "cơn bão", emoji: "⛈️", example: "There was loud thunder and lightning during the storm.", riddle: "Very bad weather with strong winds, heavy rain, and thunder." },
-          { word: "stream", ipa: "/striːm/", meaning: "con suối", emoji: "🏞️", example: "Clear cold water flowed down the mountain stream.", riddle: "A small, narrow river." },
-          { word: "volcano", ipa: "/vɒlˈkeɪ.nəʊ/", meaning: "núi lửa", emoji: "🌋", example: "Smoke came out of the top of the volcano.", riddle: "A mountain with a large hole at the top where hot lava can come out." }
-        ]
-      },
-      {
-        id: "adjectives",
-        name: "Tính từ miêu tả",
-        en: "Describing Adjectives",
-        icon: "✨",
-        color: "#f59e0b",
-        words: [
-          { word: "bored", ipa: "/bɔːd/", meaning: "buồn chán", emoji: "🥱", example: "He felt bored because it rained all afternoon.", riddle: "Feeling tired and unhappy because nothing interesting is happening." },
-          { word: "broken", ipa: "/ˈbrəʊ.kən/", meaning: "bị vỡ / bị hỏng", emoji: "💔", example: "Don't touch the broken glass on the floor.", riddle: "Damaged or in pieces, and not working properly." },
-          { word: "crowded", ipa: "/ˈkraʊ.dɪd/", meaning: "đông đúc", emoji: "👥", example: "The market was very crowded on Sunday morning.", riddle: "Full of too many people." },
-          { word: "dangerous", ipa: "/ˈdeɪn.dʒər.əs/", meaning: "nguy hiểm", emoji: "⚠️", example: "Swimming in the sea during a storm is dangerous.", riddle: "Not safe; able to hurt or harm you." },
-          { word: "delicious", ipa: "/dɪˈlɪʃ.əs/", meaning: "ngon tuyệt", emoji: "😋", example: "Mum baked a delicious chocolate cake.", riddle: "Tasting or smelling very good." },
-          { word: "empty", ipa: "/ˈemp.ti/", meaning: "trống rỗng / cạn", emoji: "🫙", example: "The juice bottle is empty; let's recycle it.", riddle: "Having nothing inside." },
-          { word: "enormous", ipa: "/ɪˈnɔː.məs/", meaning: "khổng lồ", emoji: "🐘", example: "Blue whales are enormous sea animals.", riddle: "Extremely large in size." },
-          { word: "excited", ipa: "/ɪkˈsaɪ.tɪd/", meaning: "hào hứng / phấn khích", emoji: "🤩", example: "The children are excited about their school trip.", riddle: "Feeling very happy and enthusiastic about something." },
-          { word: "frightened", ipa: "/ˈfraɪ.tənd/", meaning: "sợ hãi", emoji: "😨", example: "The little puppy was frightened of the loud thunder.", riddle: "Feeling afraid or scared." }
-        ]
-      },
-      {
-        id: "objects_tech",
-        name: "Đồ vật & Công nghệ",
-        en: "Objects & Technology",
-        icon: "💻",
-        color: "#7c3aed",
-        words: [
-          { word: "battery", ipa: "/ˈbæt.ər.i/", meaning: "cục pin", emoji: "🔋", example: "My toy car needs a new battery to move.", riddle: "An object that provides electricity for toys, clocks, and phones." },
-          { word: "calendar", ipa: "/ˈkæl.ən.dər/", meaning: "tờ lịch", emoji: "📅", example: "Mark your birthday on the wall calendar.", riddle: "A chart showing all the days, weeks, and months of a year." },
-          { word: "envelope", ipa: "/ˈen.və.ləʊp/", meaning: "phong bì thư", emoji: "✉️", example: "Put the birthday card inside a white envelope.", riddle: "A flat paper cover that you put a letter inside before posting." },
-          { word: "flashlight", ipa: "/ˈflæʃ.laɪt/", meaning: "đèn pin", emoji: "🔦", example: "We used a flashlight to see inside the dark tent.", riddle: "A small electric light that you carry in your hand." },
-          { word: "laptop", ipa: "/ˈlæp.tɒp/", meaning: "máy tính xách tay", emoji: "💻", example: "She is typing her homework on a laptop.", riddle: "A small computer that you can easily carry with you." },
-          { word: "mirror", ipa: "/ˈmɪr.ər/", meaning: "cái gương", emoji: "🪞", example: "Look in the mirror to see if your hair is tidy.", riddle: "A piece of special glass where you can see your own face." },
-          { word: "necklace", ipa: "/ˈnek.ləs/", meaning: "vòng cổ", emoji: "📿", example: "Grandma wore a pretty silver necklace.", riddle: "Jewellery that you wear around your neck." },
-          { word: "screen", ipa: "/skriːn/", meaning: "màn hình", emoji: "🖥️", example: "Don't sit too close to the television screen.", riddle: "The flat part of a TV, phone, or computer where pictures appear." },
-          { word: "torch", ipa: "/tɔːtʃ/", meaning: "đèn pin (Anh-Anh)", emoji: "🔦", example: "Bring a torch when you go camping at night.", riddle: "The British English word for a small hand-held electric light." }
-        ]
-      }
-    ];
-
-    // Gộp tự động gói mở rộng từ vocab_flyers.js nếu có
-    const ALL_TOPICS = [...BASE_TOPICS];
-    if (Array.isArray(window.FLYERS_EXTRA_TOPICS) && window.FLYERS_EXTRA_TOPICS.length > 0) {
-      window.FLYERS_EXTRA_TOPICS.forEach((extraTopic) => {
-        const existing = ALL_TOPICS.find((t) => t.id === extraTopic.id);
-        if (existing) {
-          const seen = new Set(existing.words.map((w) => w.word.toLowerCase()));
-          extraTopic.words.forEach((w) => {
-            if (!seen.has(w.word.toLowerCase())) existing.words.push(w);
-          });
-        } else {
-          ALL_TOPICS.push(extraTopic);
-        }
-      });
-    }
-
+    const ALL_TOPICS = Array.isArray(window.FLYERS_VOCAB_TOPICS) ? window.FLYERS_VOCAB_TOPICS : [];
     const ALL_WORDS = ALL_TOPICS.flatMap((t) =>
-      t.words.map((w) => ({ ...w, topicId: t.id, topicName: t.name }))
+      (t.words || []).map((w) => ({ ...w, topicId: t.id, topicName: t.name }))
     );
+    const GRAMMAR_LESSONS = Array.isArray(window.FLYERS_GRAMMAR_LESSONS) ? window.FLYERS_GRAMMAR_LESSONS : [];
+    const GRAMMAR_SENTENCES = Array.isArray(window.FLYERS_GRAMMAR_SENTENCES) ? window.FLYERS_GRAMMAR_SENTENCES : [];
 
-    const BASE_GRAMMAR_LESSONS = [
-      {
-        id: "past_cont",
-        title: "Quá khứ đơn & Quá khứ tiếp diễn",
-        formula: "S + was/were + V-ing  WHEN  S + V2/ed",
-        tip: "Hành động đang diễn ra dùng was/were + V-ing; hành động xen vào dùng quá khứ đơn.",
-        example: "I was reading a book when the phone rang.",
-        questions: [
-          { q: "She ___ dinner when her friend arrived.", opts: ["was cooking", "cooked", "cooks"], ans: 0, exp: "Hành động đang diễn ra (was cooking) thì có hành động khác xen vào (arrived)." },
-          { q: "While they ___ football, it started to rain.", opts: ["play", "were playing", "played"], ans: 1, exp: "Sau 'While' thường dùng thì Quá khứ tiếp diễn (were playing)." }
-        ]
-      },
-      {
-        id: "present_perfect",
-        title: "Thì Hiện tại hoàn thành",
-        formula: "S + have/has + V3/ed  (just, already, yet, ever, never)",
-        tip: "Dùng 'ever' trong câu hỏi trải nghiệm và 'yet' ở cuối câu phủ định/nghi vấn.",
-        example: "Have you ever seen a real dinosaur bone?",
-        questions: [
-          { q: "Have you finished your homework ___?", opts: ["already", "yet", "never"], ans: 1, exp: "'Yet' đứng cuối câu hỏi để hỏi việc đã hoàn thành chưa." },
-          { q: "Tom has ___ visited London twice.", opts: ["already", "yet", "ever"], ans: 0, exp: "'Already' đứng giữa have/has và V3/ed trong câu khẳng định." }
-        ]
-      },
-      {
-        id: "future_will_going",
-        title: "Tương lai với Will & Be going to",
-        formula: "S + will + V  |  S + am/is/are + going to + V",
-        tip: "'Be going to' dùng cho dự định đã lên kế hoạch; 'Will' dùng cho quyết định tức thì hoặc dự đoán.",
-        example: "Look at those dark clouds! It is going to rain.",
-        questions: [
-          { q: "Look at the black clouds! It ___ rain soon.", opts: ["is going to", "will be", "going"], ans: 0, exp: "Dự đoán có căn cứ rõ ràng trước mắt (mây đen) dùng 'is going to'." },
-          { q: "I think robots ___ help us clean houses in the future.", opts: ["will", "are going", "did"], ans: 0, exp: "Sau 'I think...' dùng 'will + V' để nêu dự đoán tương lai." }
-        ]
-      },
-      {
-        id: "modals",
-        title: "Động từ khiếm khuyết (Modals)",
-        formula: "S + should / must / might / could + V (nguyên mẫu)",
-        tip: "'Must' là bắt buộc/quy tắc; 'Should' là lời khuyên; 'Might' là có thể xảy ra (không chắc).",
-        example: "You must wear a helmet when you ride a motorbike.",
-        questions: [
-          { q: "You ___ whisper in the library.", opts: ["must", "mustn't", "might"], ans: 1, exp: "Nội quy thư viện không được nói to -> mustn't (không được phép) hoặc must whisper (phải nói thầm). Ở đây câu là 'whisper' nên đáp án đúng là 'must'!", ans: 0 },
-          { q: "Take an umbrella. It ___ rain later.", opts: ["might", "mustn't", "can't"], ans: 0, exp: "'Might' diễn tả khả năng có thể xảy ra (50/50)." }
-        ]
-      },
-      {
-        id: "conditionals",
-        title: "Câu điều kiện loại 0 & loại 1",
-        formula: "If + S + V(s/es),  S + will + V",
-        tip: "Mệnh đề có 'If' chia hiện tại đơn, mệnh đề kết quả chia 'will + V'.",
-        example: "If it rains tomorrow, we will stay inside and play chess.",
-        questions: [
-          { q: "If she studies hard, she ___ pass the Flyers exam.", opts: ["will", "would", "did"], ans: 0, exp: "Câu điều kiện loại 1: If + hiện tại đơn, S + will + V." },
-          { q: "If you heat ice, it ___ into water.", opts: ["turns", "turned", "will turning"], ans: 0, exp: "Sự thật hiển nhiên (loại 0): cả hai vế chia hiện tại đơn." }
-        ]
-      },
-      {
-        id: "relative_tags",
-        title: "Đại từ quan hệ & Câu hỏi đuôi",
-        formula: "who (người) | which (vật) | where (nơi chốn)",
-        tip: "Câu hỏi đuôi: Vế trước khẳng định -> đuôi phủ định (và ngược lại).",
-        example: "An astronaut is a person who travels into space.",
-        questions: [
-          { q: "A dictionary is a book ___ explains the meanings of words.", opts: ["who", "which", "where"], ans: 1, exp: "'A book' là đồ vật nên dùng đại từ quan hệ 'which'." },
-          { q: "You like strawberry yoghurt, ___?", opts: ["don't you", "aren't you", "didn't you"], ans: 0, exp: "Vế trước dùng động từ thường 'like' (hiện tại đơn) -> đuôi là 'don't you'." }
-        ]
-      }
-    ];
-
-const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
-    if (Array.isArray(window.FLYERS_EXTRA_GRAMMAR) && window.FLYERS_EXTRA_GRAMMAR.length > 0) {
-      window.FLYERS_EXTRA_GRAMMAR.forEach((extraLesson) => {
-        const existing = GRAMMAR_LESSONS.find((g) => g.id === extraLesson.id);
-        if (existing) {
-          extraLesson.questions.forEach((q) => existing.questions.push(q));
-        } else {
-          GRAMMAR_LESSONS.push(extraLesson);
-        }
-      });
-    }
-
-    const STORAGE_KEY = "flyers_kids_progress_v2";
+    const STORAGE_KEY = "flyers_kids_progress_v3";
     let state = loadState();
     let currentSection = "vocab";
     let vocabMode = "topics"; // topics | flashcard | riddle | spelling | review
-    let selectedTopicId = ALL_TOPICS[0].id;
+    let selectedTopicId = ALL_TOPICS.length ? ALL_TOPICS[0].id : "";
     let cardIndex = 0;
     let cardFlipped = false;
     let quizItem = null;
@@ -782,9 +593,17 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
     let spellLetters = [];
     let spellPicked = [];
     let currentDeckWords = [];
-    let grammarMode = "lessons"; // lessons | quiz
+    let grammarMode = "lessons"; // lessons | quiz | builder | review
     let gQuizIndex = 0;
     let gQuizAnswered = false;
+    let gQuizChosen = -1;
+    let builderIndex = 0;
+    let builderTokens = [];
+    let builderPicked = [];
+
+    function escJs(str) {
+      return String(str || "").replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+    }
 
     function loadState() {
       try {
@@ -793,10 +612,11 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
           stars: saved.stars || 0,
           streak: saved.streak || 0,
           mastered: Array.isArray(saved.mastered) ? saved.mastered : [],
-          reviewWords: Array.isArray(saved.reviewWords) ? saved.reviewWords : []
+          reviewWords: Array.isArray(saved.reviewWords) ? saved.reviewWords : [],
+          grammarWrong: Array.isArray(saved.grammarWrong) ? saved.grammarWrong : []
         };
       } catch (e) {
-        return { stars: 0, streak: 0, mastered: [], reviewWords: [] };
+        return { stars: 0, streak: 0, mastered: [], reviewWords: [], grammarWrong: [] };
       }
     }
 
@@ -832,12 +652,13 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
     }
 
     function getActiveWords() {
+      if (!ALL_WORDS.length) return [];
       if (vocabMode === "review") {
         const list = ALL_WORDS.filter((w) => state.reviewWords.includes(w.word));
         return list.length ? list : ALL_WORDS.slice(0, 10);
       }
       const topic = ALL_TOPICS.find((t) => t.id === selectedTopicId) || ALL_TOPICS[0];
-      return topic.words;
+      return topic ? topic.words : [];
     }
 
     function switchSection(sec) {
@@ -847,12 +668,13 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
 
       if (sec === "vocab") {
         document.getElementById("heroTitle").textContent = "Kho Từ Vựng Cambridge A2 Flyers";
-        document.getElementById("heroSubtitle").textContent = "Học theo chủ đề, nghe 2 tốc độ, đố định nghĩa và luyện chính tả.";
+        document.getElementById("heroSubtitle").textContent = "Học theo 15 chủ đề, nghe 2 tốc độ, đố định nghĩa và luyện chính tả.";
         document.getElementById("totalWordBadge").textContent = `📦 ${ALL_TOPICS.length} chủ đề • ${ALL_WORDS.length} từ vựng`;
       } else {
+        const totalQ = GRAMMAR_LESSONS.reduce((acc, g) => acc + (g.questions ? g.questions.length : 0), 0);
         document.getElementById("heroTitle").textContent = "Ngữ Pháp Trọng Tâm A2 Flyers";
-        document.getElementById("heroSubtitle").textContent = "6 chuyên đề ngữ pháp cốt lõi kèm mẹo tránh bẫy và bài tập thực hành.";
-        document.getElementById("totalWordBadge").textContent = `🧩 ${GRAMMAR_LESSONS.length} chuyên đề ngữ pháp`;
+        document.getElementById("heroSubtitle").textContent = `${GRAMMAR_LESSONS.length} chuyên đề công thức, ${totalQ} câu trắc nghiệm, ghép câu và ôn câu sai.`;
+        document.getElementById("totalWordBadge").textContent = `🧩 ${GRAMMAR_LESSONS.length} chuyên đề • ${totalQ} câu`;
       }
       render();
     }
@@ -874,6 +696,7 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
 
     function prepareRiddle() {
       const pool = getActiveWords();
+      if (!pool.length || !ALL_WORDS.length) return;
       const target = pool[Math.floor(Math.random() * pool.length)];
       const distractors = ALL_WORDS.filter((w) => w.word !== target.word)
         .sort(() => Math.random() - 0.5)
@@ -885,6 +708,7 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
 
     function prepareSpelling() {
       const pool = getActiveWords();
+      if (!pool.length) return;
       const target = pool[cardIndex % pool.length];
       quizItem = { target };
       quizAnswered = false;
@@ -899,7 +723,7 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
       const bar = document.getElementById("modeBar");
       if (currentSection === "vocab") {
         const modes = [
-          { id: "topics", label: "🗂️ Chọn Chủ Đề" },
+          { id: "topics", label: `🗂️ Chọn Chủ Đề (${ALL_TOPICS.length})` },
           { id: "flashcard", label: "🃏 Flashcard" },
           { id: "riddle", label: "❓ Đố Định Nghĩa" },
           { id: "spelling", label: "🐝 Chính Tả" },
@@ -910,8 +734,10 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
           .join("");
       } else {
         bar.innerHTML = `
-          <button class="mode-btn ${grammarMode === "lessons" ? "active" : ""}" onclick="grammarMode='lessons';render()">📖 Thẻ Công Thức</button>
-          <button class="mode-btn ${grammarMode === "quiz" ? "active" : ""}" onclick="grammarMode='quiz';gQuizIndex=0;gQuizAnswered=false;render()">🎯 Trắc Nghiệm Ngữ Pháp</button>
+          <button class="mode-btn ${grammarMode === "lessons" ? "active" : ""}" onclick="grammarMode='lessons';render()">📖 Thẻ Công Thức (${GRAMMAR_LESSONS.length})</button>
+          <button class="mode-btn ${grammarMode === "quiz" ? "active" : ""}" onclick="grammarMode='quiz';gQuizIndex=0;gQuizAnswered=false;gQuizChosen=-1;render()">🎯 Trắc Nghiệm</button>
+          <button class="mode-btn ${grammarMode === "builder" ? "active" : ""}" onclick="setGrammarBuilder(0)">🧱 Ghép Câu (${GRAMMAR_SENTENCES.length})</button>
+          <button class="mode-btn ${grammarMode === "review" ? "active" : ""}" onclick="grammarMode='review';gQuizIndex=0;gQuizAnswered=false;gQuizChosen=-1;render()">🔁 Ôn Câu Sai (${state.grammarWrong.length})</button>
         `;
       }
     }
@@ -925,6 +751,11 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
         return;
       }
 
+      if (!ALL_TOPICS.length || !ALL_WORDS.length) {
+        root.innerHTML = `<div class="study-panel"><p>Không tìm thấy dữ liệu trong <code>vocab_flyers.js</code>. Vui lòng kiểm tra file nằm cùng thư mục với <code>index.html</code>.</p></div>`;
+        return;
+      }
+
       if (vocabMode === "topics") {
         root.innerHTML = `
           <div class="topic-grid">
@@ -932,7 +763,7 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
               const done = t.words.filter((w) => state.mastered.includes(w.word)).length;
               const pct = Math.round((done / t.words.length) * 100);
               return `
-                <article class="topic-card" onclick="openTopic('${t.id}')">
+                <article class="topic-card" onclick="openTopic('${escJs(t.id)}')">
                   <div>
                     <div class="topic-head">
                       <div class="topic-icon">${t.icon}</div>
@@ -979,8 +810,8 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
 
             <div class="flashcard-box">
               <div class="audio-row">
-                <button class="btn btn-primary" onclick="speak('${item.word.replace(/'/g, "\'")}', 0.95)">🔊 Nghe thường</button>
-                <button class="btn btn-amber" onclick="speak('${item.word.replace(/'/g, "\'")}', 0.6)">🐢 Nghe chậm</button>
+                <button class="btn btn-primary" onclick="speak('${escJs(item.word)}', 0.95)">🔊 Nghe thường</button>
+                <button class="btn btn-amber" onclick="speak('${escJs(item.word)}', 0.6)">🐢 Nghe chậm</button>
               </div>
 
               <div class="flashcard" onclick="cardFlipped=!cardFlipped;render()">
@@ -991,16 +822,16 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
                   cardFlipped
                     ? `<div class="fc-meaning">${item.meaning}</div>
                        <div class="fc-example">“${item.example}”</div>`
-                    : `<div style="color:var(--muted);font-size:0.9rem;">👆 Chạm vào thẻ để xem nghĩa & ví dụ</div>`
+                    : `<div style="color:var(--muted);font-size:0.9rem;">👆 Chạm vào thẻ để xem nghĩa &amp; ví dụ</div>`
                 }
               </div>
 
               <div class="fc-controls">
                 <button class="btn btn-ghost" onclick="cardIndex=(cardIndex-1+currentDeckWords.length)%currentDeckWords.length;cardFlipped=false;render()">← Trước</button>
-                <button class="btn btn-success" onclick="markMastered('${item.word.replace(/'/g, "\'")}')">
+                <button class="btn btn-success" onclick="markMastered('${escJs(item.word)}')">
                   ${isMastered ? "✅ Đã thuộc" : "⭐ Đánh dấu đã thuộc"}
                 </button>
-                <button class="btn btn-amber" onclick="markReview('${item.word.replace(/'/g, "\'")}')">📌 Cần ôn lại</button>
+                <button class="btn btn-amber" onclick="markReview('${escJs(item.word)}')">📌 Cần ôn lại</button>
                 <button class="btn btn-primary" onclick="cardIndex=(cardIndex+1)%currentDeckWords.length;cardFlipped=false;render()">Tiếp →</button>
               </div>
             </div>
@@ -1023,7 +854,7 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
               <div class="riddle-prompt">
                 💡 <em>"${target.riddle}"</em>
                 <div style="margin-top:10px;">
-                  <button class="btn btn-amber" onclick="speak('${target.riddle.replace(/'/g, "\'")}', 0.9)">🔊 Nghe câu gợi ý</button>
+                  <button class="btn btn-amber" onclick="speak('${escJs(target.riddle)}', 0.9)">🔊 Nghe câu gợi ý</button>
                 </div>
               </div>
 
@@ -1031,10 +862,8 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
                 ${options
                   .map((opt) => {
                     let cls = "option-btn";
-                    if (quizAnswered) {
-                      if (opt.word === target.word) cls += " correct";
-                    }
-                    return `<button class="${cls}" ${quizAnswered ? "disabled" : ""} onclick="checkRiddle('${opt.word.replace(/'/g, "\'")}')">
+                    if (quizAnswered && opt.word === target.word) cls += " correct";
+                    return `<button class="${cls}" ${quizAnswered ? "disabled" : ""} onclick="checkRiddle('${escJs(opt.word)}')">
                       <span>${opt.emoji}</span>
                       <span>${opt.word}</span>
                     </button>`;
@@ -1076,8 +905,8 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
               <div style="color:var(--muted);font-size:0.9rem;margin-bottom:12px;">${target.riddle}</div>
 
               <div class="audio-row">
-                <button class="btn btn-primary" onclick="speak('${target.word.replace(/'/g, "\'")}', 0.9)">🔊 Nghe từ</button>
-                <button class="btn btn-amber" onclick="speak('${target.word.replace(/'/g, "\'")}', 0.55)">🐢 Đọc chậm</button>
+                <button class="btn btn-primary" onclick="speak('${escJs(target.word)}', 0.9)">🔊 Nghe từ</button>
+                <button class="btn btn-amber" onclick="speak('${escJs(target.word)}', 0.55)">🐢 Đọc chậm</button>
               </div>
 
               <div class="spell-slots">
@@ -1169,7 +998,55 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
       render();
     }
 
+    function getAllGrammarQuestions() {
+      return GRAMMAR_LESSONS.flatMap((g) =>
+        (g.questions || []).map((q, idx) => ({
+          ...q,
+          qid: `${g.id}__${idx}`,
+          topic: g.title
+        }))
+      );
+    }
+
+    function setGrammarBuilder(idx) {
+      grammarMode = "builder";
+      if (!GRAMMAR_SENTENCES.length) {
+        render();
+        return;
+      }
+      builderIndex = ((idx % GRAMMAR_SENTENCES.length) + GRAMMAR_SENTENCES.length) % GRAMMAR_SENTENCES.length;
+      const cleanTokens = GRAMMAR_SENTENCES[builderIndex].en.split(" ");
+      builderTokens = cleanTokens
+        .map((word, i) => ({ word, i }))
+        .sort(() => Math.random() - 0.5);
+      builderPicked = [];
+      render();
+    }
+
+    function pickBuilderToken(idx) {
+      if (!GRAMMAR_SENTENCES.length) return;
+      const target = GRAMMAR_SENTENCES[builderIndex];
+      const targetWords = target.en.split(" ");
+      if (builderPicked.length >= targetWords.length) return;
+      builderPicked.push(idx);
+      if (builderPicked.length === targetWords.length) {
+        const built = builderPicked.map((i) => builderTokens[i].word).join(" ");
+        speak(target.en, 0.9);
+        if (built === target.en) {
+          addStar(2);
+        } else {
+          breakStreak();
+        }
+      }
+      render();
+    }
+
     function renderGrammar(root) {
+      if (!GRAMMAR_LESSONS.length) {
+        root.innerHTML = `<div class="study-panel"><p>Không tìm thấy dữ liệu trong <code>grammar_flyers.js</code>.</p></div>`;
+        return;
+      }
+
       if (grammarMode === "lessons") {
         root.innerHTML = GRAMMAR_LESSONS.map(
           (g) => `
@@ -1179,7 +1056,7 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
               <p style="margin-bottom:8px;"><strong>Mẹo nhớ:</strong> ${g.tip}</p>
               <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;">
                 <span>📌 Ví dụ: <em>${g.example}</em></span>
-                <button class="btn btn-primary" onclick="speak('${g.example.replace(/'/g, "\'")}', 0.9)">🔊 Nghe ví dụ</button>
+                <button class="btn btn-primary" onclick="speak('${escJs(g.example)}', 0.9)">🔊 Nghe ví dụ</button>
               </div>
             </article>
           `
@@ -1187,12 +1064,93 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
         return;
       }
 
-      const allQ = GRAMMAR_LESSONS.flatMap((g) => g.questions.map((q) => ({ ...q, topic: g.title })));
-      const item = allQ[gQuizIndex % allQ.length];
+      if (grammarMode === "builder") {
+        if (!GRAMMAR_SENTENCES.length) return;
+        const item = GRAMMAR_SENTENCES[builderIndex];
+        const targetWords = item.en.split(" ");
+        const built = builderPicked.map((i) => builderTokens[i].word).join(" ");
+        const isDone = builderPicked.length === targetWords.length;
+        const isRight = built === item.en;
+
+        root.innerHTML = `
+          <div class="study-panel">
+            <div class="study-header">
+              <strong>🧱 Ghép Câu Hoàn Chỉnh (${builderIndex + 1}/${GRAMMAR_SENTENCES.length}) — ${item.topic}</strong>
+              <button class="btn btn-amber" onclick="speak('${escJs(item.en)}', 0.85)">🔊 Nghe mẫu</button>
+            </div>
+
+            <div class="quiz-box">
+              <div class="riddle-prompt">
+                🇻🇳 Sắp xếp các mảnh từ thành câu tiếng Anh đúng:<br/>
+                <strong>“${item.vi}”</strong>
+              </div>
+
+              <div class="spell-slots" style="min-height:64px;padding:12px;background:#f8fafc;border-radius:16px;border:1px solid var(--border);">
+                ${
+                  builderPicked.length
+                    ? builderPicked
+                        .map(
+                          (tokIdx, pos) =>
+                            `<button class="btn btn-primary" style="padding:8px 12px;" onclick="builderPicked.splice(${pos},1);render()">${builderTokens[tokIdx].word}</button>`
+                        )
+                        .join("")
+                    : `<span style="color:var(--muted);font-size:0.92rem;">👆 Chạm vào các từ bên dưới theo đúng thứ tự câu...</span>`
+                }
+              </div>
+
+              <div class="letter-pool" style="gap:10px;">
+                ${builderTokens
+                  .map(
+                    (tok, idx) =>
+                      `<button class="btn btn-ghost" style="border:1px solid var(--border);${builderPicked.includes(idx) ? "opacity:0.35;" : ""}" ${builderPicked.includes(idx) ? "disabled" : ""} onclick="pickBuilderToken(${idx})">${tok.word}</button>`
+                  )
+                  .join("")}
+              </div>
+
+              <div class="fc-controls">
+                <button class="btn btn-ghost" onclick="builderPicked.pop();render()">⌫ Bỏ từ cuối</button>
+                <button class="btn btn-ghost" onclick="builderPicked=[];render()">🔄 Xếp lại</button>
+                <button class="btn btn-primary" onclick="setGrammarBuilder(builderIndex + 1)">Câu tiếp theo →</button>
+              </div>
+
+              ${
+                isDone
+                  ? `<div class="feedback-banner ${isRight ? "feedback-ok" : "feedback-err"}">
+                       ${
+                         isRight
+                           ? `🎉 Xuất sắc! Câu hoàn chỉnh chính xác (+2 ⭐)`
+                           : `❌ Chưa đúng thứ tự rồi. Câu chuẩn là: <strong>${item.en}</strong>`
+                       }
+                     </div>`
+                  : ""
+              }
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      const allQ = getAllGrammarQuestions();
+      const pool = grammarMode === "review"
+        ? allQ.filter((q) => state.grammarWrong.includes(q.qid))
+        : allQ;
+
+      if (grammarMode === "review" && pool.length === 0) {
+        root.innerHTML = `
+          <div class="study-panel" style="text-align:center;padding:40px 20px;">
+            <h2>🎉 Tuyệt vời! Bé chưa có câu ngữ pháp nào làm sai.</h2>
+            <p style="color:var(--muted);margin:10px 0 18px;">Hãy thử sức ở phần Trắc Nghiệm hoặc Ghép Câu nhé.</p>
+            <button class="btn btn-primary" onclick="grammarMode='quiz';gQuizIndex=0;gQuizAnswered=false;gQuizChosen=-1;render()">Luyện Trắc Nghiệm Ngữ Pháp</button>
+          </div>
+        `;
+        return;
+      }
+
+      const item = pool[gQuizIndex % pool.length];
       root.innerHTML = `
         <div class="study-panel">
           <div class="study-header">
-            <strong>🎯 Câu ${(gQuizIndex % allQ.length) + 1}/${allQ.length} — ${item.topic}</strong>
+            <strong>${grammarMode === "review" ? "🔁 Ôn Câu Sai" : "🎯 Trắc Nghiệm"} (${(gQuizIndex % pool.length) + 1}/${pool.length}) — ${item.topic}</strong>
           </div>
           <div class="quiz-box">
             <div class="riddle-prompt">${item.q}</div>
@@ -1200,16 +1158,21 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
               ${item.opts
                 .map((opt, idx) => {
                   let cls = "option-btn";
-                  if (gQuizAnswered && idx === item.ans) cls += " correct";
-                  return `<button class="${cls}" ${gQuizAnswered ? "disabled" : ""} onclick="answerGrammar(${idx}, ${item.ans})">${opt}</button>`;
+                  if (gQuizAnswered) {
+                    if (idx === item.ans) cls += " correct";
+                    else if (idx === gQuizChosen) cls += " wrong";
+                  }
+                  return `<button class="${cls}" ${gQuizAnswered ? "disabled" : ""} onclick="answerGrammar(${idx}, ${item.ans}, '${escJs(item.qid)}')">${opt}</button>`;
                 })
                 .join("")}
             </div>
             ${
               gQuizAnswered
-                ? `<div class="feedback-banner feedback-ok">💡 Giải thích: ${item.exp}</div>
+                ? `<div class="feedback-banner ${gQuizChosen === item.ans ? "feedback-ok" : "feedback-err"}">
+                     ${gQuizChosen === item.ans ? "✅ Chính xác! " : "❌ Chưa đúng rồi! "}💡 ${item.exp}
+                   </div>
                    <div style="margin-top:14px;text-align:right;">
-                     <button class="btn btn-primary" onclick="gQuizIndex++;gQuizAnswered=false;render()">Câu tiếp theo →</button>
+                     <button class="btn btn-primary" onclick="gQuizIndex++;gQuizAnswered=false;gQuizChosen=-1;render()">Câu tiếp theo →</button>
                    </div>`
                 : ""
             }
@@ -1218,27 +1181,34 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
       `;
     }
 
-    function answerGrammar(chosen, ans) {
+    function answerGrammar(chosen, ans, qid) {
       gQuizAnswered = true;
-      if (chosen === ans) addStar(1);
-      else breakStreak();
+      gQuizChosen = chosen;
+      if (chosen === ans) {
+        addStar(1);
+        state.grammarWrong = state.grammarWrong.filter((id) => id !== qid);
+      } else {
+        breakStreak();
+        if (qid && !state.grammarWrong.includes(qid)) {
+          state.grammarWrong.push(qid);
+        }
+      }
+      saveState();
       render();
     }
 
     function resetProgress() {
       if (!confirm("Bạn có chắc muốn đặt lại toàn bộ Sao và tiến độ học trên thiết bị này?")) return;
-      state = { stars: 0, streak: 0, mastered: [], reviewWords: [] };
+      state = { stars: 0, streak: 0, mastered: [], reviewWords: [], grammarWrong: [] };
       saveState();
       render();
     }
 
     // Khởi tạo
     saveState();
-    const extraVocabLoaded = Array.isArray(window.FLYERS_EXTRA_TOPICS) && window.FLYERS_EXTRA_TOPICS.length > 0;
-    const extraGrammarLoaded = Array.isArray(window.FLYERS_EXTRA_GRAMMAR) && window.FLYERS_EXTRA_GRAMMAR.length > 0;
-    const totalGrammarQ = GRAMMAR_LESSONS.reduce((acc, g) => acc + g.questions.length, 0);
+    const totalGrammarQ = GRAMMAR_LESSONS.reduce((acc, g) => acc + (g.questions ? g.questions.length : 0), 0);
     document.getElementById("dataSourceStatus").textContent =
-      `✅ Từ vựng: ${ALL_WORDS.length} từ (${ALL_TOPICS.length} chủ đề${extraVocabLoaded ? " + mở rộng" : ""}) • Ngữ pháp: ${GRAMMAR_LESSONS.length} chuyên đề (${totalGrammarQ} câu${extraGrammarLoaded ? " + mở rộng" : ""})`;
+      `✅ Vocabulary (${ALL_TOPICS.length} chủ đề • ${ALL_WORDS.length} từ) & Grammar (${GRAMMAR_LESSONS.length} chuyên đề • ${totalGrammarQ} câu • ${GRAMMAR_SENTENCES.length} mẫu ghép câu)`;
     switchSection("vocab");
   </script>
 </body>
