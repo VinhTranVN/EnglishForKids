@@ -781,13 +781,10 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
     let quizAnswered = false;
     let spellLetters = [];
     let spellPicked = [];
-    let grammarMode = "lessons"; // lessons | quiz | builder | review
+    let currentDeckWords = [];
+    let grammarMode = "lessons"; // lessons | quiz
     let gQuizIndex = 0;
     let gQuizAnswered = false;
-    let gQuizChosen = -1;
-    let builderIndex = 0;
-    let builderTokens = [];
-    let builderPicked = [];
 
     function loadState() {
       try {
@@ -796,11 +793,10 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
           stars: saved.stars || 0,
           streak: saved.streak || 0,
           mastered: Array.isArray(saved.mastered) ? saved.mastered : [],
-          reviewWords: Array.isArray(saved.reviewWords) ? saved.reviewWords : [],
-          grammarWrong: Array.isArray(saved.grammarWrong) ? saved.grammarWrong : []
+          reviewWords: Array.isArray(saved.reviewWords) ? saved.reviewWords : []
         };
       } catch (e) {
-        return { stars: 0, streak: 0, mastered: [], reviewWords: [], grammarWrong: [] };
+        return { stars: 0, streak: 0, mastered: [], reviewWords: [] };
       }
     }
 
@@ -855,7 +851,7 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
         document.getElementById("totalWordBadge").textContent = `📦 ${ALL_TOPICS.length} chủ đề • ${ALL_WORDS.length} từ vựng`;
       } else {
         document.getElementById("heroTitle").textContent = "Ngữ Pháp Trọng Tâm A2 Flyers";
-        document.getElementById("heroSubtitle").textContent = "Học công thức, làm trắc nghiệm, ghép câu hoàn chỉnh và tự động ôn lại câu làm sai.";
+        document.getElementById("heroSubtitle").textContent = "6 chuyên đề ngữ pháp cốt lõi kèm mẹo tránh bẫy và bài tập thực hành.";
         document.getElementById("totalWordBadge").textContent = `🧩 ${GRAMMAR_LESSONS.length} chuyên đề ngữ pháp`;
       }
       render();
@@ -915,9 +911,7 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
       } else {
         bar.innerHTML = `
           <button class="mode-btn ${grammarMode === "lessons" ? "active" : ""}" onclick="grammarMode='lessons';render()">📖 Thẻ Công Thức</button>
-          <button class="mode-btn ${grammarMode === "quiz" ? "active" : ""}" onclick="grammarMode='quiz';gQuizIndex=0;gQuizAnswered=false;gQuizChosen=-1;render()">🎯 Trắc Nghiệm</button>
-          <button class="mode-btn ${grammarMode === "builder" ? "active" : ""}" onclick="setGrammarBuilder(0)">🧱 Ghép Câu</button>
-          <button class="mode-btn ${grammarMode === "review" ? "active" : ""}" onclick="grammarMode='review';gQuizIndex=0;gQuizAnswered=false;gQuizChosen=-1;render()">🔁 Ôn Câu Sai (${state.grammarWrong.length})</button>
+          <button class="mode-btn ${grammarMode === "quiz" ? "active" : ""}" onclick="grammarMode='quiz';gQuizIndex=0;gQuizAnswered=false;render()">🎯 Trắc Nghiệm Ngữ Pháp</button>
         `;
       }
     }
@@ -960,6 +954,7 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
 
       const topic = ALL_TOPICS.find((t) => t.id === selectedTopicId) || ALL_TOPICS[0];
       const words = getActiveWords();
+      currentDeckWords = words;
 
       if (vocabMode === "flashcard" || vocabMode === "review") {
         if (vocabMode === "review" && state.reviewWords.length === 0) {
@@ -1001,12 +996,12 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
               </div>
 
               <div class="fc-controls">
-                <button class="btn btn-ghost" onclick="cardIndex=(cardIndex-1+words.length)%words.length;cardFlipped=false;render()">← Trước</button>
+                <button class="btn btn-ghost" onclick="cardIndex=(cardIndex-1+currentDeckWords.length)%currentDeckWords.length;cardFlipped=false;render()">← Trước</button>
                 <button class="btn btn-success" onclick="markMastered('${item.word.replace(/'/g, "\'")}')">
                   ${isMastered ? "✅ Đã thuộc" : "⭐ Đánh dấu đã thuộc"}
                 </button>
                 <button class="btn btn-amber" onclick="markReview('${item.word.replace(/'/g, "\'")}')">📌 Cần ôn lại</button>
-                <button class="btn btn-primary" onclick="cardIndex=(cardIndex+1)%words.length;cardFlipped=false;render()">Tiếp →</button>
+                <button class="btn btn-primary" onclick="cardIndex=(cardIndex+1)%currentDeckWords.length;cardFlipped=false;render()">Tiếp →</button>
               </div>
             </div>
           </div>
@@ -1174,63 +1169,6 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
       render();
     }
 
-    function getAllGrammarQuestions() {
-      return GRAMMAR_LESSONS.flatMap((g) =>
-        g.questions.map((q, idx) => ({
-          ...q,
-          qid: `${g.id}__${idx}`,
-          topic: g.title
-        }))
-      );
-    }
-
-    function getGrammarSentences() {
-      return [
-        { topic: "Quá khứ tiếp diễn", vi: "Tôi đang đọc sách thì điện thoại reo.", en: "I was reading a book when the phone rang." },
-        { topic: "Hiện tại hoàn thành", vi: "Bạn đã bao giờ nhìn thấy xương khủng long thật chưa?", en: "Have you ever seen a real dinosaur bone?" },
-        { topic: "Tương lai Be going to", vi: "Nhìn những đám mây đen kia! Trời sắp mưa rồi.", en: "Look at those dark clouds! It is going to rain." },
-        { topic: "Động từ khiếm khuyết", vi: "Bạn phải đội mũ bảo hiểm khi đi xe máy.", en: "You must wear a helmet when you ride a motorbike." },
-        { topic: "Câu điều kiện loại 1", vi: "Nếu ngày mai trời mưa, chúng tôi sẽ ở trong nhà chơi cờ vua.", en: "If it rains tomorrow, we will stay inside and play chess." },
-        { topic: "Đại từ quan hệ", vi: "Phi hành gia là người bay vào vũ trụ.", en: "An astronaut is a person who travels into space." },
-        { topic: "Quá khứ tiếp diễn (While)", vi: "Trong khi chúng tôi đang dã ngoại ở công viên, trời bắt đầu mưa.", en: "While we were having a picnic in the park, it began to rain." },
-        { topic: "Hiện tại hoàn thành (For)", vi: "Cô ấy đã sống ở thành phố này được năm năm rồi.", en: "She has lived in this city for five years." },
-        { topic: "Nơi chốn với Where", vi: "Lâu đài là nơi các vị vua và hoàng hậu từng sinh sống.", en: "A castle is a place where kings and queens lived." },
-        { topic: "Động từ + To-V", vi: "Chúng tôi quyết định mượn một vài cuốn sách từ thư viện.", en: "We decided to borrow some books from the library." },
-        { topic: "So sánh hơn", vi: "Chiếc vòng tay bạc này đắt hơn chiếc vòng nhựa.", en: "This silver bracelet is more expensive than the plastic one." },
-        { topic: "Câu hỏi đuôi", vi: "Bạn có thể bơi rất giỏi, phải không?", en: "You can swim very well, can't you?" }
-      ];
-    }
-
-    function setGrammarBuilder(idx) {
-      grammarMode = "builder";
-      const list = getGrammarSentences();
-      builderIndex = ((idx % list.length) + list.length) % list.length;
-      const cleanTokens = list[builderIndex].en.split(" ");
-      builderTokens = cleanTokens
-        .map((word, i) => ({ word, i }))
-        .sort(() => Math.random() - 0.5);
-      builderPicked = [];
-      render();
-    }
-
-    function pickBuilderToken(idx) {
-      const list = getGrammarSentences();
-      const target = list[builderIndex];
-      const targetWords = target.en.split(" ");
-      if (builderPicked.length >= targetWords.length) return;
-      builderPicked.push(idx);
-      if (builderPicked.length === targetWords.length) {
-        const built = builderPicked.map((i) => builderTokens[i].word).join(" ");
-        speak(target.en, 0.9);
-        if (built === target.en) {
-          addStar(2);
-        } else {
-          breakStreak();
-        }
-      }
-      render();
-    }
-
     function renderGrammar(root) {
       if (grammarMode === "lessons") {
         root.innerHTML = GRAMMAR_LESSONS.map(
@@ -1249,93 +1187,12 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
         return;
       }
 
-      if (grammarMode === "builder") {
-        const list = getGrammarSentences();
-        const item = list[builderIndex];
-        const targetWords = item.en.split(" ");
-        const built = builderPicked.map((i) => builderTokens[i].word).join(" ");
-        const isDone = builderPicked.length === targetWords.length;
-        const isRight = built === item.en;
-
-        root.innerHTML = `
-          <div class="study-panel">
-            <div class="study-header">
-              <strong>🧱 Ghép Câu Hoàn Chỉnh (${builderIndex + 1}/${list.length}) — ${item.topic}</strong>
-              <button class="btn btn-amber" onclick="speak('${item.en.replace(/'/g, "\'")}', 0.85)">🔊 Nghe mẫu</button>
-            </div>
-
-            <div class="quiz-box">
-              <div class="riddle-prompt">
-                🇻🇳 Sắp xếp các mảnh từ thành câu tiếng Anh đúng:<br/>
-                <strong>“${item.vi}”</strong>
-              </div>
-
-              <div class="spell-slots" style="min-height:64px;padding:12px;background:#f8fafc;border-radius:16px;border:1px solid var(--border);">
-                ${
-                  builderPicked.length
-                    ? builderPicked
-                        .map(
-                          (tokIdx, pos) =>
-                            `<button class="btn btn-primary" style="padding:8px 12px;" onclick="builderPicked.splice(${pos},1);render()">${builderTokens[tokIdx].word}</button>`
-                        )
-                        .join("")
-                    : `<span style="color:var(--muted);font-size:0.92rem;">👆 Chạm vào các từ bên dưới theo đúng thứ tự câu...</span>`
-                }
-              </div>
-
-              <div class="letter-pool" style="gap:10px;">
-                ${builderTokens
-                  .map(
-                    (tok, idx) =>
-                      `<button class="btn btn-ghost" style="border:1px solid var(--border);${builderPicked.includes(idx) ? "opacity:0.35;" : ""}" ${builderPicked.includes(idx) ? "disabled" : ""} onclick="pickBuilderToken(${idx})">${tok.word}</button>`
-                  )
-                  .join("")}
-              </div>
-
-              <div class="fc-controls">
-                <button class="btn btn-ghost" onclick="builderPicked.pop();render()">⌫ Bỏ từ cuối</button>
-                <button class="btn btn-ghost" onclick="builderPicked=[];render()">🔄 Xếp lại</button>
-                <button class="btn btn-primary" onclick="setGrammarBuilder(builderIndex + 1)">Câu tiếp theo →</button>
-              </div>
-
-              ${
-                isDone
-                  ? `<div class="feedback-banner ${isRight ? "feedback-ok" : "feedback-err"}">
-                       ${
-                         isRight
-                           ? `🎉 Xuất sắc! Câu hoàn chỉnh chính xác (+2 ⭐)`
-                           : `❌ Chưa đúng thứ tự rồi. Câu chuẩn là: <strong>${item.en}</strong>`
-                       }
-                     </div>`
-                  : ""
-              }
-            </div>
-          </div>
-        `;
-        return;
-      }
-
-      const allQ = getAllGrammarQuestions();
-      const pool = grammarMode === "review"
-        ? allQ.filter((q) => state.grammarWrong.includes(q.qid))
-        : allQ;
-
-      if (grammarMode === "review" && pool.length === 0) {
-        root.innerHTML = `
-          <div class="study-panel" style="text-align:center;padding:40px 20px;">
-            <h2>🎉 Tuyệt vời! Bé chưa có câu ngữ pháp nào làm sai.</h2>
-            <p style="color:var(--muted);margin:10px 0 18px;">Hãy thử sức ở phần Trắc Nghiệm hoặc Ghép Câu nhé.</p>
-            <button class="btn btn-primary" onclick="grammarMode='quiz';gQuizIndex=0;gQuizAnswered=false;gQuizChosen=-1;render()">Luyện Trắc Nghiệm Ngữ Pháp</button>
-          </div>
-        `;
-        return;
-      }
-
-      const item = pool[gQuizIndex % pool.length];
+      const allQ = GRAMMAR_LESSONS.flatMap((g) => g.questions.map((q) => ({ ...q, topic: g.title })));
+      const item = allQ[gQuizIndex % allQ.length];
       root.innerHTML = `
         <div class="study-panel">
           <div class="study-header">
-            <strong>${grammarMode === "review" ? "🔁 Ôn Câu Sai" : "🎯 Trắc Nghiệm"} (${(gQuizIndex % pool.length) + 1}/${pool.length}) — ${item.topic}</strong>
+            <strong>🎯 Câu ${(gQuizIndex % allQ.length) + 1}/${allQ.length} — ${item.topic}</strong>
           </div>
           <div class="quiz-box">
             <div class="riddle-prompt">${item.q}</div>
@@ -1343,21 +1200,16 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
               ${item.opts
                 .map((opt, idx) => {
                   let cls = "option-btn";
-                  if (gQuizAnswered) {
-                    if (idx === item.ans) cls += " correct";
-                    else if (idx === gQuizChosen) cls += " wrong";
-                  }
-                  return `<button class="${cls}" ${gQuizAnswered ? "disabled" : ""} onclick="answerGrammar(${idx}, ${item.ans}, '${item.qid}')">${opt}</button>`;
+                  if (gQuizAnswered && idx === item.ans) cls += " correct";
+                  return `<button class="${cls}" ${gQuizAnswered ? "disabled" : ""} onclick="answerGrammar(${idx}, ${item.ans})">${opt}</button>`;
                 })
                 .join("")}
             </div>
             ${
               gQuizAnswered
-                ? `<div class="feedback-banner ${gQuizChosen === item.ans ? "feedback-ok" : "feedback-err"}">
-                     ${gQuizChosen === item.ans ? "✅ Chính xác! " : "❌ Chưa đúng rồi! "}💡 ${item.exp}
-                   </div>
+                ? `<div class="feedback-banner feedback-ok">💡 Giải thích: ${item.exp}</div>
                    <div style="margin-top:14px;text-align:right;">
-                     <button class="btn btn-primary" onclick="gQuizIndex++;gQuizAnswered=false;gQuizChosen=-1;render()">Câu tiếp theo →</button>
+                     <button class="btn btn-primary" onclick="gQuizIndex++;gQuizAnswered=false;render()">Câu tiếp theo →</button>
                    </div>`
                 : ""
             }
@@ -1366,25 +1218,16 @@ const GRAMMAR_LESSONS = [...BASE_GRAMMAR_LESSONS];
       `;
     }
 
-    function answerGrammar(chosen, ans, qid) {
+    function answerGrammar(chosen, ans) {
       gQuizAnswered = true;
-      gQuizChosen = chosen;
-      if (chosen === ans) {
-        addStar(1);
-        state.grammarWrong = state.grammarWrong.filter((id) => id !== qid);
-      } else {
-        breakStreak();
-        if (qid && !state.grammarWrong.includes(qid)) {
-          state.grammarWrong.push(qid);
-        }
-      }
-      saveState();
+      if (chosen === ans) addStar(1);
+      else breakStreak();
       render();
     }
 
     function resetProgress() {
       if (!confirm("Bạn có chắc muốn đặt lại toàn bộ Sao và tiến độ học trên thiết bị này?")) return;
-      state = { stars: 0, streak: 0, mastered: [], reviewWords: [], grammarWrong: [] };
+      state = { stars: 0, streak: 0, mastered: [], reviewWords: [] };
       saveState();
       render();
     }
