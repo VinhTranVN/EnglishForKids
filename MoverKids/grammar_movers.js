@@ -1,361 +1,114 @@
-// Dữ liệu ngữ pháp Cambridge A1 Movers đầy đủ chuyên đề & câu ghép từ
-// Gắn vào window.MOVERS_GRAMMAR_LESSONS và window.MOVERS_GRAMMAR_SENTENCES
 window.MOVERS_GRAMMAR_LESSONS = [
   {
-    "id": "past_simple_movers",
-    "title": "1. Thì Quá khứ đơn (Past Simple)",
-    "formula": "S + V2/ed  |  Phủ định: S + didn't + V(nguyên mẫu)  |  Câu hỏi: Did + S + V(nguyên mẫu)?",
-    "tip": "Dùng cho hành động đã xảy ra và kết thúc trong quá khứ (yesterday, last week, ago). Sau 'did' hoặc 'didn't', động từ luôn ở dạng nguyên mẫu.",
-    "example": "Yesterday we went to the zoo and saw two pandas.",
-    "questions": [
-      {
-        "q": "We ___ to the cinema last Saturday.",
-        "opts": [
-          "went",
-          "go",
-          "going"
-        ],
-        "ans": 0,
-        "exp": "'Last Saturday' chỉ quá khứ -> dùng động từ bất quy tắc quá khứ đơn 'went'."
-      },
-      {
-        "q": "Did you ___ your homework yesterday evening?",
-        "opts": [
-          "finish",
-          "finished",
-          "finishes"
-        ],
-        "ans": 0,
-        "exp": "Sau trợ động từ 'Did', động từ chính giữ nguyên mẫu 'finish'."
-      },
-      {
-        "q": "Tom didn't ___ to school because he had a cold.",
-        "opts": [
-          "come",
-          "came",
-          "coming"
-        ],
-        "ans": 0,
-        "exp": "Câu phủ định với 'didn't' đi kèm động từ nguyên mẫu 'come'."
-      },
-      {
-        "q": "She ___ a nice letter to her grandmother two days ago.",
-        "opts": [
-          "wrote",
-          "write",
-          "writing"
-        ],
-        "ans": 0,
-        "exp": "'Two days ago' là dấu hiệu quá khứ đơn -> dùng 'wrote'."
-      }
+    id: "past_simple",
+    title: "1. Thì Quá khứ đơn (Past Simple)",
+    formula: "Khẳng định: S + V2/ed  |  Phủ định: S + didn't + V  |  Nghi vấn: Did + S + V?",
+    tip: "Dùng cho hành động đã xảy ra và kết thúc trong quá khứ. Thường đi với: yesterday, last night/week/year, ... ago.",
+    example: "We went to the zoo last Sunday and saw lions.",
+    questions: [
+      { q: "She ___ a funny comic yesterday afternoon.", opts: ["read", "reads", "reading"], ans: 0, exp: "Hành động xảy ra 'yesterday afternoon' dùng quá khứ đơn ('read' viết giống hiện tại nhưng phát âm /red/)." },
+      { q: "Did you ___ your homework last night?", opts: ["do", "did", "doing"], ans: 0, exp: "Sau trợ động từ 'Did', động từ chính luôn ở dạng nguyên mẫu ('do')." },
+      { q: "They ___ football in the park two days ago.", opts: ["play", "played", "plays"], ans: 1, exp: "Có dấu hiệu 'two days ago' nên động từ 'play' thêm '-ed' thành 'played'." }
     ]
   },
   {
-    "id": "was_were_could_movers",
-    "title": "2. Was / Were & Could (Quá khứ)",
-    "formula": "I/he/she/it + was (wasn't)  |  we/you/they + were (weren't)  |  could + V(nguyên mẫu)",
-    "tip": "'Was/Were' là dạng quá khứ của 'am/is/are'. 'Could' là dạng quá khứ của 'can' để nói về khả năng trong quá khứ.",
-    "example": "When I was six, I could ride a bike.",
-    "questions": [
-      {
-        "q": "Where ___ you yesterday afternoon?",
-        "opts": [
-          "were",
-          "was",
-          "did"
-        ],
-        "ans": 0,
-        "exp": "Chủ ngữ 'you' trong quá khứ đi với 'were'."
-      },
-      {
-        "q": "The weather ___ cold and windy last Sunday.",
-        "opts": [
-          "was",
-          "were",
-          "is"
-        ],
-        "ans": 0,
-        "exp": "'The weather' là danh từ không đếm được/số ít -> dùng 'was'."
-      },
-      {
-        "q": "When she was young, she ___ swim very fast.",
-        "opts": [
-          "could",
-          "can",
-          "was"
-        ],
-        "ans": 0,
-        "exp": "Nói về khả năng trong quá khứ ('When she was young') dùng 'could'."
-      }
+    id: "was_were",
+    title: "2. Động từ To Be ở quá khứ (Was / Were)",
+    formula: "I / He / She / It + was (wasn't)  |  You / We / They + were (weren't)",
+    tip: "Dùng để mô tả trạng thái, tính chất hoặc vị trí của người/vật trong quá khứ (không dùng với động từ thường).",
+    example: "I was tired last night, but my friends were excited.",
+    questions: [
+      { q: "Where ___ you yesterday morning?", opts: ["was", "were", "are"], ans: 1, exp: "Chủ ngữ là 'you' trong quá khứ ('yesterday morning') dùng 'were'." },
+      { q: "The weather ___ cold and windy last winter.", opts: ["was", "were", "is"], ans: 0, exp: "'The weather' là danh từ không đếm được/số ít trong quá khứ nên dùng 'was'." }
     ]
   },
   {
-    "id": "comparatives_superlatives_movers",
-    "title": "3. So sánh hơn & So sánh nhất",
-    "formula": "Hơn: adj/adv + er + than (hoặc more + tính từ dài + than)  |  Nhất: the + adj/adv + est (hoặc the most + tính từ dài)",
-    "tip": "Chú ý bất quy tắc: good -> better -> the best; bad -> worse -> the worst. Tính từ dài (exciting, difficult) dùng more / the most.",
-    "example": "An elephant is bigger than a bear, and the blue whale is the biggest.",
-    "questions": [
-      {
-        "q": "This book is ___ than that comic book.",
-        "opts": [
-          "more interesting",
-          "interestinger",
-          "most interesting"
-        ],
-        "ans": 0,
-        "exp": "'Interesting' là tính từ dài -> so sánh hơn dùng 'more interesting than'."
-      },
-      {
-        "q": "Lily is the ___ student in our class.",
-        "opts": [
-          "best",
-          "better",
-          "good"
-        ],
-        "ans": 0,
-        "exp": "So sánh nhất với 'good' là 'the best'."
-      },
-      {
-        "q": "A kangaroo can jump ___ than a rabbit.",
-        "opts": [
-          "higher",
-          "high",
-          "highest"
-        ],
-        "ans": 0,
-        "exp": "So sánh hai vật/con vật có 'than' -> dùng dạng so sánh hơn 'higher'."
-      }
+    id: "present_continuous",
+    title: "3. Thì Hiện tại tiếp diễn (Present Continuous)",
+    formula: "S + am / is / are + V-ing  |  Phủ định: am not / isn't / aren't + V-ing",
+    tip: "Dùng cho hành động đang diễn ra ngay lúc nói (now, at the moment, Look!, Listen!).",
+    example: "Look! The dolphins are jumping out of the water.",
+    questions: [
+      { q: "Listen! Someone ___ the piano.", opts: ["play", "plays", "is playing"], ans: 2, exp: "Có 'Listen!' báo hiệu hành động đang xảy ra ngay lúc này -> dùng 'is playing'." },
+      { q: "They ___ their bikes in the park right now.", opts: ["are riding", "ride", "rode"], ans: 0, exp: "'Right now' + chủ ngữ 'They' dùng 'are riding'." }
     ]
   },
   {
-    "id": "have_to_must_movers",
-    "title": "4. Have to & Must (Bắt buộc / Cần phải)",
-    "formula": "S + have/has to + V  |  S + must / mustn't + V",
-    "tip": "Dùng để diễn tả điều bắt buộc, quy định hoặc nhiệm vụ cần làm. 'Mustn't' nghĩa là không được phép làm.",
-    "example": "We have to tidy our bedroom before we go out to play.",
-    "questions": [
-      {
-        "q": "You ___ wear a warm coat; it's snowing outside.",
-        "opts": [
-          "must",
-          "mustn't",
-          "weren't"
-        ],
-        "ans": 0,
-        "exp": "Trời đang có tuyết, cần mặc áo ấm -> dùng 'must'."
-      },
-      {
-        "q": "My brother ___ practice the piano every day.",
-        "opts": [
-          "has to",
-          "have to",
-          "mustn't"
-        ],
-        "ans": 0,
-        "exp": "Chủ ngữ số ít 'My brother' dùng 'has to'."
-      },
-      {
-        "q": "You ___ shout in the hospital.",
-        "opts": [
-          "mustn't",
-          "have to",
-          "can"
-        ],
-        "ans": 0,
-        "exp": "Trong bệnh viện không được làm ồn -> dùng 'mustn't'."
-      }
+    id: "comparatives_superlatives",
+    title: "4. So sánh hơn & So sánh nhất (Comparatives & Superlatives)",
+    formula: "So sánh hơn: Adj-er + than / more + Adj + than  |  So sánh nhất: the + Adj-est / the most + Adj",
+    tip: "So sánh 2 đối tượng dùng '-er than'; so sánh từ 3 đối tượng trở lên dùng 'the ...-est'. Bất quy tắc: good -> better -> best; bad -> worse -> worst.",
+    example: "A whale is bigger than a dolphin, and the blue whale is the biggest.",
+    questions: [
+      { q: "My bag is ___ than yours.", opts: ["heavier", "heavy", "heaviest"], ans: 0, exp: "So sánh hơn giữa hai chiếc túi: tính từ kết thúc bằng phụ âm + 'y' đổi 'y' thành 'i' + '-er' -> 'heavier'." },
+      { q: "Tom is the ___ runner in our class.", opts: ["fast", "faster", "fastest"], ans: 2, exp: "Nhất trong cả lớp dùng so sánh nhất -> 'the fastest'." },
+      { q: "This cake is ___ than the biscuit.", opts: ["good", "better", "best"], ans: 1, exp: "So sánh hơn của 'good' là 'better'." }
     ]
   },
   {
-    "id": "adverbs_manner_freq_movers",
-    "title": "5. Trạng từ cách thức & Tần suất",
-    "formula": "Cách thức: adj + ly (carefully, quickly, quietly, loudly)  |  Ngoại lệ: good -> well, fast -> fast, hard -> hard",
-    "tip": "Trạng từ cách thức thường đứng sau động từ để cho biết hành động diễn ra như thế nào. Trạng từ tần suất (always, often, sometimes, never) đứng trước động từ thường.",
-    "example": "The children walked quietly past the sleeping baby.",
-    "questions": [
-      {
-        "q": "Please carry that bowl of soup ___.",
-        "opts": [
-          "carefully",
-          "careful",
-          "care"
-        ],
-        "ans": 0,
-        "exp": "Bổ nghĩa cho động từ 'carry' cần trạng từ cách thức 'carefully'."
-      },
-      {
-        "q": "She sings very ___; she wants to be a singer.",
-        "opts": [
-          "well",
-          "good",
-          "best"
-        ],
-        "ans": 0,
-        "exp": "Bổ nghĩa cho động từ 'sings' dùng trạng từ 'well'."
-      },
-      {
-        "q": "We ___ go to the beach in winter because it's too cold.",
-        "opts": [
-          "never",
-          "always",
-          "often"
-        ],
-        "ans": 0,
-        "exp": "Trời mùa đông quá lạnh nên thường không đi biển -> 'never'."
-      }
+    id: "have_to_must",
+    title: "5. Bổn phận & Sự cần thiết (Have to / Must)",
+    formula: "I / We / You / They + have to + V  |  He / She / It + has to + V  |  Must + V",
+    tip: "Dùng khi nói về quy tắc, nhiệm vụ hoặc điều cần làm. 'Have to / Has to' chia theo chủ ngữ; 'must' giữ nguyên dạng với mọi chủ ngữ.",
+    example: "We have to wear a helmet when riding a motorbike.",
+    questions: [
+      { q: "She ___ tidy her bedroom before going out.", opts: ["have to", "has to", "having to"], ans: 1, exp: "Chủ ngữ số ít 'She' đi với 'has to'." },
+      { q: "You ___ be quiet in the library.", opts: ["must", "has", "are"], ans: 0, exp: "Sau 'must' là động từ nguyên mẫu 'be' để diễn tả quy định." }
     ]
   },
   {
-    "id": "conjunctions_movers",
-    "title": "6. Liên từ Because, So, But, And, Or",
-    "formula": "because (vì - nêu lý do)  |  so (nên - nêu kết quả)  |  but (nhưng - tương phản)",
-    "tip": "Nhìn vế trước và vế sau: nếu vế sau là lý do chọn 'because'; nếu vế sau là kết quả chọn 'so'; nếu hai ý trái ngược chọn 'but'.",
-    "example": "I was thirsty, so I drank a big glass of water.",
-    "questions": [
-      {
-        "q": "Tom didn't go to school ___ he had a stomach-ache.",
-        "opts": [
-          "because",
-          "so",
-          "but"
-        ],
-        "ans": 0,
-        "exp": "Vế sau nêu nguyên nhân bị đau bụng -> dùng 'because'."
-      },
-      {
-        "q": "It was raining heavily, ___ we took our umbrellas.",
-        "opts": [
-          "so",
-          "because",
-          "but"
-        ],
-        "ans": 0,
-        "exp": "Vế sau là kết quả/hành động do trời mưa -> dùng 'so'."
-      },
-      {
-        "q": "I like apples, ___ my sister doesn't like them.",
-        "opts": [
-          "but",
-          "so",
-          "because"
-        ],
-        "ans": 0,
-        "exp": "Hai ý trái ngược nhau (thích vs không thích) -> dùng 'but'."
-      }
+    id: "adverbs_of_manner",
+    title: "6. Trạng từ chỉ cách thức (Adverbs of Manner)",
+    formula: "Adj + -ly -> Adv  |  Bất quy tắc: good -> well, fast -> fast, hard -> hard",
+    tip: "Dùng để mô tả hành động diễn ra như thế nào (thường đứng sau động từ).",
+    example: "The snail moves slowly, while the cheetah runs fast.",
+    questions: [
+      { q: "Please speak ___ so the baby can sleep.", opts: ["quiet", "quietly", "quieter"], ans: 1, exp: "Bổ nghĩa cho động từ 'speak' dùng trạng từ 'quietly'." },
+      { q: "My sister sings very ___.", opts: ["good", "well", "best"], ans: 1, exp: "Trạng từ tương ứng của tính từ 'good' là 'well'." }
     ]
   },
   {
-    "id": "quantifiers_pronouns_movers",
-    "title": "7. Some, Any, A lot of & Đại từ tân ngữ/sở hữu",
-    "formula": "some / a lot of (khẳng định, đếm được & không đếm được)  |  any (phủ định, câu hỏi)",
-    "tip": "Đại từ tân ngữ: me, you, him, her, it, us, them. Đại từ sở hữu (đứng một mình, không có danh từ sau): mine, yours, his, hers, ours, theirs.",
-    "example": "There are a lot of birds in the trees, and this yellow bag is mine.",
-    "questions": [
-      {
-        "q": "Have you got ___ cheese in the fridge?",
-        "opts": [
-          "any",
-          "some",
-          "a"
-        ],
-        "ans": 0,
-        "exp": "Trong câu hỏi ('Have you got...?') dùng 'any'."
-      },
-      {
-        "q": "That blue rucksack isn't yours; it's ___.",
-        "opts": [
-          "mine",
-          "my",
-          "me"
-        ],
-        "ans": 0,
-        "exp": "Đứng cuối câu không kèm danh từ -> dùng đại từ sở hữu 'mine'."
-      },
-      {
-        "q": "Look at those funny monkeys! Let's take a photo of ___.",
-        "opts": [
-          "them",
-          "they",
-          "their"
-        ],
-        "ans": 0,
-        "exp": "Sau giới từ 'of' dùng đại từ tân ngữ 'them'."
-      }
+    id: "conjunctions_because_so_but",
+    title: "7. Liên từ nối câu (Because / So / But)",
+    formula: "Because + lý do  |  ... , so + kết quả  |  ... , but + ý trái ngược",
+    tip: "'Because' nêu nguyên nhân; 'so' nêu kết quả; 'but' nối hai ý tương phản nhau.",
+    example: "I took an umbrella because it was rainy, but the wind stopped soon.",
+    questions: [
+      { q: "I was hungry, ___ I ate a big sandwich.", opts: ["because", "so", "but"], ans: 1, exp: "'Đói bụng' dẫn đến kết quả 'ăn bánh mì kẹp' -> dùng 'so'." },
+      { q: "He stayed home ___ he had a bad cold.", opts: ["because", "so", "but"], ans: 0, exp: "Nêu lý do bị cảm lạnh nên ở nhà -> dùng 'because'." }
     ]
   },
   {
-    "id": "prepositions_wh_movers",
-    "title": "8. Giới từ In / On / At & Câu hỏi Wh-",
-    "formula": "at + giờ (at 7 o'clock)  |  on + thứ/ngày (on Monday)  |  in + tháng/năm/mùa/buổi (in July, in the morning)",
-    "tip": "Câu hỏi Movers thường dùng: When (khi nào), Where (ở đâu), Why (tại sao), Who (ai), What (cái gì), How often (bao lâu một lần).",
-    "example": "Our swimming lesson is on Thursday at three o'clock.",
-    "questions": [
-      {
-        "q": "We have an English test ___ Friday morning.",
-        "opts": [
-          "on",
-          "at",
-          "in"
-        ],
-        "ans": 0,
-        "exp": "Trước ngày trong tuần ('Friday') dùng giới từ 'on'."
-      },
-      {
-        "q": "The train leaves ___ half past eight.",
-        "opts": [
-          "at",
-          "on",
-          "in"
-        ],
-        "ans": 0,
-        "exp": "Trước giờ cụ thể dùng giới từ 'at'."
-      },
-      {
-        "q": "___ did you go for your summer holiday? — To the mountains.",
-        "opts": [
-          "Where",
-          "When",
-          "Who"
-        ],
-        "ans": 0,
-        "exp": "Câu trả lời chỉ địa điểm ('To the mountains') -> hỏi 'Where'."
-      }
+    id: "quantifiers_some_any_alot",
+    title: "8. Lượng từ (Some / Any / A lot of)",
+    formula: "Some: câu khẳng định / lời mời  |  Any: câu phủ định / câu hỏi  |  A lot of: nhiều",
+    tip: "Dùng được cho cả danh từ đếm được số nhiều và danh từ không đếm được.",
+    example: "There are some apples in the basket, and a lot of water in the bottle.",
+    questions: [
+      { q: "Are there ___ bananas in the fridge?", opts: ["some", "any", "much"], ans: 1, exp: "Câu hỏi với danh từ đếm được số nhiều 'bananas' dùng 'any'." },
+      { q: "We have ___ homework to do today.", opts: ["a lot of", "many", "an"], ans: 0, exp: "'Homework' không đếm được nên dùng 'a lot of'." }
     ]
-  }
-];
-
-window.MOVERS_GRAMMAR_SENTENCES = [
-  {
-    "vi": "Hôm qua chúng tôi đã đi đến sở thú.",
-    "en": "Yesterday we went to the zoo."
   },
   {
-    "vi": "Cô ấy có một cơn đau đầu nặng.",
-    "en": "She had a bad headache."
+    id: "prepositions_time_place",
+    title: "9. Giới từ chỉ thời gian & nơi chốn (In / On / At)",
+    formula: "In + tháng/năm/mùa/buổi (trừ night)  |  On + ngày/thứ/ngày cụ thể  |  At + giờ / at night",
+    tip: "Nhớ mẹo: 'At' cho giờ cố định & night; 'On' cho ngày/thứ; 'In' cho khoảng thời gian dài hơn như tháng, mùa, năm.",
+    example: "We have English on Monday at nine o'clock in the morning.",
+    questions: [
+      { q: "My birthday is ___ May.", opts: ["in", "on", "at"], ans: 0, exp: "Trước tên tháng ('May') dùng giới từ 'in'." },
+      { q: "We go to the swimming pool ___ Saturday afternoon.", opts: ["in", "on", "at"], ans: 1, exp: "Trước thứ / ngày cụ thể ('Saturday afternoon') dùng 'on'." }
+    ]
   },
   {
-    "vi": "Con cá voi xanh lớn hơn con gấu.",
-    "en": "A blue whale is bigger than a bear."
-  },
-  {
-    "vi": "Chúng ta phải mang theo áo khoác ấm.",
-    "en": "We must wear a warm coat."
-  },
-  {
-    "vi": "Họ đã đi bộ yên lặng qua khu rừng.",
-    "en": "They walked quietly through the forest."
-  },
-  {
-    "vi": "Tôi ở nhà vì trời mưa to.",
-    "en": "I stayed home because it rained."
-  },
-  {
-    "vi": "Có rất nhiều sách trên kệ.",
-    "en": "There are a lot of books on the shelf."
-  },
-  {
-    "vi": "Tiết học của chúng tôi vào sáng thứ Tư.",
-    "en": "Our lesson is on Wednesday morning."
+    id: "wh_questions_frequency",
+    title: "10. Câu hỏi Wh- & Trạng từ tần suất (How often / Why / When)",
+    formula: "How often + do/does + S + V?  |  Always > Usually > Often > Sometimes > Never",
+    tip: "Trạng từ tần suất thường đứng trước động từ thường và sau động từ 'to be'.",
+    example: "How often do you go to the library? — I go there twice a week.",
+    questions: [
+      { q: "___ do you visit your grandparents? — Every Sunday.", opts: ["How often", "Who", "What"], ans: 0, exp: "Câu trả lời 'Every Sunday' chỉ tần suất -> hỏi bằng 'How often'." },
+      { q: "She is ___ late for school. She wakes up early.", opts: ["never", "always", "often"], ans: 0, exp: "Dậy sớm nên không bao giờ đi học muộn -> 'never'." }
+    ]
   }
 ];

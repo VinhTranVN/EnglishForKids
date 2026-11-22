@@ -1,1555 +1,464 @@
-// Dữ liệu từ vựng Cambridge A1 Movers đầy đủ theo chủ đề
-// Gắn vào window.MOVERS_VOCAB_TOPICS để ứng dụng A1 Movers đọc toàn bộ từ vựng từ file này.
 window.MOVERS_VOCAB_TOPICS = [
   {
-    "id": "home_house_movers",
-    "name": "Ngôi nhà & Đồ dùng Movers",
-    "en": "Home & House",
-    "icon": "🏠",
-    "color": "#3b82f6",
-    "words": [
-      {
-        "word": "address",
-        "ipa": "/əˈdres/",
-        "meaning": "địa chỉ nhà",
-        "emoji": "📮",
-        "example": "Do you know your best friend's home address?",
-        "riddle": "The number of a house and the name of the street where someone lives."
-      },
-      {
-        "word": "balcony",
-        "ipa": "/ˈbæl.kə.ni/",
-        "meaning": "ban công",
-        "emoji": "🌇",
-        "example": "We like sitting on the balcony in the cool evening.",
-        "riddle": "A small area outside a room on a high floor where you can stand."
-      },
-      {
-        "word": "basement",
-        "ipa": "/ˈbeɪs.mənt/",
-        "meaning": "tầng hầm",
-        "emoji": "⬇️",
-        "example": "We keep old boxes and bikes in the basement.",
-        "riddle": "A room or rooms in a building that are partly or completely below ground."
-      },
-      {
-        "word": "blanket",
-        "ipa": "/ˈblæŋ.kɪt/",
-        "meaning": "chăn / mền",
-        "emoji": "🛏️",
-        "example": "Put an extra blanket on the bed because it is cold tonight.",
-        "riddle": "A warm cover made of wool or soft cloth that you put on a bed."
-      },
-      {
-        "word": "downstairs",
-        "ipa": "/ˌdaʊnˈsteəz/",
-        "meaning": "tầng dưới / xuống lầu",
-        "emoji": "👇",
-        "example": "The kitchen is downstairs, and my bedroom is upstairs.",
-        "riddle": "On or to a lower floor of a house or building."
-      },
-      {
-        "word": "dream",
-        "ipa": "/driːm/",
-        "meaning": "giấc mơ / mơ",
-        "emoji": "💭",
-        "example": "I had a funny dream about flying with a dolphin.",
-        "riddle": "Pictures, stories, or thoughts that happen in your mind while you sleep."
-      },
-      {
-        "word": "elevator",
-        "ipa": "/ˈel.ɪ.veɪ.tər/",
-        "meaning": "thang máy (Anh-Mỹ)",
-        "emoji": "🛗",
-        "example": "Let's take the elevator up to the fifth floor.",
-        "riddle": "A machine that carries people up and down between floors (called 'lift' in UK English)."
-      },
-      {
-        "word": "internet",
-        "ipa": "/ˈɪn.tə.net/",
-        "meaning": "mạng internet",
-        "emoji": "🌐",
-        "example": "We use the internet to find information for school projects.",
-        "riddle": "The system that connects computers around the world so people can share information."
-      },
-      {
-        "word": "lift",
-        "ipa": "/lɪft/",
-        "meaning": "thang máy (Anh-Anh)",
-        "emoji": "🛗",
-        "example": "Grandma took the lift because she didn't want to climb the stairs.",
-        "riddle": "A machine in a building that takes people up or down to another floor."
-      },
-      {
-        "word": "message",
-        "ipa": "/ˈmes.ɪdʒ/",
-        "meaning": "tin nhắn / lời nhắn",
-        "emoji": "💬",
-        "example": "Mum left a message on the table before going to work.",
-        "riddle": "Words or information that you send or leave for another person."
-      },
-      {
-        "word": "roof",
-        "ipa": "/ruːf/",
-        "meaning": "mái nhà",
-        "emoji": "🏡",
-        "example": "A bird is standing on the red roof of our house.",
-        "riddle": "The top covering of a house or building that keeps out rain and sun."
-      },
-      {
-        "word": "seat",
-        "ipa": "/siːt/",
-        "meaning": "chỗ ngồi / ghế ngồi",
-        "emoji": "💺",
-        "example": "There are no empty seats on the bus this morning.",
-        "riddle": "A place where you can sit, such as a chair or a place on a bus or train."
-      },
-      {
-        "word": "shower",
-        "ipa": "/ˈʃaʊər/",
-        "meaning": "vòi hoa sen / tắm vòi sen",
-        "emoji": "🚿",
-        "example": "I always have a warm shower before school.",
-        "riddle": "A place where you stand and wash your body under falling water."
-      },
-      {
-        "word": "stairs",
-        "ipa": "/steəz/",
-        "meaning": "cầu thang bộ",
-        "emoji": "🪜",
-        "example": "Be careful walking down the stairs with a cup of tea.",
-        "riddle": "Steps inside a building that you walk up or down to go between floors."
-      },
-      {
-        "word": "toothbrush",
-        "ipa": "/ˈtuːθ.brʌʃ/",
-        "meaning": "bàn chải đánh răng",
-        "emoji": "🪥",
-        "example": "Don't forget your toothbrush when you stay at Grandpa's house.",
-        "riddle": "A small brush with a handle that you use to clean your teeth."
-      },
-      {
-        "word": "toothpaste",
-        "ipa": "/ˈtuːθ.peɪst/",
-        "meaning": "kem đánh răng",
-        "emoji": "🧴",
-        "example": "Put a little toothpaste on your brush every morning and night.",
-        "riddle": "A soft paste you put on a brush to clean your teeth."
-      },
-      {
-        "word": "upstairs",
-        "ipa": "/ˌʌpˈsteəz/",
-        "meaning": "tầng trên / lên lầu",
-        "emoji": "👆",
-        "example": "My brother is doing his homework upstairs in his room.",
-        "riddle": "On or to a higher floor of a building."
-      }
+    id: "daily_routines",
+    name: "Hoạt động hằng ngày",
+    en: "Daily Routines & Actions",
+    icon: "🏃",
+    words: [
+      { word: "awake", ipa: "/əˈweɪk/", meaning: "tỉnh giấc / thức", emoji: "⏰", example: "I was awake early this morning.", exampleVi: "Sáng nay tớ đã thức dậy sớm.", riddle: "Not asleep; awake after sleeping." },
+      { word: "climb", ipa: "/klaɪm/", meaning: "leo / trèo", emoji: "🧗", example: "The children climbed the tree in the garden.", exampleVi: "Bọn trẻ trèo lên cây trong vườn.", riddle: "To go up a hill, tree, ladder, or stairs." },
+      { word: "cook", ipa: "/kʊk/", meaning: "nấu ăn", emoji: "🍳", example: "Dad cooked pasta for dinner last night.", exampleVi: "Tối qua bố nấu mì ống cho bữa tối.", riddle: "To make food hot and ready to eat." },
+      { word: "carry", ipa: "/ˈkær.i/", meaning: "mang / xách", emoji: "🎒", example: "She carried a heavy bag to school.", exampleVi: "Cô ấy xách một chiếc túi nặng tới trường.", riddle: "To hold something and move it from one place to another." },
+      { word: "drop", ipa: "/drɒp/", meaning: "làm rơi / nhỏ giọt", emoji: "💧", example: "Be careful not to drop your glass.", exampleVi: "Cẩn thận đừng làm rơi cốc của bạn.", riddle: "To let something fall by accident." },
+      { word: "invite", ipa: "/ɪnˈvaɪt/", meaning: "mời", emoji: "💌", example: "We invited our friends to the birthday party.", exampleVi: "Chúng tớ mời các bạn tới tiệc sinh nhật.", riddle: "To ask someone to come to a party, meal, or event." },
+      { word: "laugh", ipa: "/lɑːf/", meaning: "cười lớn", emoji: "😂", example: "Everyone laughed at the funny clown.", exampleVi: "Mọi người cười lớn trước chú hề vui nhộn.", riddle: "To make a happy sound when something is funny." },
+      { word: "shout", ipa: "/ʃaʊt/", meaning: "hét / gọi to", emoji: "📢", example: "Please do not shout in the library.", exampleVi: "Làm ơn không nói to/hét trong thư viện.", riddle: "To speak very loudly." },
+      { word: "wave", ipa: "/weɪv/", meaning: "vẫy tay / sóng", emoji: "👋", example: "Grandma waved goodbye at the door.", exampleVi: "Bà vẫy tay chào tạm biệt ở cửa.", riddle: "To move your hand back and forth to say hello or goodbye." },
+      { word: "wash", ipa: "/wɒʃ/", meaning: "rửa / giặt", emoji: "🧼", example: "Wash your hands before eating lunch.", exampleVi: "Rửa tay trước khi ăn trưa nhé.", riddle: "To clean something with water and soap." },
+      { word: "plant", ipa: "/plɑːnt/", meaning: "trồng cây / thực vật", emoji: "🌱", example: "We planted flowers in the schoolyard.", exampleVi: "Chúng tớ trồng hoa ở sân trường.", riddle: "To put a seed or young tree in the ground so it grows." },
+      { word: "water", ipa: "/ˈwɔː.tər/", meaning: "tưới nước / nước", emoji: "🚿", example: "I water the plants every evening.", exampleVi: "Tớ tưới cây vào mỗi buổi tối.", riddle: "To pour water on plants or flowers." },
+      { word: "help", ipa: "/help/", meaning: "giúp đỡ", emoji: "🤝", example: "Can you help me carry these books?", exampleVi: "Bạn giúp tớ mang đống sách này được không?", riddle: "To do something useful for someone." },
+      { word: "wait", ipa: "/weɪt/", meaning: "chờ / đợi", emoji: "⏳", example: "We waited for the bus for ten minutes.", exampleVi: "Chúng tớ đợi xe buýt mười phút.", riddle: "To stay in one place until something happens." },
+      { word: "hurry", ipa: "/ˈhʌr.i/", meaning: "vội vã / nhanh lên", emoji: "💨", example: "Hurry up! The train is coming.", exampleVi: "Nhanh lên! Tàu sắp tới rồi.", riddle: "To move or do things quickly because you have little time." },
+      { word: "tidy", ipa: "/ˈtaɪ.di/", meaning: "dọn dẹp / gọn gàng", emoji: "🧹", example: "Please tidy your desk before bed.", exampleVi: "Hãy dọn gọn bàn học trước khi đi ngủ.", riddle: "To put things in the right place so a room looks neat." },
+      { word: "skate", ipa: "/skeɪt/", meaning: "trượt băng / trượt pa-tanh", emoji: "⛸️", example: "They love to skate on the ice rink.", exampleVi: "Họ thích trượt băng trên sân băng.", riddle: "To move across ice or ground wearing special boots with blades or wheels." },
+      { word: "skip", ipa: "/skɪp/", meaning: "nhảy dây / bỏ qua", emoji: "🪢", example: "The girls are skipping in the playground.", exampleVi: "Các bạn nữ đang nhảy dây ở sân chơi.", riddle: "To jump over a rope again and again." },
+      { word: "dance", ipa: "/dɑːns/", meaning: "nhảy múa", emoji: "💃", example: "We danced to music at the party.", exampleVi: "Chúng tớ nhảy theo nhạc ở bữa tiệc.", riddle: "To move your body to music." },
+      { word: "sail", ipa: "/seɪl/", meaning: "đi thuyền buồm / lướt buồm", emoji: "⛵", example: "They sailed across the blue lake.", exampleVi: "Họ chèo thuyền buồm qua hồ xanh.", riddle: "To travel on water in a boat with sails." },
+      { word: "ride", ipa: "/raɪd/", meaning: "cưỡi / đi xe", emoji: "🚲", example: "I ride my bike to the park on Sundays.", exampleVi: "Chủ nhật tớ đạp xe tới công viên.", riddle: "To sit on and control a bicycle, horse, or motorbike." },
+      { word: "hide", ipa: "/haɪd/", meaning: "trốn / giấu", emoji: "🙈", example: "The cat is hiding behind the sofa.", exampleVi: "Con mèo đang trốn sau ghế sô-pha.", riddle: "To go where people cannot see you." },
+      { word: "find", ipa: "/faɪnd/", meaning: "tìm thấy", emoji: "🔍", example: "I cannot find my lost pencil case.", exampleVi: "Tớ không tìm thấy hộp bút bị mất.", riddle: "To discover something you were looking for." },
+      { word: "call", ipa: "/kɔːl/", meaning: "gọi điện / gọi tên", emoji: "📞", example: "Mum called me for dinner.", exampleVi: "Mẹ gọi tớ vào ăn tối.", riddle: "To telephone someone or say someone's name loudly." },
+      { word: "text", ipa: "/tekst/", meaning: "nhắn tin / tin nhắn", emoji: "💬", example: "I texted my friend after school.", exampleVi: "Tớ nhắn tin cho bạn sau giờ học.", riddle: "To send a short written message on a phone." }
     ]
   },
   {
-    "id": "health_feelings_movers",
-    "name": "Sức khỏe & Cảm xúc Movers",
-    "en": "Health & Feelings",
-    "icon": "🩺",
-    "color": "#ef4444",
-    "words": [
-      {
-        "word": "afraid",
-        "ipa": "/əˈfreɪd/",
-        "meaning": "sợ hãi / e rằng",
-        "emoji": "😨",
-        "example": "The little kitten is afraid of loud noises.",
-        "riddle": "Feeling fear or worried that something bad might happen."
-      },
-      {
-        "word": "all right",
-        "ipa": "/ˌɔːl ˈraɪt/",
-        "meaning": "ổn / không sao",
-        "emoji": "👌",
-        "example": "Don't worry about the test; everything will be all right.",
-        "riddle": "Safe, well, or acceptable; not hurt or in trouble."
-      },
-      {
-        "word": "awake",
-        "ipa": "/əˈweɪk/",
-        "meaning": "còn thức / tỉnh giấc",
-        "emoji": "👀",
-        "example": "The baby is awake and smiling in his bed.",
-        "riddle": "Not sleeping."
-      },
-      {
-        "word": "bad",
-        "ipa": "/bæd/",
-        "meaning": "tệ / xấu / đau nặng",
-        "emoji": "😞",
-        "example": "He has a bad cough and stayed home from school.",
-        "riddle": "Unpleasant, poor quality, or not good for you."
-      },
-      {
-        "word": "better",
-        "ipa": "/ˈbet.ər/",
-        "meaning": "khỏe hơn / tốt hơn",
-        "emoji": "😊",
-        "example": "Drink some warm tea and you will feel better soon.",
-        "riddle": "More well after being ill, or of higher quality than something else."
-      },
-      {
-        "word": "boring",
-        "ipa": "/ˈbɔː.rɪŋ/",
-        "meaning": "nhàm chán",
-        "emoji": "🥱",
-        "example": "This film is boring; let's play a board game instead.",
-        "riddle": "Not interesting or fun."
-      },
-      {
-        "word": "clever",
-        "ipa": "/ˈklev.ər/",
-        "meaning": "thông minh / khéo léo",
-        "emoji": "🧠",
-        "example": "That clever dog can open the garden gate.",
-        "riddle": "Quick to learn, understand things, and solve problems."
-      },
-      {
-        "word": "cold",
-        "ipa": "/kəʊld/",
-        "meaning": "bị cảm lạnh / lạnh",
-        "emoji": "🤧",
-        "example": "I have a cold, so I am sneezing a lot today.",
-        "riddle": "A common illness that makes you sneeze and cough, or having a low temperature."
-      },
-      {
-        "word": "cough",
-        "ipa": "/kɒf/",
-        "meaning": "ho / cơn ho",
-        "emoji": "😷",
-        "example": "She has a bad cough and needs some medicine.",
-        "riddle": "To push air out of your throat with a sudden loud sound, often when sick."
-      },
-      {
-        "word": "doctor",
-        "ipa": "/ˈdɒk.tər/",
-        "meaning": "bác sĩ",
-        "emoji": "👩‍⚕️",
-        "example": "The doctor listened to my chest and gave me good advice.",
-        "riddle": "A person whose job is to examine people and help them get better when ill."
-      },
-      {
-        "word": "earache",
-        "ipa": "/ˈɪə.reɪk/",
-        "meaning": "đau tai",
-        "emoji": "👂",
-        "example": "He has an earache after swimming in the cold pool.",
-        "riddle": "Pain inside your ear."
-      },
-      {
-        "word": "fine",
-        "ipa": "/faɪn/",
-        "meaning": "khỏe / tốt / trời đẹp",
-        "emoji": "😄",
-        "example": "Thank you for asking, I'm fine today!",
-        "riddle": "Feeling well, good, or pleasant."
-      },
-      {
-        "word": "headache",
-        "ipa": "/ˈhed.eɪk/",
-        "meaning": "đau đầu",
-        "emoji": "🤕",
-        "example": "I have a headache because I didn't sleep early last night.",
-        "riddle": "A pain in your head."
-      },
-      {
-        "word": "hospital",
-        "ipa": "/ˈhɒs.pɪ.təl/",
-        "meaning": "bệnh viện",
-        "emoji": "🏥",
-        "example": "My aunt works as a nurse at the city hospital.",
-        "riddle": "A large place where doctors and nurses look after people who are ill or hurt."
-      },
-      {
-        "word": "hungry",
-        "ipa": "/ˈhʌŋ.ɡri/",
-        "meaning": "đói bụng",
-        "emoji": "🍽️",
-        "example": "We are very hungry after playing football all afternoon.",
-        "riddle": "Wanting or needing food."
-      },
-      {
-        "word": "ill",
-        "ipa": "/ɪl/",
-        "meaning": "bị ốm / bệnh",
-        "emoji": "🤒",
-        "example": "Tom is ill in bed with a fever today.",
-        "riddle": "Not well or not healthy."
-      },
-      {
-        "word": "matter",
-        "ipa": "/ˈmæt.ər/",
-        "meaning": "chuyện gì thế / vấn đề",
-        "emoji": "❓",
-        "example": "What's the matter? Why are you crying?",
-        "riddle": "A problem or situation, often asked in 'What's the matter?'."
-      },
-      {
-        "word": "nurse",
-        "ipa": "/nɜːs/",
-        "meaning": "y tá / điều dưỡng",
-        "emoji": "🩺",
-        "example": "The kind nurse put a bandage on my cut arm.",
-        "riddle": "A person trained to help doctors and care for sick or injured people."
-      },
-      {
-        "word": "stomach-ache",
-        "ipa": "/ˈstʌm.ək.eɪk/",
-        "meaning": "đau bụng",
-        "emoji": "🤢",
-        "example": "He has a stomach-ache after eating too much ice cream.",
-        "riddle": "Pain in your stomach."
-      },
-      {
-        "word": "thirsty",
-        "ipa": "/ˈθɜː.sti/",
-        "meaning": "khát nước",
-        "emoji": "🥤",
-        "example": "I'm thirsty after running; can I have some water?",
-        "riddle": "Feeling a need to drink."
-      },
-      {
-        "word": "tired",
-        "ipa": "/ˈtaɪəd/",
-        "meaning": "mệt mỏi / buồn ngủ",
-        "emoji": "😴",
-        "example": "The children are tired after the long trip to the zoo.",
-        "riddle": "Feeling that you want to rest or sleep."
-      },
-      {
-        "word": "toothache",
-        "ipa": "/ˈtuːθ.eɪk/",
-        "meaning": "đau răng",
-        "emoji": "🦷",
-        "example": "She went to the dentist because she had a toothache.",
-        "riddle": "Pain in one or more of your teeth."
-      },
-      {
-        "word": "worse",
-        "ipa": "/wɜːs/",
-        "meaning": "tệ hơn / nặng hơn",
-        "emoji": "📉",
-        "example": "If your cough gets worse, we must see the doctor.",
-        "riddle": "More bad or of lower quality than something else."
-      }
+    id: "places_town",
+    name: "Địa điểm trong thị trấn",
+    en: "Places Around Town",
+    icon: "🏙️",
+    words: [
+      { word: "hospital", ipa: "/ˈhɒs.pɪ.təl/", meaning: "bệnh viện", emoji: "🏥", example: "The doctor works at the city hospital.", exampleVi: "Bác sĩ làm việc ở bệnh viện thành phố.", riddle: "A large place where sick or hurt people get care." },
+      { word: "library", ipa: "/ˈlaɪ.brər.i/", meaning: "thư viện", emoji: "📚", example: "We borrow storybooks from the school library.", exampleVi: "Chúng tớ mượn truyện từ thư viện trường.", riddle: "A quiet place with many books you can read or borrow." },
+      { word: "market", ipa: "/ˈmɑː.kɪt/", meaning: "khu chợ", emoji: "🧺", example: "Mum buys fresh fruit at the weekend market.", exampleVi: "Mẹ mua trái cây tươi ở chợ cuối tuần.", riddle: "A place where people buy and sell food or goods." },
+      { word: "supermarket", ipa: "/ˈsuː.pəˌmɑː.kɪt/", meaning: "siêu thị", emoji: "🛒", example: "There is a big supermarket near our house.", exampleVi: "Có một siêu thị lớn gần nhà tớ.", riddle: "A large shop selling food, drinks, and household things." },
+      { word: "cinema", ipa: "/ˈsɪn.ə.mə/", meaning: "rạp chiếu phim", emoji: "🎬", example: "We watched a funny film at the cinema.", exampleVi: "Chúng tớ xem một bộ phim vui ở rạp.", riddle: "A place with a big screen where people watch films." },
+      { word: "station", ipa: "/ˈsteɪ.ʃən/", meaning: "nhà ga / trạm", emoji: "🚆", example: "We waited for the train at the station.", exampleVi: "Chúng tớ đợi tàu hỏa ở nhà ga.", riddle: "A place where trains or buses stop for passengers." },
+      { word: "bank", ipa: "/bæŋk/", meaning: "ngân hàng / bờ sông", emoji: "🏦", example: "Dad went to the bank this morning.", exampleVi: "Sáng nay bố đi ngân hàng.", riddle: "A place where people keep or borrow money." },
+      { word: "cafe", ipa: "/ˈkæf.eɪ/", meaning: "quán cà phê / quán giải khát", emoji: "☕", example: "We had hot chocolate at the corner cafe.", exampleVi: "Chúng tớ uống sô-cô-la nóng ở quán góc phố.", riddle: "A small place to buy drinks, cakes, or light meals." },
+      { word: "square", ipa: "/skweər/", meaning: "quảng trường / hình vuông", emoji: "🏛️", example: "Many people walk in the town square.", exampleVi: "Nhiều người đi dạo ở quảng trường thị trấn.", riddle: "An open area with buildings around it in a town or city." },
+      { word: "road", ipa: "/rəʊd/", meaning: "con đường", emoji: "🛣️", example: "Look both ways before crossing the road.", exampleVi: "Nhìn cả hai phía trước khi băng qua đường.", riddle: "A hard path for cars, buses, and bicycles to travel on." },
+      { word: "street", ipa: "/striːt/", meaning: "phố / đường phố", emoji: "🏘️", example: "Our school is in a quiet street.", exampleVi: "Trường tớ nằm trên một con phố yên tĩnh.", riddle: "A road in a town or city with houses or shops on the sides." },
+      { word: "bridge", ipa: "/brɪdʒ/", meaning: "cây cầu", emoji: "🌉", example: "The train went over the old bridge.", exampleVi: "Đoàn tàu chạy qua cây cầu cũ.", riddle: "Something built over a river or road so people can cross." },
+      { word: "farm", ipa: "/fɑːm/", meaning: "nông trại / trang trại", emoji: "🚜", example: "Uncle Tom has cows and sheep on his farm.", exampleVi: "Bác Tom có bò và cừu ở trang trại.", riddle: "An area of land used for growing crops and keeping animals." },
+      { word: "field", ipa: "/fiːld/", meaning: "cánh đồng / bãi cỏ", emoji: "🌾", example: "The horses are running in the green field.", exampleVi: "Những con ngựa đang chạy trên cánh đồng xanh.", riddle: "An area of land with grass or crops." },
+      { word: "forest", ipa: "/ˈfɒr.ɪst/", meaning: "khu rừng", emoji: "🌲", example: "Lots of birds live in the forest.", exampleVi: "Nhiều loài chim sống trong khu rừng.", riddle: "A large area covered with many trees." },
+      { word: "jungle", ipa: "/ˈdʒʌŋ.ɡəl/", meaning: "rừng rậm nhiệt đới", emoji: "🌴", example: "Monkeys swing in the trees of the jungle.", exampleVi: "Khỉ đu trên cây trong rừng rậm.", riddle: "A thick forest in hot parts of the world." },
+      { word: "lake", ipa: "/leɪk/", meaning: "hồ nước", emoji: "🏞️", example: "We saw ducks swimming on the lake.", exampleVi: "Chúng tớ thấy vịt bơi trên hồ.", riddle: "A large area of water surrounded by land." },
+      { word: "river", ipa: "/ˈrɪv.ər/", meaning: "dòng sông", emoji: "🌊", example: "The river flows through the valley.", exampleVi: "Dòng sông chảy qua thung lũng.", riddle: "A long, natural stream of water flowing to the sea or a lake." },
+      { word: "hill", ipa: "/hɪl/", meaning: "ngọn đồi", emoji: "⛰️", example: "We rolled down the grassy hill.", exampleVi: "Chúng tớ lăn xuống ngọn đồi đầy cỏ.", riddle: "A high area of land that is lower than a mountain." },
+      { word: "mountain", ipa: "/ˈmaʊn.tɪn/", meaning: "núi", emoji: "🏔️", example: "There is snow on top of the high mountain.", exampleVi: "Có tuyết trên đỉnh ngọn núi cao.", riddle: "A very high hill." },
+      { word: "island", ipa: "/ˈaɪ.lənd/", meaning: "hòn đảo", emoji: "🏝️", example: "We took a boat to a small island.", exampleVi: "Chúng tớ đi thuyền tới một hòn đảo nhỏ.", riddle: "Land with water all around it." },
+      { word: "waterfall", ipa: "/ˈwɔː.tə.fɔːl/", meaning: "thác nước", emoji: "💦", example: "The waterfall looks amazing in the sunlight.", exampleVi: "Thác nước trông tuyệt đẹp dưới nắng.", riddle: "Water falling from a high place over rocks." },
+      { word: "basement", ipa: "/ˈbeɪs.mənt/", meaning: "tầng hầm", emoji: "🪜", example: "We keep old boxes in the basement.", exampleVi: "Chúng tớ cất các thùng cũ ở tầng hầm.", riddle: "A room or floor under a building." },
+      { word: "balcony", ipa: "/ˈbæl.kə.ni/", meaning: "ban công", emoji: "🪴", example: "Mum grows herbs on our balcony.", exampleVi: "Mẹ trồng rau thơm trên ban công nhà tớ.", riddle: "An outside area above the ground attached to a building." },
+      { word: "lift", ipa: "/lɪft/", meaning: "thang máy / nâng lên", emoji: "🛗", example: "Take the lift to the fifth floor.", exampleVi: "Đi thang máy lên tầng năm nhé.", riddle: "A machine that carries people up and down in a building." }
     ]
   },
   {
-    "id": "town_places_movers",
-    "name": "Thị trấn & Địa điểm Movers",
-    "en": "Town & Places",
-    "icon": "🏙️",
-    "color": "#0ea5e9",
-    "words": [
-      {
-        "word": "bus station",
-        "ipa": "/ˈbʌs ˌsteɪ.ʃən/",
-        "meaning": "bến xe buýt",
-        "emoji": "🚏",
-        "example": "We walked to the bus station to catch the number 12 bus.",
-        "riddle": "A place where buses stop for passengers to get on and off."
-      },
-      {
-        "word": "bus stop",
-        "ipa": "/ˈbʌs stɒp/",
-        "meaning": "trạm dừng xe buýt",
-        "emoji": "🚌",
-        "example": "Wait for me at the bus stop near the supermarket.",
-        "riddle": "A place by the road with a sign where a bus stops."
-      },
-      {
-        "word": "cafe",
-        "ipa": "/ˈkæf.eɪ/",
-        "meaning": "quán cà phê / quán giải khát",
-        "emoji": "☕",
-        "example": "We stopped at a small cafe for hot chocolate and cake.",
-        "riddle": "A small place where you can buy drinks, snacks, and light meals."
-      },
-      {
-        "word": "car park",
-        "ipa": "/ˈkɑː ˌpɑːk/",
-        "meaning": "bãi đỗ xe",
-        "emoji": "🅿️",
-        "example": "Dad parked the car in the car park next to the cinema.",
-        "riddle": "An area or building where people leave their cars."
-      },
-      {
-        "word": "centre",
-        "ipa": "/ˈsen.tər/",
-        "meaning": "trung tâm",
-        "emoji": "🎯",
-        "example": "There is a big sports centre near our school.",
-        "riddle": "The middle point of a place, or a building used for a specific activity (spelled 'center' in US English)."
-      },
-      {
-        "word": "cinema",
-        "ipa": "/ˈsɪn.ə.mə/",
-        "meaning": "rạp chiếu phim",
-        "emoji": "🎬",
-        "example": "We went to the cinema to watch a funny animal film.",
-        "riddle": "A building where you pay to watch films on a big screen."
-      },
-      {
-        "word": "city",
-        "ipa": "/ˈsɪt.i/",
-        "meaning": "thành phố lớn",
-        "emoji": "🏙️",
-        "example": "There are tall buildings and busy streets in the city.",
-        "riddle": "A large and important town where many people live and work."
-      },
-      {
-        "word": "countryside",
-        "ipa": "/ˈkʌn.tri.saɪd/",
-        "meaning": "vùng nông thôn",
-        "emoji": "🌾",
-        "example": "Grandparents live in a quiet house in the countryside.",
-        "riddle": "Land outside towns and cities with fields, farms, trees, and hills."
-      },
-      {
-        "word": "farm",
-        "ipa": "/fɑːm/",
-        "meaning": "nông trại / trang trại",
-        "emoji": "🚜",
-        "example": "Uncle Ben grows vegetables and keeps cows on his farm.",
-        "riddle": "An area of land used for growing crops or keeping farm animals."
-      },
-      {
-        "word": "market",
-        "ipa": "/ˈmɑː.kɪt/",
-        "meaning": "khu chợ / phiên chợ",
-        "emoji": "🧺",
-        "example": "Mum buys fresh fruit and vegetables at the morning market.",
-        "riddle": "A place or time when people buy and sell food, clothes, and other goods."
-      },
-      {
-        "word": "place",
-        "ipa": "/pleɪs/",
-        "meaning": "địa điểm / nơi chốn",
-        "emoji": "📍",
-        "example": "The park is my favourite place to ride my bike.",
-        "riddle": "A particular position, building, town, or area."
-      },
-      {
-        "word": "road",
-        "ipa": "/rəʊd/",
-        "meaning": "con đường",
-        "emoji": "🛣️",
-        "example": "Look left and right before crossing the road.",
-        "riddle": "A hard, flat path for cars, buses, and bicycles to travel on."
-      },
-      {
-        "word": "shopping centre",
-        "ipa": "/ˈʃɒp.ɪŋ ˌsen.tər/",
-        "meaning": "trung tâm mua sắm",
-        "emoji": "🛍️",
-        "example": "There are many clothes and book shops in the shopping centre.",
-        "riddle": "A large building or area with many different shops together."
-      },
-      {
-        "word": "sports centre",
-        "ipa": "/ˈspɔːts ˌsen.tər/",
-        "meaning": "trung tâm thể thao",
-        "emoji": "🏀",
-        "example": "I play badminton at the sports centre on Wednesdays.",
-        "riddle": "A building where people go to do sports like swimming, tennis, or gym."
-      },
-      {
-        "word": "square",
-        "ipa": "/skweər/",
-        "meaning": "quảng trường / hình vuông",
-        "emoji": "⬜",
-        "example": "People gather in the town square for music and festivals.",
-        "riddle": "An open area with buildings around it in a town, or a shape with four equal sides."
-      },
-      {
-        "word": "station",
-        "ipa": "/ˈsteɪ.ʃən/",
-        "meaning": "nhà ga",
-        "emoji": "🚉",
-        "example": "The train arrived at the station on time.",
-        "riddle": "A place where trains stop so people can get on or off."
-      },
-      {
-        "word": "supermarket",
-        "ipa": "/ˈsuː.pəˌmɑː.kɪt/",
-        "meaning": "siêu thị",
-        "emoji": "🛒",
-        "example": "We push a big trolley around the supermarket.",
-        "riddle": "A large shop that sells food, drinks, and household things."
-      },
-      {
-        "word": "swimming pool",
-        "ipa": "/ˈswɪm.ɪŋ puːl/",
-        "meaning": "bể bơi / hồ bơi",
-        "emoji": "🏊",
-        "example": "The water in the outdoor swimming pool is cool and blue.",
-        "riddle": "A large area of water made for people to swim in."
-      },
-      {
-        "word": "town",
-        "ipa": "/taʊn/",
-        "meaning": "thị trấn",
-        "emoji": "🏘️",
-        "example": "Our small town has a library, a park, and a post office.",
-        "riddle": "A place with streets and buildings that is larger than a village but smaller than a city."
-      }
+    id: "animals_nature",
+    name: "Động vật & Thiên nhiên",
+    en: "Animals & Nature",
+    icon: "🐬",
+    words: [
+      { word: "dolphin", ipa: "/ˈdɒl.fɪn/", meaning: "cá heo", emoji: "🐬", example: "The dolphin jumped high out of the sea.", exampleVi: "Con cá heo nhảy cao lên khỏi mặt biển.", riddle: "A smart sea animal that can jump and swim fast." },
+      { word: "whale", ipa: "/weɪl/", meaning: "cá voi", emoji: "🐳", example: "A blue whale is bigger than a bus.", exampleVi: "Cá voi xanh to hơn cả chiếc xe buýt.", riddle: "A very large animal that lives in the ocean." },
+      { word: "shark", ipa: "/ʃɑːk/", meaning: "cá mập", emoji: "🦈", example: "Sharks have sharp teeth and swim in deep water.", exampleVi: "Cá mập có răng sắc và bơi ở vùng nước sâu.", riddle: "A large fish with sharp teeth that lives in the sea." },
+      { word: "bat", ipa: "/bæt/", meaning: "con dơi / gậy bóng chày", emoji: "🦇", example: "Bats fly at night and sleep in the day.", exampleVi: "Dơi bay vào ban đêm và ngủ ban ngày.", riddle: "An animal with wings that flies at night." },
+      { word: "bear", ipa: "/beər/", meaning: "con gấu", emoji: "🐻", example: "Brown bears love eating fish and berries.", exampleVi: "Gấu nâu thích ăn cá và quả mọng.", riddle: "A large, strong animal with thick fur." },
+      { word: "kangaroo", ipa: "/ˌkæŋ.ɡərˈuː/", meaning: "chuột túi", emoji: "🦘", example: "A kangaroo carries its baby in a pouch.", exampleVi: "Chuột túi mang con trong túi trước bụng.", riddle: "An Australian animal that jumps on strong back legs." },
+      { word: "lion", ipa: "/ˈlaɪ.ən/", meaning: "sư tử", emoji: "🦁", example: "The lion has a big furry mane.", exampleVi: "Con sư tử có bộ bờm lớn nhiều lông.", riddle: "A big wild cat with a loud roar." },
+      { word: "panda", ipa: "/ˈpæn.də/", meaning: "gấu trúc", emoji: "🐼", example: "Pandas eat green bamboo leaves.", exampleVi: "Gấu trúc ăn lá tre xanh.", riddle: "A black-and-white bear that eats bamboo." },
+      { word: "parrot", ipa: "/ˈpær.ət/", meaning: "con vẹt", emoji: "🦜", example: "The colourful parrot can copy words.", exampleVi: "Con vẹt sặc sỡ có thể bắt chước lời nói.", riddle: "A bright bird that can sometimes copy human speech." },
+      { word: "owl", ipa: "/aʊl/", meaning: "chim cú", emoji: "🦉", example: "The owl has big round eyes.", exampleVi: "Con cú có đôi mắt to tròn.", riddle: "A bird with big eyes that often hunts at night." },
+      { word: "swan", ipa: "/swɒn/", meaning: "thiên nga", emoji: "🦢", example: "A white swan glided across the pond.", exampleVi: "Con thiên nga trắng lướt nhẹ trên ao.", riddle: "A large white bird with a long curved neck." },
+      { word: "snail", ipa: "/sneɪl/", meaning: "con ốc sên", emoji: "🐌", example: "The snail moves slowly with a shell on its back.", exampleVi: "Ốc sên di chuyển chậm với chiếc vỏ trên lưng.", riddle: "A small slow animal with a spiral shell on its back." },
+      { word: "fly", ipa: "/flaɪ/", meaning: "con ruồi / bay", emoji: "🪰", example: "A small fly landed on the window.", exampleVi: "Một con ruồi nhỏ đậu trên cửa sổ.", riddle: "A small insect with two wings." },
+      { word: "kitten", ipa: "/ˈkɪt.ən/", meaning: "mèo con", emoji: "🐱", example: "Our new kitten likes playing with yarn.", exampleVi: "Mèo con mới của tớ thích chơi cuộn len.", riddle: "A very young cat." },
+      { word: "puppy", ipa: "/ˈpʌp.i/", meaning: "chó con", emoji: "🐶", example: "The puppy wagged its tail happily.", exampleVi: "Chú chó con vẫy đuôi vui vẻ.", riddle: "A very young dog." },
+      { word: "rabbit", ipa: "/ˈræb.ɪt/", meaning: "con thỏ", emoji: "🐰", example: "The rabbit has long ears and hops fast.", exampleVi: "Con thỏ có tai dài và nhảy nhanh.", riddle: "A small animal with long ears that hops." },
+      { word: "zebra", ipa: "/ˈzeb.rə/", meaning: "ngựa vằn", emoji: "🦓", example: "A zebra has black and white stripes.", exampleVi: "Ngựa vằn có các sọc đen trắng.", riddle: "An animal like a horse with black and white stripes." },
+      { word: "hippo", ipa: "/ˈhɪp.əʊ/", meaning: "hà mã", emoji: "🦛", example: "The hippo stays cool in the river.", exampleVi: "Hà mã ngâm mình cho mát dưới sông.", riddle: "A large heavy animal that likes water." },
+      { word: "camel", ipa: "/ˈkæm.əl/", meaning: "lạc đà", emoji: "🐪", example: "Camels can walk far in the hot desert.", exampleVi: "Lạc đà có thể đi xa trên sa mạc nóng.", riddle: "A desert animal with one or two humps on its back." },
+      { word: "leaf", ipa: "/liːf/", meaning: "chiếc lá", emoji: "🍃", example: "A yellow leaf fell from the tree.", exampleVi: "Một chiếc lá vàng rụng khỏi cây.", riddle: "A flat green part of a plant or tree." },
+      { word: "grass", ipa: "/ɡrɑːs/", meaning: "cỏ / bãi cỏ", emoji: "🌿", example: "Do not walk on the wet grass.", exampleVi: "Đừng đi lên bãi cỏ ướt nhé.", riddle: "Short green plants covering the ground." },
+      { word: "flower", ipa: "/ˈflaʊ.ər/", meaning: "bông hoa", emoji: "🌸", example: "Bees visit colourful flowers in spring.", exampleVi: "Ong ghé thăm những bông hoa rực rỡ vào mùa xuân.", riddle: "The pretty, often colourful part of a plant." },
+      { word: "sky", ipa: "/skaɪ/", meaning: "bầu trời", emoji: "🌤️", example: "White clouds float across the blue sky.", exampleVi: "Những đám mây trắng trôi trên bầu trời xanh.", riddle: "The space above the earth where you see the sun and clouds." },
+      { word: "star", ipa: "/stɑːr/", meaning: "ngôi sao", emoji: "⭐", example: "We saw bright stars at night.", exampleVi: "Chúng tớ thấy những ngôi sao sáng vào ban đêm.", riddle: "A bright point of light in the night sky." },
+      { word: "moon", ipa: "/muːn/", meaning: "mặt trăng", emoji: "🌙", example: "The full moon shone brightly tonight.", exampleVi: "Trăng tròn tối nay tỏa sáng rực rỡ.", riddle: "The round object that shines in the sky at night." }
     ]
   },
   {
-    "id": "nature_animals_movers",
-    "name": "Thiên nhiên & Động vật Movers",
-    "en": "Nature & Animals",
-    "icon": "🦁",
-    "color": "#10b981",
-    "words": [
-      {
-        "word": "bat",
-        "ipa": "/bæt/",
-        "meaning": "con dơi (hoặc gậy bóng chày)",
-        "emoji": "🦇",
-        "example": "A bat flew out of the cave in the evening.",
-        "riddle": "A small animal with wings that flies at night, or sports equipment used to hit a ball."
-      },
-      {
-        "word": "bear",
-        "ipa": "/beər/",
-        "meaning": "con gấu",
-        "emoji": "🐻",
-        "example": "Brown bears can climb trees and catch fish in rivers.",
-        "riddle": "A large, strong animal with thick fur and sharp claws."
-      },
-      {
-        "word": "cloud",
-        "ipa": "/klaʊd/",
-        "meaning": "đám mây",
-        "emoji": "☁️",
-        "example": "Big grey clouds mean it might rain soon.",
-        "riddle": "A white or grey mass of tiny water drops floating in the sky."
-      },
-      {
-        "word": "dolphin",
-        "ipa": "/ˈdɒl.fɪn/",
-        "meaning": "cá heo",
-        "emoji": "🐬",
-        "example": "We saw playful dolphins jumping near our boat.",
-        "riddle": "A clever, friendly sea animal with a long nose that can jump out of the water."
-      },
-      {
-        "word": "field",
-        "ipa": "/fiːld/",
-        "meaning": "cánh đồng / bãi cỏ",
-        "emoji": "🌿",
-        "example": "Sheep are eating green grass in the field.",
-        "riddle": "An open area of land, often with grass or crops, with fences or hedges around it."
-      },
-      {
-        "word": "forest",
-        "ipa": "/ˈfɒr.ɪst/",
-        "meaning": "khu rừng",
-        "emoji": "🌲",
-        "example": "Many birds and squirrels live in the green forest.",
-        "riddle": "A large area of land covered with lots of trees."
-      },
-      {
-        "word": "grass",
-        "ipa": "/ɡrɑːs/",
-        "meaning": "cỏ / bãi cỏ",
-        "emoji": "🌱",
-        "example": "The children sat on the grass and had a picnic.",
-        "riddle": "A common green plant with thin blades that covers gardens and fields."
-      },
-      {
-        "word": "island",
-        "ipa": "/ˈaɪ.lənd/",
-        "meaning": "hòn đảo",
-        "emoji": "🏝️",
-        "example": "We took a boat to a small island in the sea.",
-        "riddle": "A piece of land completely surrounded by water."
-      },
-      {
-        "word": "jungle",
-        "ipa": "/ˈdʒʌŋ.ɡəl/",
-        "meaning": "rừng rậm nhiệt đới",
-        "emoji": "🌴",
-        "example": "Monkeys and parrots live high up in the jungle trees.",
-        "riddle": "A thick tropical forest with many plants, vines, and wild animals."
-      },
-      {
-        "word": "kangaroo",
-        "ipa": "/ˌkæŋ.ɡərˈuː/",
-        "meaning": "chuột túi kangaroo",
-        "emoji": "🦘",
-        "example": "A kangaroo can jump very far on its strong back legs.",
-        "riddle": "An Australian animal with strong back legs that jumps and carries its baby in a pouch."
-      },
-      {
-        "word": "kitten",
-        "ipa": "/ˈkɪt.ən/",
-        "meaning": "mèo con",
-        "emoji": "🐱",
-        "example": "The little kitten is chasing a ball of wool.",
-        "riddle": "A very young cat."
-      },
-      {
-        "word": "lake",
-        "ipa": "/leɪk/",
-        "meaning": "hồ nước",
-        "emoji": "🏞️",
-        "example": "Ducks are swimming on the calm lake.",
-        "riddle": "A large area of water surrounded by land."
-      },
-      {
-        "word": "leaf / leaves",
-        "ipa": "/liːf/ /liːvz/",
-        "meaning": "chiếc lá / những chiếc lá",
-        "emoji": "🍂",
-        "example": "In autumn, orange leaves fall from the trees.",
-        "riddle": "The flat green or coloured parts that grow on a tree or plant."
-      },
-      {
-        "word": "lion",
-        "ipa": "/ˈlaɪ.ən/",
-        "meaning": "sư tử",
-        "emoji": "🦁",
-        "example": "The lion has a big mane and a loud roar.",
-        "riddle": "A large wild cat with golden fur, often called the king of animals."
-      },
-      {
-        "word": "moon",
-        "ipa": "/muːn/",
-        "meaning": "Mặt Trăng",
-        "emoji": "🌙",
-        "example": "The round moon shone brightly in the dark sky.",
-        "riddle": "The round object in the sky that we often see at night."
-      },
-      {
-        "word": "mountain",
-        "ipa": "/ˈmaʊn.tɪn/",
-        "meaning": "ngọn núi",
-        "emoji": "⛰️",
-        "example": "It was exciting to walk up the high mountain path.",
-        "riddle": "A very high, steep hill, often with rocks or snow at the top."
-      },
-      {
-        "word": "panda",
-        "ipa": "/ˈpæn.də/",
-        "meaning": "gấu trúc",
-        "emoji": "🐼",
-        "example": "The black and white panda loves eating bamboo.",
-        "riddle": "A large bear-like animal with black and white fur that eats bamboo."
-      },
-      {
-        "word": "parrot",
-        "ipa": "/ˈpær.ət/",
-        "meaning": "con vẹt",
-        "emoji": "🦜",
-        "example": "The colourful parrot can repeat a few words.",
-        "riddle": "A bright-coloured bird with a curved beak that can sometimes copy human speech."
-      },
-      {
-        "word": "plant",
-        "ipa": "/plɑːnt/",
-        "meaning": "cây xanh / trồng cây",
-        "emoji": "🪴",
-        "example": "We water the plants by the window every two days.",
-        "riddle": "A living thing that grows in the ground with roots, stems, and leaves."
-      },
-      {
-        "word": "puppy",
-        "ipa": "/ˈpʌp.i/",
-        "meaning": "chó con",
-        "emoji": "🐶",
-        "example": "Our puppy barked happily when we came home.",
-        "riddle": "A very young dog."
-      },
-      {
-        "word": "rabbit",
-        "ipa": "/ˈræb.ɪt/",
-        "meaning": "con thỏ",
-        "emoji": "🐇",
-        "example": "The white rabbit has long ears and hops quickly.",
-        "riddle": "A small animal with long ears and soft fur that hops and eats carrots or grass."
-      },
-      {
-        "word": "river",
-        "ipa": "/ˈrɪv.ər/",
-        "meaning": "dòng sông",
-        "emoji": "🌊",
-        "example": "Fish swim in the wide river flowing to the sea.",
-        "riddle": "A long, natural flow of water moving across land toward the sea or a lake."
-      },
-      {
-        "word": "rock",
-        "ipa": "/rɒk/",
-        "meaning": "tảng đá / hòn đá",
-        "emoji": "🪨",
-        "example": "Be careful not to slip on the wet rocks near the water.",
-        "riddle": "A hard, natural stone or large piece of stone."
-      },
-      {
-        "word": "shark",
-        "ipa": "/ʃɑːk/",
-        "meaning": "cá mập",
-        "emoji": "🦈",
-        "example": "A shark has sharp teeth and swims in deep oceans.",
-        "riddle": "A large fish with sharp teeth that lives in the sea."
-      },
-      {
-        "word": "snail",
-        "ipa": "/sneɪl/",
-        "meaning": "con ốc sên",
-        "emoji": "🐌",
-        "example": "A snail moves very slowly and carries its shell.",
-        "riddle": "A small slow creature with a spiral shell on its back."
-      },
-      {
-        "word": "star",
-        "ipa": "/stɑːr/",
-        "meaning": "ngôi sao",
-        "emoji": "⭐",
-        "example": "We could see many stars far away from the city lights.",
-        "riddle": "A small shining point of light in the night sky."
-      },
-      {
-        "word": "sun",
-        "ipa": "/sʌn/",
-        "meaning": "Mặt Trời",
-        "emoji": "☀️",
-        "example": "The sun gives us light and warmth during the day.",
-        "riddle": "The bright star in the sky that gives light and heat to the Earth."
-      },
-      {
-        "word": "weather",
-        "ipa": "/ˈweð.ər/",
-        "meaning": "thời tiết",
-        "emoji": "🌦️",
-        "example": "What was the weather like on your holiday?",
-        "riddle": "Whether it is sunny, rainy, windy, cloudy, hot, or cold outside."
-      },
-      {
-        "word": "whale",
-        "ipa": "/weɪl/",
-        "meaning": "cá voi",
-        "emoji": "🐋",
-        "example": "A blue whale is the biggest animal in the ocean.",
-        "riddle": "A very large sea animal that breathes air through a hole on top of its head."
-      },
-      {
-        "word": "wind",
-        "ipa": "/wɪnd/",
-        "meaning": "gió",
-        "emoji": "💨",
-        "example": "The wind is blowing strongly, so hold onto your hat.",
-        "riddle": "Air moving outside, which can be gentle or very strong."
-      }
+    id: "weather_seasons",
+    name: "Thời tiết & Mùa trong năm",
+    en: "Weather & Seasons",
+    icon: "🌦️",
+    words: [
+      { word: "sunny", ipa: "/ˈsʌn.i/", meaning: "có nắng / nắng đẹp", emoji: "☀️", example: "It is sunny and warm today.", exampleVi: "Hôm nay trời nắng và ấm áp.", riddle: "Bright with lots of sunlight." },
+      { word: "rainy", ipa: "/ˈreɪ.ni/", meaning: "có mưa", emoji: "🌧️", example: "Take an umbrella on a rainy day.", exampleVi: "Mang theo ô vào ngày mưa nhé.", riddle: "With a lot of rain." },
+      { word: "windy", ipa: "/ˈwɪn.di/", meaning: "có gió", emoji: "🌬️", example: "It is windy, so fly your kite!", exampleVi: "Trời có gió đấy, thả diều đi nào!", riddle: "With a lot of wind blowing." },
+      { word: "cloudy", ipa: "/ˈklaʊ.di/", meaning: "nhiều mây", emoji: "☁️", example: "The sky is cloudy this morning.", exampleVi: "Sáng nay trời nhiều mây.", riddle: "With many clouds in the sky." },
+      { word: "snowy", ipa: "/ˈsnəʊ.i/", meaning: "có tuyết", emoji: "❄️", example: "We built a snowman on a snowy day.", exampleVi: "Chúng tớ đắp người tuyết vào ngày có tuyết.", riddle: "Covered with or having snow." },
+      { word: "storm", ipa: "/stɔːm/", meaning: "cơn bão / giông bão", emoji: "⛈️", example: "Stay indoors during the big storm.", exampleVi: "Hãy ở trong nhà khi có cơn bão lớn.", riddle: "Bad weather with strong wind, rain, thunder, or lightning." },
+      { word: "rainbow", ipa: "/ˈreɪn.bəʊ/", meaning: "cầu vồng", emoji: "🌈", example: "A bright rainbow appeared after the rain.", exampleVi: "Một cầu vồng rực rỡ xuất hiện sau cơn mưa.", riddle: "A curved arch of colours seen in the sky after rain." },
+      { word: "weather", ipa: "/ˈweð.ər/", meaning: "thời tiết", emoji: "🌡️", example: "What is the weather like in your city?", exampleVi: "Thời tiết ở thành phố bạn thế nào?", riddle: "Rain, sun, wind, snow, or temperature outside." },
+      { word: "hot", ipa: "/hɒt/", meaning: "nóng", emoji: "🔥", example: "Summer afternoons can be very hot.", exampleVi: "Các buổi chiều mùa hè có thể rất nóng.", riddle: "Having a high temperature." },
+      { word: "cold", ipa: "/kəʊld/", meaning: "lạnh / cảm lạnh", emoji: "🥶", example: "Put on your coat because it is cold.", exampleVi: "Mặc áo khoác vào vì trời lạnh đấy.", riddle: "Having a low temperature." },
+      { word: "warm", ipa: "/wɔːm/", meaning: "ấm áp", emoji: "🌞", example: "Spring mornings are pleasant and warm.", exampleVi: "Buổi sáng mùa xuân dễ chịu và ấm áp.", riddle: "Nice and slightly hot, not cold." },
+      { word: "wet", ipa: "/wet/", meaning: "ướt", emoji: "💧", example: "My shoes are wet from the puddles.", exampleVi: "Giày tớ bị ướt vì vũng nước.", riddle: "Covered with water or another liquid." },
+      { word: "dry", ipa: "/draɪ/", meaning: "khô / khô ráo", emoji: "🏜️", example: "Hang the towel outside so it gets dry.", exampleVi: "Phơi khăn ra ngoài cho khô nhé.", riddle: "Not wet; without water." },
+      { word: "spring", ipa: "/sprɪŋ/", meaning: "mùa xuân / lò xo", emoji: "🌷", example: "New leaves grow in spring.", exampleVi: "Lá non mọc vào mùa xuân.", riddle: "The season after winter when plants start to grow." },
+      { word: "summer", ipa: "/ˈsʌm.ər/", meaning: "mùa hè", emoji: "🏖️", example: "We go to the beach in summer.", exampleVi: "Chúng tớ đi biển vào mùa hè.", riddle: "The hottest season of the year." },
+      { word: "autumn", ipa: "/ˈɔː.təm/", meaning: "mùa thu", emoji: "🍂", example: "Leaves turn orange and red in autumn.", exampleVi: "Lá chuyển màu cam và đỏ vào mùa thu.", riddle: "The season after summer when leaves fall." },
+      { word: "winter", ipa: "/ˈwɪn.tər/", meaning: "mùa đông", emoji: "☃️", example: "Winter is cold in many countries.", exampleVi: "Mùa đông lạnh ở nhiều quốc gia.", riddle: "The coldest season of the year." },
+      { word: "morning", ipa: "/ˈmɔː.nɪŋ/", meaning: "buổi sáng", emoji: "🌅", example: "I eat breakfast every morning.", exampleVi: "Tớ ăn sáng mỗi buổi sáng.", riddle: "The early part of the day from sunrise to noon." },
+      { word: "afternoon", ipa: "/ˌɑːf.təˈnuːn/", meaning: "buổi chiều", emoji: "🌇", example: "We play football in the afternoon.", exampleVi: "Chúng tớ chơi bóng đá vào buổi chiều.", riddle: "The time of day between noon and evening." },
+      { word: "evening", ipa: "/ˈiːv.nɪŋ/", meaning: "buổi tối", emoji: "🌆", example: "We read stories together in the evening.", exampleVi: "Chúng tớ đọc truyện cùng nhau vào buổi tối.", riddle: "The part of the day between afternoon and night." },
+      { word: "night", ipa: "/naɪt/", meaning: "ban đêm", emoji: "🌃", example: "The moon comes out at night.", exampleVi: "Mặt trăng xuất hiện vào ban đêm.", riddle: "The dark time of day when most people sleep." },
+      { word: "today", ipa: "/təˈdeɪ/", meaning: "hôm nay", emoji: "📅", example: "Today is my best friend's birthday.", exampleVi: "Hôm nay là sinh nhật bạn thân của tớ.", riddle: "This present day." },
+      { word: "yesterday", ipa: "/ˈjes.tə.deɪ/", meaning: "hôm qua", emoji: "⏮️", example: "We visited our grandparents yesterday.", exampleVi: "Hôm qua chúng tớ đi thăm ông bà.", riddle: "The day before today." },
+      { word: "tomorrow", ipa: "/təˈmɒr.əʊ/", meaning: "ngày mai", emoji: "⏭️", example: "We have a music class tomorrow.", exampleVi: "Ngày mai chúng tớ có tiết âm nhạc.", riddle: "The day after today." },
+      { word: "weekend", ipa: "/ˌwiːkˈend/", meaning: "cuối tuần", emoji: "🎉", example: "We go camping at the weekend.", exampleVi: "Chúng tớ đi cắm trại vào cuối tuần.", riddle: "Saturday and Sunday." }
     ]
   },
   {
-    "id": "food_clothes_daily_movers",
-    "name": "Ẩm thực, Trang phục & Đời sống Movers",
-    "en": "Food, Clothes & Daily Life",
-    "icon": "🥗",
-    "color": "#f59e0b",
-    "words": [
-      {
-        "word": "bottle",
-        "ipa": "/ˈbɒt.əl/",
-        "meaning": "cái chai / bình nước",
-        "emoji": "🧴",
-        "example": "Bring a bottle of water for the walk in the park.",
-        "riddle": "A container, usually made of glass or plastic, used for holding liquids."
-      },
-      {
-        "word": "bowl",
-        "ipa": "/bəʊl/",
-        "meaning": "cái bát / cái tô",
-        "emoji": "🥣",
-        "example": "She ate a bowl of hot soup for dinner.",
-        "riddle": "A round dish that is deep inside, used for soup, rice, or cereal."
-      },
-      {
-        "word": "cheese",
-        "ipa": "/tʃiːz/",
-        "meaning": "phô mai",
-        "emoji": "🧀",
-        "example": "I like cheese and tomato sandwiches for lunch.",
-        "riddle": "A yellow or white food made from milk."
-      },
-      {
-        "word": "coat",
-        "ipa": "/kəʊt/",
-        "meaning": "áo khoác",
-        "emoji": "🧥",
-        "example": "Put on your warm coat before going out in the rain.",
-        "riddle": "A piece of outdoor clothing worn over other clothes to keep warm or dry."
-      },
-      {
-        "word": "coffee",
-        "ipa": "/ˈkɒf.i/",
-        "meaning": "cà phê",
-        "emoji": "☕",
-        "example": "Dad drinks a cup of coffee every morning.",
-        "riddle": "A hot or iced brown drink made from roasted beans."
-      },
-      {
-        "word": "cup",
-        "ipa": "/kʌp/",
-        "meaning": "cái tách / cốc",
-        "emoji": "🍵",
-        "example": "Grandma gave me a cup of sweet tea.",
-        "riddle": "A small round container with a handle used for drinking tea or coffee."
-      },
-      {
-        "word": "glass",
-        "ipa": "/ɡlɑːs/",
-        "meaning": "cốc thủy tinh / thủy tinh",
-        "emoji": "🥛",
-        "example": "Please pass me a glass of orange juice.",
-        "riddle": "A container made of clear glass for drinking water or juice."
-      },
-      {
-        "word": "meat",
-        "ipa": "/miːt/",
-        "meaning": "thịt",
-        "emoji": "🍖",
-        "example": "We had chicken and vegetables for family lunch.",
-        "riddle": "Food that comes from animals, such as chicken, beef, or pork."
-      },
-      {
-        "word": "milk",
-        "ipa": "/mɪlk/",
-        "meaning": "sữa",
-        "emoji": "🥛",
-        "example": "Children drink milk to help their bones grow strong.",
-        "riddle": "A white liquid produced by cows or goats that people drink."
-      },
-      {
-        "word": "pancake",
-        "ipa": "/ˈpæn.keɪk/",
-        "meaning": "bánh kếp",
-        "emoji": "🥞",
-        "example": "We had pancakes with fruit and honey for breakfast.",
-        "riddle": "A thin flat round cake cooked in a pan, often eaten for breakfast."
-      },
-      {
-        "word": "pasta",
-        "ipa": "/ˈpæs.tə/",
-        "meaning": "mì Ý / nui",
-        "emoji": "🍝",
-        "example": "Mum cooked pasta with tomato sauce for dinner.",
-        "riddle": "Italian food made from flour and water, such as spaghetti or macaroni."
-      },
-      {
-        "word": "picnic",
-        "ipa": "/ˈpɪk.nɪk/",
-        "meaning": "buổi dã ngoại / ăn ngoài trời",
-        "emoji": "🧺",
-        "example": "We took sandwiches and fruit for a picnic by the lake.",
-        "riddle": "A meal eaten outside, for example in a park or countryside."
-      },
-      {
-        "word": "salad",
-        "ipa": "/ˈsæl.əd/",
-        "meaning": "món salad / rau trộn",
-        "emoji": "🥗",
-        "example": "Fresh green salad goes well with grilled fish.",
-        "riddle": "A cold dish of raw vegetables like lettuce, tomato, and cucumber."
-      },
-      {
-        "word": "sandwich",
-        "ipa": "/ˈsæn.wɪtʃ/",
-        "meaning": "bánh mì kẹp",
-        "emoji": "🥪",
-        "example": "I packed an egg sandwich in my lunchbox.",
-        "riddle": "Two slices of bread with cheese, meat, or vegetables between them."
-      },
-      {
-        "word": "scarf",
-        "ipa": "/skɑːf/",
-        "meaning": "khăn quàng cổ",
-        "emoji": "🧣",
-        "example": "She wrapped a soft scarf around her neck in winter.",
-        "riddle": "A piece of cloth you wear around your neck or head for warmth or style."
-      },
-      {
-        "word": "soup",
-        "ipa": "/suːp/",
-        "meaning": "món súp / canh",
-        "emoji": "🍲",
-        "example": "Hot vegetable soup is great on a rainy day.",
-        "riddle": "A liquid food made by cooking meat, fish, or vegetables in water."
-      },
-      {
-        "word": "sweater",
-        "ipa": "/ˈswet.ər/",
-        "meaning": "áo len / áo chui đầu",
-        "emoji": "🧶",
-        "example": "Put on a sweater; it is windy near the sea.",
-        "riddle": "A warm knitted top worn over a shirt or t-shirt."
-      },
-      {
-        "word": "tea",
-        "ipa": "/tiː/",
-        "meaning": "trà",
-        "emoji": "🫖",
-        "example": "They sat in the garden and had a pot of tea.",
-        "riddle": "A popular hot or cold drink made by putting dried leaves in hot water."
-      },
-      {
-        "word": "vegetable",
-        "ipa": "/ˈvedʒ.tə.bəl/",
-        "meaning": "rau củ",
-        "emoji": "🥦",
-        "example": "Eating green vegetables every day helps you stay strong.",
-        "riddle": "A plant or part of a plant used as food, such as carrots, peas, or cabbage."
-      }
+    id: "food_drinks",
+    name: "Đồ ăn & Thức uống",
+    en: "Food & Drinks",
+    icon: "🥗",
+    words: [
+      { word: "pancake", ipa: "/ˈpæn.keɪk/", meaning: "bánh kếp", emoji: "🥞", example: "Mum made pancakes with honey for breakfast.", exampleVi: "Mẹ làm bánh kếp mật ong cho bữa sáng.", riddle: "A thin flat round cake fried in a pan." },
+      { word: "soup", ipa: "/suːp/", meaning: "súp / canh", emoji: "🍲", example: "Hot vegetable soup is good for dinner.", exampleVi: "Súp rau nóng tốt cho bữa tối.", riddle: "Liquid food made by boiling meat, fish, or vegetables." },
+      { word: "pasta", ipa: "/ˈpæs.tə/", meaning: "mì Ý / mì ống", emoji: "🍝", example: "Do you like pasta with tomato sauce?", exampleVi: "Bạn có thích mì Ý sốt cà chua không?", riddle: "Italian food made from flour and water in shapes like tubes or ribbons." },
+      { word: "salad", ipa: "/ˈsæl.əd/", meaning: "món salad / rau trộn", emoji: "🥗", example: "She made a fresh salad with lettuce and tomatoes.", exampleVi: "Cô ấy làm món salad tươi với xà lách và cà chua.", riddle: "A cold mix of raw vegetables, often with fruit or cheese." },
+      { word: "cheese", ipa: "/tʃiːz/", meaning: "phô mai", emoji: "🧀", example: "Mice love eating yellow cheese.", exampleVi: "Chuột thích ăn phô mai vàng.", riddle: "A food made from milk, often yellow or white." },
+      { word: "sandwich", ipa: "/ˈsæn.wɪdʒ/", meaning: "bánh mì kẹp", emoji: "🥪", example: "I packed a cheese sandwich for lunch.", exampleVi: "Tớ mang theo bánh mì kẹp phô mai ăn trưa.", riddle: "Two slices of bread with food like meat, egg, or cheese inside." },
+      { word: "burger", ipa: "/ˈbɜː.ɡər/", meaning: "bánh burger", emoji: "🍔", example: "We ate burgers and chips at the park.", exampleVi: "Chúng tớ ăn burger và khoai tây chiên ở công viên.", riddle: "A round bread roll with cooked meat or a patty inside." },
+      { word: "tea", ipa: "/tiː/", meaning: "trà", emoji: "🍵", example: "Grandpa drinks warm tea in the morning.", exampleVi: "Ông uống trà ấm vào buổi sáng.", riddle: "A hot or cold drink made by putting leaves in water." },
+      { word: "coffee", ipa: "/ˈkɒf.i/", meaning: "cà phê", emoji: "☕", example: "Parents often drink coffee in the morning.", exampleVi: "Bố mẹ thường uống cà phê vào buổi sáng.", riddle: "A dark hot drink made from roasted beans." },
+      { word: "lemonade", ipa: "/ˌlem.əˈneɪd/", meaning: "nước chanh", emoji: "🍋", example: "Cold lemonade is great on a hot day.", exampleVi: "Nước chanh mát lạnh rất tuyệt vào ngày nóng.", riddle: "A sweet drink made with lemon juice, water, and sugar." },
+      { word: "bottle", ipa: "/ˈbɒt.əl/", meaning: "cái chai / bình", emoji: "🍼", example: "Bring a bottle of water to PE class.", exampleVi: "Mang theo chai nước tới giờ thể dục nhé.", riddle: "A container with a narrow neck for holding liquids." },
+      { word: "bowl", ipa: "/bəʊl/", meaning: "cái bát / tô", emoji: "🥣", example: "He ate a big bowl of cereal.", exampleVi: "Cậu ấy ăn một bát lớn ngũ cốc.", riddle: "A round deep dish used for food like soup or cereal." },
+      { word: "cup", ipa: "/kʌp/", meaning: "cái tách / cốc", emoji: "🥤", example: "Would you like a cup of milk?", exampleVi: "Bạn có muốn một cốc sữa không?", riddle: "A small round container with a handle used for drinking." },
+      { word: "glass", ipa: "/ɡlɑːs/", meaning: "cái ly thủy tinh / kính", emoji: "🥛", example: "Drink a glass of water every morning.", exampleVi: "Uống một ly nước mỗi sáng nhé.", riddle: "A container made of glass that you drink from." },
+      { word: "plate", ipa: "/pleɪt/", meaning: "cái đĩa", emoji: "🍽️", example: "Put the cookies on the plate.", exampleVi: "Đặt bánh quy lên đĩa nhé.", riddle: "A flat round dish used for serving food." },
+      { word: "hungry", ipa: "/ˈhʌŋ.ɡri/", meaning: "đói bụng", emoji: "🤤", example: "I am hungry after swimming.", exampleVi: "Tớ đói bụng sau khi bơi.", riddle: "Feeling that you want to eat food." },
+      { word: "thirsty", ipa: "/ˈθɜː.sti/", meaning: "khát nước", emoji: "🥵", example: "The runner is thirsty after the race.", exampleVi: "Người chạy bộ khát nước sau cuộc đua.", riddle: "Feeling that you want to drink something." },
+      { word: "delicious", ipa: "/dɪˈlɪʃ.əs/", meaning: "ngon tuyệt", emoji: "😋", example: "This strawberry cake is delicious!", exampleVi: "Chiếc bánh dâu tây này ngon tuyệt!", riddle: "Tasting very good." },
+      { word: "sweet", ipa: "/swiːt/", meaning: "ngọt / kẹo", emoji: "🍬", example: "Mangoes are sweet and juicy.", exampleVi: "Xoài ngọt và nhiều nước.", riddle: "Having a taste like sugar." },
+      { word: "biscuit", ipa: "/ˈbɪs.kɪt/", meaning: "bánh quy", emoji: "🍪", example: "Can I have a chocolate biscuit?", exampleVi: "Tớ xin một chiếc bánh quy sô-cô-la được không?", riddle: "A small flat dry cake that is sweet or savoury." },
+      { word: "strawberry", ipa: "/ˈstrɔː.bər.i/", meaning: "quả dâu tây", emoji: "🍓", example: "Strawberries are red and sweet in spring.", exampleVi: "Dâu tây đỏ và ngọt vào mùa xuân.", riddle: "A small red fruit with tiny seeds on the outside." },
+      { word: "carrot", ipa: "/ˈkær.ət/", meaning: "củ cà rốt", emoji: "🥕", example: "Rabbits love crunchy orange carrots.", exampleVi: "Thỏ thích ăn cà rốt cam giòn.", riddle: "A long orange vegetable that grows under the ground." },
+      { word: "onion", ipa: "/ˈʌn.jən/", meaning: "củ hành tây", emoji: "🧅", example: "Chop the onion carefully for the soup.", exampleVi: "Thái nhỏ củ hành tây cho nồi súp.", riddle: "A round vegetable with layers that can make you cry when cut." },
+      { word: "mushroom", ipa: "/ˈmʌʃ.ruːm/", meaning: "cây nấm", emoji: "🍄", example: "We put mushrooms on our pizza.", exampleVi: "Chúng tớ cho nấm lên bánh pizza.", riddle: "A small plant-like food with a cap and stem." },
+      { word: "olive", ipa: "/ˈɒl.ɪv/", meaning: "quả ô-liu", emoji: "🫒", example: "Green olives are often on salads or pizzas.", exampleVi: "Ô-liu xanh thường có trên salad hoặc pizza.", riddle: "A small green or black fruit used for oil or eaten as food." }
     ]
   },
   {
-    "id": "activities_verbs_movers",
-    "name": "Hoạt động & Động từ Movers",
-    "en": "Activities & Verbs",
-    "icon": "⚡",
-    "color": "#8b5cf6",
-    "words": [
-      {
-        "word": "ask",
-        "ipa": "/ɑːsk/",
-        "meaning": "hỏi / yêu cầu",
-        "emoji": "🙋",
-        "example": "If you don't understand, ask the teacher for help.",
-        "riddle": "To say or write a question to get information or help."
-      },
-      {
-        "word": "bring",
-        "ipa": "/brɪŋ/",
-        "meaning": "mang theo / đem tới",
-        "emoji": "🎒",
-        "example": "Remember to bring your coloured pencils to art class.",
-        "riddle": "To take someone or something with you to the place where you are."
-      },
-      {
-        "word": "build",
-        "ipa": "/bɪld/",
-        "meaning": "xây dựng / lắp ráp",
-        "emoji": "🧱",
-        "example": "The children built a big castle out of sand.",
-        "riddle": "To make something by putting parts or materials together."
-      },
-      {
-        "word": "call",
-        "ipa": "/kɔːl/",
-        "meaning": "gọi điện / gọi tên / đặt tên",
-        "emoji": "📞",
-        "example": "I will call you on the phone when I get home.",
-        "riddle": "To telephone someone, shout to get attention, or give a name to someone or something."
-      },
-      {
-        "word": "carry",
-        "ipa": "/ˈkær.i/",
-        "meaning": "mang / vác / cầm theo",
-        "emoji": "🧳",
-        "example": "Can I help you carry that heavy bag?",
-        "riddle": "To hold something and take it from one place to another."
-      },
-      {
-        "word": "catch",
-        "ipa": "/kætʃ/",
-        "meaning": "bắt lấy / bắt xe kịp",
-        "emoji": "⚾",
-        "example": "Hurry up so we can catch the morning bus!",
-        "riddle": "To take hold of something moving, or get onto a bus or train in time."
-      },
-      {
-        "word": "change",
-        "ipa": "/tʃeɪndʒ/",
-        "meaning": "thay đổi / thay đồ",
-        "emoji": "🔄",
-        "example": "I need to change my wet shoes after the rain.",
-        "riddle": "To become different or put on different clothes."
-      },
-      {
-        "word": "climb",
-        "ipa": "/klaɪm/",
-        "meaning": "leo / trèo",
-        "emoji": "🧗",
-        "example": "Be careful when you climb up the ladder.",
-        "riddle": "To go up, over, or down something using your hands and feet."
-      },
-      {
-        "word": "cook",
-        "ipa": "/kʊk/",
-        "meaning": "nấu ăn / đầu bếp",
-        "emoji": "👩‍🍳",
-        "example": "Dad likes to cook noodles for the family on Sundays.",
-        "riddle": "To prepare food using heat, or a person who prepares meals."
-      },
-      {
-        "word": "cry",
-        "ipa": "/kraɪ/",
-        "meaning": "khóc / kêu lên",
-        "emoji": "😢",
-        "example": "The little girl cried when she lost her favourite doll.",
-        "riddle": "To produce tears from your eyes because you are sad, hurt, or upset."
-      },
-      {
-        "word": "dance",
-        "ipa": "/dɑːns/",
-        "meaning": "nhảy múa / khiêu vũ",
-        "emoji": "💃",
-        "example": "Everyone danced to the music at the birthday party.",
-        "riddle": "To move your body to music."
-      },
-      {
-        "word": "draw",
-        "ipa": "/drɔː/",
-        "meaning": "vẽ tranh / kéo",
-        "emoji": "✏️",
-        "example": "He drew a picture of a rocket in his notebook.",
-        "riddle": "To make a picture with a pencil, pen, or crayon."
-      },
-      {
-        "word": "drop",
-        "ipa": "/drɒp/",
-        "meaning": "làm rơi / rớt xuống",
-        "emoji": "⬇️",
-        "example": "Oops! I dropped my keys on the floor.",
-        "riddle": "To let something fall by accident."
-      },
-      {
-        "word": "film",
-        "ipa": "/fɪlm/",
-        "meaning": "bộ phim / quay phim",
-        "emoji": "🎥",
-        "example": "We watched a great adventure film at the cinema.",
-        "riddle": "A story with moving pictures shown on a screen, or to record video."
-      },
-      {
-        "word": "find",
-        "ipa": "/faɪnd/",
-        "meaning": "tìm thấy",
-        "emoji": "🔍",
-        "example": "I couldn't find my glasses until I looked under the sofa.",
-        "riddle": "To discover something you were looking for or by chance."
-      },
-      {
-        "word": "fly",
-        "ipa": "/flaɪ/",
-        "meaning": "bay / lái máy bay / thả diều",
-        "emoji": "✈️",
-        "example": "Birds fly south when the weather gets cold.",
-        "riddle": "To move through the air using wings or in an aircraft."
-      },
-      {
-        "word": "get",
-        "ipa": "/ɡet/",
-        "meaning": "nhận được / lấy / trở nên",
-        "emoji": "🎁",
-        "example": "We got lots of presents on our birthday.",
-        "riddle": "To receive, fetch, buy, or become something."
-      },
-      {
-        "word": "go",
-        "ipa": "/ɡəʊ/",
-        "meaning": "đi",
-        "emoji": "🚶",
-        "example": "We go swimming at the sports centre every Saturday.",
-        "riddle": "To move or travel from one place to another."
-      },
-      {
-        "word": "have (got)",
-        "ipa": "/hæv/",
-        "meaning": "có",
-        "emoji": "✅",
-        "example": "She has got a new red bike.",
-        "riddle": "To own, hold, or experience something."
-      },
-      {
-        "word": "help",
-        "ipa": "/help/",
-        "meaning": "giúp đỡ",
-        "emoji": "🤝",
-        "example": "I always help my mum set the table for dinner.",
-        "riddle": "To make it easier for someone to do something."
-      },
-      {
-        "word": "hide",
-        "ipa": "/haɪd/",
-        "meaning": "trốn / giấu",
-        "emoji": "🙈",
-        "example": "The cat likes to hide behind the curtains.",
-        "riddle": "To put yourself or something in a place where others cannot see it."
-      },
-      {
-        "word": "hop",
-        "ipa": "/hɒp/",
-        "meaning": "nhảy lò cò",
-        "emoji": "🐸",
-        "example": "The frog can hop across the wet grass.",
-        "riddle": "To jump on one foot or move with short jumps like a frog or bird."
-      },
-      {
-        "word": "invite",
-        "ipa": "/ɪnˈvaɪt/",
-        "meaning": "mời",
-        "emoji": "✉️",
-        "example": "We invited our cousins to come and stay for the weekend.",
-        "riddle": "To ask someone to come to a party, meal, or visit."
-      },
-      {
-        "word": "laugh",
-        "ipa": "/lɑːf/",
-        "meaning": "cười",
-        "emoji": "😂",
-        "example": "We all laughed at the clown's silly joke.",
-        "riddle": "To make sounds with your voice to show you are amused or happy."
-      },
-      {
-        "word": "look at",
-        "ipa": "/lʊk æt/",
-        "meaning": "nhìn vào / xem",
-        "emoji": "👁️",
-        "example": "Look at that big rainbow in the sky!",
-        "riddle": "To direct your eyes toward someone or something."
-      },
-      {
-        "word": "lose",
-        "ipa": "/luːz/",
-        "meaning": "làm mất / thua cuộc",
-        "emoji": "😕",
-        "example": "Be careful not to lose your ticket before the train arrives.",
-        "riddle": "To no longer have something because you cannot find it, or not win a game."
-      },
-      {
-        "word": "need",
-        "ipa": "/niːd/",
-        "meaning": "cần",
-        "emoji": "📌",
-        "example": "We need some milk and bread from the shop.",
-        "riddle": "To have to have something because it is necessary or important."
-      },
-      {
-        "word": "plant",
-        "ipa": "/plɑːnt/",
-        "meaning": "trồng cây",
-        "emoji": "🌱",
-        "example": "They planted small trees in the school garden.",
-        "riddle": "To put a seed or plant into the ground so it can grow."
-      },
-      {
-        "word": "ride",
-        "ipa": "/raɪd/",
-        "meaning": "cưỡi / đi xe đạp, ngựa",
-        "emoji": "🚲",
-        "example": "I can ride my bike to the park in ten minutes.",
-        "riddle": "To sit on and control a bicycle, horse, or motorbike, or travel in a vehicle."
-      },
-      {
-        "word": "sail",
-        "ipa": "/seɪl/",
-        "meaning": "đi thuyền buồm / chèo thuyền",
-        "emoji": "⛵",
-        "example": "They sailed their small boat across the bay.",
-        "riddle": "To travel on water in a boat or ship, especially using wind and sails."
-      },
-      {
-        "word": "send",
-        "ipa": "/send/",
-        "meaning": "gửi đi",
-        "emoji": "📤",
-        "example": "I sent a postcard to my aunt from the beach.",
-        "riddle": "To arrange for a letter, message, or parcel to go to someone."
-      },
-      {
-        "word": "shop",
-        "ipa": "/ʃɒp/",
-        "meaning": "mua sắm / cửa hàng",
-        "emoji": "🛍️",
-        "example": "We went shopping for new shoes on Saturday.",
-        "riddle": "To buy things in stores, or a place where goods are sold."
-      },
-      {
-        "word": "shout",
-        "ipa": "/ʃaʊt/",
-        "meaning": "hét to / nói lớn",
-        "emoji": "📢",
-        "example": "Don't shout inside the library; please talk quietly.",
-        "riddle": "To speak or call out in a very loud voice."
-      },
-      {
-        "word": "skate",
-        "ipa": "/skeɪt/",
-        "meaning": "trượt băng / trượt pa-tanh",
-        "emoji": "⛸️",
-        "example": "She loves to ice skate with her friends in winter.",
-        "riddle": "To move over ice or ground wearing special boots with blades or wheels."
-      },
-      {
-        "word": "sleep",
-        "ipa": "/sliːp/",
-        "meaning": "ngủ",
-        "emoji": "💤",
-        "example": "Most children need about nine hours of sleep each night.",
-        "riddle": "To rest with your eyes closed and your mind inactive at night."
-      },
-      {
-        "word": "snow",
-        "ipa": "/snəʊ/",
-        "meaning": "tuyết / tuyết rơi",
-        "emoji": "❄️",
-        "example": "It snowed heavily in the mountains last week.",
-        "riddle": "Soft white flakes of ice that fall from clouds in cold weather."
-      },
-      {
-        "word": "swim",
-        "ipa": "/swɪm/",
-        "meaning": "bơi lội",
-        "emoji": "🏊",
-        "example": "Can you swim across the pool without stopping?",
-        "riddle": "To move through water using your arms and legs."
-      },
-      {
-        "word": "take",
-        "ipa": "/teɪk/",
-        "meaning": "cầm / lấy / đưa đi / mất (thời gian)",
-        "emoji": "👜",
-        "example": "Take an umbrella with you because it might rain.",
-        "riddle": "To carry or move something from one place to another, or accept/get something."
-      },
-      {
-        "word": "think",
-        "ipa": "/θɪŋk/",
-        "meaning": "nghĩ / cho rằng",
-        "emoji": "🤔",
-        "example": "I think it is going to be sunny tomorrow.",
-        "riddle": "To use your mind to form an idea, opinion, or plan."
-      },
-      {
-        "word": "travel",
-        "ipa": "/ˈtræv.əl/",
-        "meaning": "đi du lịch / di chuyển",
-        "emoji": "🧳",
-        "example": "We like to travel by train to see new places.",
-        "riddle": "To go from one place to another, often on a trip or journey."
-      },
-      {
-        "word": "wait",
-        "ipa": "/weɪt/",
-        "meaning": "chờ đợi",
-        "emoji": "⏳",
-        "example": "Please wait here while I buy two ice creams.",
-        "riddle": "To stay in one place until someone comes or something happens."
-      },
-      {
-        "word": "wake up",
-        "ipa": "/weɪk ʌp/",
-        "meaning": "thức dậy",
-        "emoji": "⏰",
-        "example": "I usually wake up at seven o'clock on school mornings.",
-        "riddle": "To stop sleeping and open your eyes."
-      },
-      {
-        "word": "walk",
-        "ipa": "/wɔːk/",
-        "meaning": "đi bộ",
-        "emoji": "🚶‍♂️",
-        "example": "We walk to school together every morning.",
-        "riddle": "To move along by putting one foot in front of the other on land."
-      },
-      {
-        "word": "wash",
-        "ipa": "/wɒʃ/",
-        "meaning": "rửa / giặt",
-        "emoji": "🧼",
-        "example": "Always wash your hands before eating dinner.",
-        "riddle": "To clean something or yourself with water and soap."
-      },
-      {
-        "word": "watch",
-        "ipa": "/wɒtʃ/",
-        "meaning": "xem (TV, trận đấu)",
-        "emoji": "📺",
-        "example": "We watched a cartoon together after dinner.",
-        "riddle": "To look at something carefully for a period of time, such as a TV show or game."
-      },
-      {
-        "word": "work",
-        "ipa": "/wɜːk/",
-        "meaning": "làm việc / hoạt động",
-        "emoji": "💼",
-        "example": "My father works in an office near the station.",
-        "riddle": "To do a job to earn money or do tasks with effort."
-      }
+    id: "health_body",
+    name: "Sức khỏe & Cơ thể",
+    en: "Health & Body",
+    icon: "🩺",
+    words: [
+      { word: "headache", ipa: "/ˈhed.eɪk/", meaning: "đau đầu", emoji: "🤕", example: "I have a headache, so I will rest.", exampleVi: "Tớ bị đau đầu nên sẽ nghỉ ngơi.", riddle: "A pain in your head." },
+      { word: "stomachache", ipa: "/ˈstʌm.ək.eɪk/", meaning: "đau bụng", emoji: "🤢", example: "He got a stomachache from eating too fast.", exampleVi: "Cậu ấy bị đau bụng vì ăn quá nhanh.", riddle: "A pain in your stomach." },
+      { word: "toothache", ipa: "/ˈtuːθ.eɪk/", meaning: "đau răng", emoji: "🦷", example: "She went to the dentist because of a toothache.", exampleVi: "Cô ấy đi nha sĩ vì bị đau răng.", riddle: "A pain in a tooth." },
+      { word: "earache", ipa: "/ˈɪə.reɪk/", meaning: "đau tai", emoji: "👂", example: "Swimming in cold water gave him an earache.", exampleVi: "Bơi nước lạnh làm cậu ấy bị đau tai.", riddle: "A pain inside your ear." },
+      { word: "cough", ipa: "/kɒf/", meaning: "bị ho / tiếng ho", emoji: "😷", example: "Cover your mouth when you cough.", exampleVi: "Che miệng khi bạn bị ho nhé.", riddle: "To push air out of your throat with a sudden sound when ill." },
+      { word: "cold_ill", ipa: "/kəʊld/", meaning: "bị cảm lạnh", emoji: "🤧", example: "Drink warm water when you have a cold.", exampleVi: "Uống nước ấm khi bị cảm lạnh nhé.", riddle: "A common illness that makes you sneeze and have a runny nose." },
+      { word: "temperature", ipa: "/ˈtem.prə.tʃər/", meaning: "nhiệt độ / bị sốt", emoji: "🌡️", example: "The nurse checked the boy's temperature.", exampleVi: "Y tá kiểm tra nhiệt độ cho cậu bé.", riddle: "How hot or cold something or someone's body is." },
+      { word: "doctor", ipa: "/ˈdɒk.tər/", meaning: "bác sĩ", emoji: "👨‍⚕️", example: "The doctor gave me some medicine.", exampleVi: "Bác sĩ kê cho tớ ít thuốc.", riddle: "A person who helps sick or hurt people get better." },
+      { word: "nurse", ipa: "/nɜːs/", meaning: "y tá", emoji: "👩‍⚕️", example: "The nurse is kind and helpful.", exampleVi: "Cô y tá rất tử tế và hay giúp đỡ.", riddle: "A person who cares for sick people in a hospital or clinic." },
+      { word: "dentist", ipa: "/ˈden.tɪst/", meaning: "nha sĩ", emoji: "🪥", example: "Visit the dentist every six months.", exampleVi: "Khám nha sĩ sáu tháng một lần nhé.", riddle: "A doctor who looks after people's teeth." },
+      { word: "hospital_bed", ipa: "/ˈmed.ɪ.sən/", meaning: "thuốc", emoji: "💊", example: "Take the medicine after your meal.", exampleVi: "Uống thuốc sau bữa ăn nhé.", riddle: "Something you take to feel better when you are sick." },
+      { word: "hurt", ipa: "/hɜːt/", meaning: "làm đau / bị thương", emoji: "🩹", example: "My knee hurts after I fell.", exampleVi: "Đầu gối tớ đau sau khi bị ngã.", riddle: "To feel pain or cause pain to someone or something." },
+      { word: "fine", ipa: "/faɪn/", meaning: "khỏe / ổn", emoji: "😊", example: "Thanks for asking, I feel fine now.", exampleVi: "Cảm ơn bạn đã hỏi, giờ tớ thấy khỏe rồi.", riddle: "Feeling well and happy." },
+      { word: "better", ipa: "/ˈbet.ər/", meaning: "khỏe hơn / tốt hơn", emoji: "💪", example: "Rest more and you will feel better soon.", exampleVi: "Nghỉ ngơi thêm rồi bạn sẽ sớm khỏe hơn.", riddle: "More well or of higher quality than before." },
+      { word: "tired", ipa: "/ˈtaɪəd/", meaning: "mệt mỏi", emoji: "😴", example: "We were tired after the long hike.", exampleVi: "Chúng tớ mệt sau chuyến đi bộ đường dài.", riddle: "Feeling that you need sleep or rest." },
+      { word: "sleep", ipa: "/sliːp/", meaning: "ngủ / giấc ngủ", emoji: "💤", example: "Children need eight to ten hours of sleep.", exampleVi: "Trẻ em cần ngủ tám đến mười tiếng.", riddle: "To rest with your eyes closed at night." },
+      { word: "back", ipa: "/bæk/", meaning: "cái lưng / phía sau", emoji: "🔙", example: "My back hurts from carrying a heavy box.", exampleVi: "Lưng tớ đau vì mang chiếc thùng nặng.", riddle: "The part of your body between your neck and waist." },
+      { word: "neck", ipa: "/nek/", meaning: "cái cổ", emoji: "🦒", example: "Giraffes have very long necks.", exampleVi: "Hươu cao cổ có chiếc cổ rất dài.", riddle: "The part of the body that joins the head to the shoulders." },
+      { word: "shoulder", ipa: "/ˈʃəʊl.dər/", meaning: "bờ vai", emoji: "🏋️", example: "He carried the backpack on one shoulder.", exampleVi: "Cậu ấy đeo ba-lô trên một bên vai.", riddle: "The part of the body where each arm joins the neck." },
+      { word: "stomach", ipa: "/ˈstʌm.ək/", meaning: "cái bụng / dạ dày", emoji: "🫃", example: "Food goes into your stomach when you eat.", exampleVi: "Thức ăn đi vào dạ dày khi bạn ăn.", riddle: "The part of your body where food goes after you swallow it." },
+      { word: "tooth", ipa: "/tuːθ/", meaning: "cái răng", emoji: "🦷", example: "Brush your teeth twice a day.", exampleVi: "Đánh răng hai lần mỗi ngày nhé.", riddle: "One of the hard white things in your mouth used for biting." },
+      { word: "beard", ipa: "/bɪəd/", meaning: "bộ râu quai nón", emoji: "🧔", example: "Grandpa has a white beard and moustache.", exampleVi: "Ông có bộ râu trắng và ria mép.", riddle: "Hair that grows on a man's chin and cheeks." },
+      { word: "moustache", ipa: "/məˈstɑːʃ/", meaning: "ria mép", emoji: "🥸", example: "The actor has a neat moustache.", exampleVi: "Nam diễn viên có bộ ria mép gọn gàng.", riddle: "Hair that grows above a man's upper lip." },
+      { word: "strong", ipa: "/strɒŋ/", meaning: "khỏe mạnh / mạnh mẽ", emoji: "🦾", example: "Eating well and exercising make you strong.", exampleVi: "Ăn uống tốt và tập thể dục giúp bạn khỏe mạnh.", riddle: "Having great physical power or good health." },
+      { word: "weak", ipa: "/wiːk/", meaning: "yếu / yếu ớt", emoji: "🪫", example: "He felt weak after having a fever.", exampleVi: "Cậu ấy thấy yếu người sau khi bị sốt.", riddle: "Not strong; having little energy." }
     ]
   },
   {
-    "id": "adjectives_adverbs_misc_movers",
-    "name": "Tính từ, Trạng từ & Từ nối Movers",
-    "en": "Adjectives, Adverbs & Connectors",
-    "icon": "✨",
-    "color": "#ec4899",
-    "words": [
-      {
-        "word": "above",
-        "ipa": "/əˈbʌv/",
-        "meaning": "ở phía trên",
-        "emoji": "⬆️",
-        "example": "There is a colourful kite flying above the trees.",
-        "riddle": "In or to a higher position than something else."
-      },
-      {
-        "word": "after",
-        "ipa": "/ˈɑːf.tər/",
-        "meaning": "sau / sau khi",
-        "emoji": "⏭️",
-        "example": "We play football in the yard after school.",
-        "riddle": "Following in time or place."
-      },
-      {
-        "word": "always",
-        "ipa": "/ˈɔːl.weɪz/",
-        "meaning": "luôn luôn",
-        "emoji": "🔁",
-        "example": "I always brush my teeth before going to bed.",
-        "riddle": "At all times; every time."
-      },
-      {
-        "word": "badly",
-        "ipa": "/ˈbæd.li/",
-        "meaning": "tệ / kém / nặng",
-        "emoji": "👎",
-        "example": "He hurt his leg badly when he fell off his bike.",
-        "riddle": "In a poor, incorrect, or serious way."
-      },
-      {
-        "word": "because",
-        "ipa": "/bɪˈkɒz/",
-        "meaning": "bởi vì",
-        "emoji": "🔗",
-        "example": "I stayed home because I had a bad cold.",
-        "riddle": "Used to give the reason for something."
-      },
-      {
-        "word": "below",
-        "ipa": "/bɪˈləʊ/",
-        "meaning": "ở phía dưới",
-        "emoji": "⬇️",
-        "example": "We could see the small boats in the harbour below us.",
-        "riddle": "In or to a lower position than something else."
-      },
-      {
-        "word": "best",
-        "ipa": "/best/",
-        "meaning": "tốt nhất / giỏi nhất",
-        "emoji": "🥇",
-        "example": "Strawberry ice cream is my best flavour!",
-        "riddle": "Of the highest quality or most liked."
-      },
-      {
-        "word": "better",
-        "ipa": "/ˈbet.ər/",
-        "meaning": "tốt hơn / giỏi hơn",
-        "emoji": "📈",
-        "example": "Anna can draw better than I can.",
-        "riddle": "More good or skilful than someone or something else."
-      },
-      {
-        "word": "careful",
-        "ipa": "/ˈkeə.fəl/",
-        "meaning": "cẩn thận",
-        "emoji": "🧐",
-        "example": "Be careful with that hot bowl of soup.",
-        "riddle": "Thinking about what you are doing so you don't make mistakes or get hurt."
-      },
-      {
-        "word": "carefully",
-        "ipa": "/ˈkeə.fəl.i/",
-        "meaning": "một cách cẩn thận",
-        "emoji": "✍️",
-        "example": "Please read the story carefully before answering the questions.",
-        "riddle": "With great attention so as not to make a mistake or cause damage."
-      },
-      {
-        "word": "difficult",
-        "ipa": "/ˈdɪf.ɪ.kəlt/",
-        "meaning": "khó",
-        "emoji": "🧩",
-        "example": "That puzzle was difficult, but we solved it together.",
-        "riddle": "Hard to do, understand, or deal with."
-      },
-      {
-        "word": "easy",
-        "ipa": "/ˈiː.zi/",
-        "meaning": "dễ dàng",
-        "emoji": "😊",
-        "example": "This English song is easy to sing.",
-        "riddle": "Not difficult to do or understand."
-      },
-      {
-        "word": "exciting",
-        "ipa": "/ɪkˈsaɪ.tɪŋ/",
-        "meaning": "thú vị / hào hứng",
-        "emoji": "🎢",
-        "example": "Going to the amusement park was very exciting.",
-        "riddle": "Making you feel happy, interested, and full of energy."
-      },
-      {
-        "word": "famous",
-        "ipa": "/ˈfeɪ.məs/",
-        "meaning": "nổi tiếng",
-        "emoji": "🌟",
-        "example": "That artist is famous for painting sea animals.",
-        "riddle": "Known about by many people."
-      },
-      {
-        "word": "fat",
-        "ipa": "/fæt/",
-        "meaning": "mập / béo / dày",
-        "emoji": "🐷",
-        "example": "A fat cat was sleeping near the warm fireplace.",
-        "riddle": "Having a lot of flesh or body weight."
-      },
-      {
-        "word": "loud",
-        "ipa": "/laʊd/",
-        "meaning": "to / ồn ào",
-        "emoji": "🔊",
-        "example": "The music at the party was very loud.",
-        "riddle": "Making a lot of noise; easy to hear from far away."
-      },
-      {
-        "word": "loudly",
-        "ipa": "/ˈlaʊd.li/",
-        "meaning": "một cách to tiếng",
-        "emoji": "📣",
-        "example": "The parrot shouted loudly when someone came in.",
-        "riddle": "With a lot of sound or noise."
-      },
-      {
-        "word": "never",
-        "ipa": "/ˈnev.ər/",
-        "meaning": "không bao giờ",
-        "emoji": "🚫",
-        "example": "I never eat food that has fallen on the floor.",
-        "riddle": "Not ever; at no time."
-      },
-      {
-        "word": "often",
-        "ipa": "/ˈɒf.ən/",
-        "meaning": "thường xuyên",
-        "emoji": "🗓️",
-        "example": "We often go for a walk in the park on Sundays.",
-        "riddle": "Many times; frequently."
-      },
-      {
-        "word": "quick",
-        "ipa": "/kwɪk/",
-        "meaning": "nhanh",
-        "emoji": "⚡",
-        "example": "Let's have a quick snack before the movie starts.",
-        "riddle": "Fast; taking only a short time."
-      },
-      {
-        "word": "quickly",
-        "ipa": "/ˈkwɪk.li/",
-        "meaning": "một cách nhanh chóng",
-        "emoji": "🏃",
-        "example": "The rabbit ran quickly into the bushes.",
-        "riddle": "At a fast speed or in a short time."
-      },
-      {
-        "word": "quiet",
-        "ipa": "/ˈkwaɪ.ət/",
-        "meaning": "yên tĩnh / ít nói",
-        "emoji": "🤫",
-        "example": "Please be quiet because the baby is sleeping.",
-        "riddle": "Making very little or no noise."
-      },
-      {
-        "word": "quietly",
-        "ipa": "/ˈkwaɪ.ət.li/",
-        "meaning": "một cách yên tĩnh / khẽ khàng",
-        "emoji": "🐾",
-        "example": "We walked quietly so we wouldn't wake anyone.",
-        "riddle": "With very little or no noise."
-      },
-      {
-        "word": "safe",
-        "ipa": "/seɪf/",
-        "meaning": "an toàn",
-        "emoji": "🛡️",
-        "example": "It is safe to cross the road at the zebra crossing.",
-        "riddle": "Protected from danger, harm, or loss."
-      },
-      {
-        "word": "slow",
-        "ipa": "/sləʊ/",
-        "meaning": "chậm",
-        "emoji": "🐢",
-        "example": "A snail is very slow compared to a horse.",
-        "riddle": "Moving or happening at a low speed, not fast."
-      },
-      {
-        "word": "slowly",
-        "ipa": "/ˈsləʊ.li/",
-        "meaning": "một cách chậm rãi",
-        "emoji": "🐌",
-        "example": "The old man walked slowly down the path.",
-        "riddle": "At a low speed; not quickly."
-      },
-      {
-        "word": "sometimes",
-        "ipa": "/ˈsʌm.taɪmz/",
-        "meaning": "thỉnh thoảng / đôi khi",
-        "emoji": "🌤️",
-        "example": "I sometimes ride my scooter to the library.",
-        "riddle": "On some occasions, not always and not never."
-      },
-      {
-        "word": "strong",
-        "ipa": "/strɒŋ/",
-        "meaning": "khỏe mạnh / mạnh mẽ",
-        "emoji": "💪",
-        "example": "Elephants are very strong and can lift heavy logs.",
-        "riddle": "Having great physical power or force."
-      },
-      {
-        "word": "thin",
-        "ipa": "/θɪn/",
-        "meaning": "gầy / mỏng",
-        "emoji": "📏",
-        "example": "She wore a thin jacket because the afternoon was warm.",
-        "riddle": "Having little width or thickness, or not fat."
-      },
-      {
-        "word": "weak",
-        "ipa": "/wiːk/",
-        "meaning": "yếu ớt",
-        "emoji": "🪫",
-        "example": "The little puppy felt weak before it drank warm milk.",
-        "riddle": "Not physically strong or powerful."
-      },
-      {
-        "word": "well",
-        "ipa": "/wel/",
-        "meaning": "giỏi / tốt / khỏe",
-        "emoji": "👏",
-        "example": "My brother can play the guitar very well.",
-        "riddle": "In a good, skilful, or successful way, or in good health."
-      },
-      {
-        "word": "worst",
-        "ipa": "/wɜːst/",
-        "meaning": "tệ nhất",
-        "emoji": "⛈️",
-        "example": "Yesterday was the worst day for a picnic because of the storm.",
-        "riddle": "Of the lowest quality or most unpleasant."
-      }
+    id: "clothes_shopping",
+    name: "Trang phục & Mua sắm",
+    en: "Clothes & Shopping",
+    icon: "🛍️",
+    words: [
+      { word: "sweater", ipa: "/ˈswet.ər/", meaning: "áo len dài tay", emoji: "🧶", example: "Put on a warm sweater in winter.", exampleVi: "Mặc áo len ấm vào mùa đông nhé.", riddle: "A warm knitted top worn on the upper body." },
+      { word: "coat", ipa: "/kəʊt/", meaning: "áo khoác ngoài", emoji: "🧥", example: "Button your coat before going out in the rain.", exampleVi: "Cài cúc áo khoác trước khi ra mưa nhé.", riddle: "A warm outer piece of clothing worn over other clothes." },
+      { word: "scarf", ipa: "/skɑːf/", meaning: "khăn quàng cổ", emoji: "🧣", example: "She wrapped a striped scarf around her neck.", exampleVi: "Cô ấy quàng chiếc khăn sọc quanh cổ.", riddle: "A piece of cloth worn around the neck for warmth or style." },
+      { word: "glove", ipa: "/ɡlʌv/", meaning: "găng tay", emoji: "🧤", example: "Wear gloves when playing in the snow.", exampleVi: "Đeo găng tay khi chơi tuyết nhé.", riddle: "A covering for the hand with a separate part for each finger." },
+      { word: "boot", ipa: "/buːt/", meaning: "ủng / giày cao cổ", emoji: "🥾", example: "Wear rain boots in muddy fields.", exampleVi: "Đi ủng đi mưa ở cánh đồng bùn nhé.", riddle: "A strong shoe that covers the foot and ankle." },
+      { word: "glasses", ipa: "/ˈɡlɑː.sɪz/", meaning: "kính mắt", emoji: "👓", example: "He wears glasses to read the board.", exampleVi: "Cậu ấy đeo kính để đọc bảng.", riddle: "Two lenses in a frame worn in front of eyes to help see better." },
+      { word: "sunglasses", ipa: "/ˈsʌnˌɡlɑː.sɪz/", meaning: "kính râm / kính mát", emoji: "🕶️", example: "Wear sunglasses when the sun is bright.", exampleVi: "Đeo kính râm khi nắng chói nhé.", riddle: "Dark glasses worn to protect eyes from bright sunlight." },
+      { word: "umbrella", ipa: "/ʌmˈbrel.ə/", meaning: "cái ô / cây dù", emoji: "☂️", example: "Do not forget your umbrella today.", exampleVi: "Hôm nay đừng quên mang ô nhé.", riddle: "Something you open to keep rain or sun off yourself." },
+      { word: "shop", ipa: "/ʃɒp/", meaning: "cửa hàng / đi mua sắm", emoji: "🏪", example: "There is a toy shop near the park.", exampleVi: "Có một cửa hàng đồ chơi gần công viên.", riddle: "A place where you buy things." },
+      { word: "market_stall", ipa: "/stɔːl/", meaning: "quầy hàng / sạp hàng", emoji: "🎪", example: "We bought fresh apples at the fruit stall.", exampleVi: "Chúng tớ mua táo tươi ở quầy trái cây.", riddle: "A small open table or stand where goods are sold." },
+      { word: "money", ipa: "/ˈmʌn.i/", meaning: "tiền", emoji: "💵", example: "Save some money in your piggy bank.", exampleVi: "Tiết kiệm chút tiền vào lợn đất nhé.", riddle: "Coins and notes used to buy things." },
+      { word: "coin", ipa: "/kɔɪn/", meaning: "đồng xu", emoji: "🪙", example: "I have two silver coins in my pocket.", exampleVi: "Tớ có hai đồng xu bạc trong túi.", riddle: "A small flat round piece of metal money." },
+      { word: "pay", ipa: "/peɪ/", meaning: "trả tiền / thanh toán", emoji: "💳", example: "Dad paid for the books at the counter.", exampleVi: "Bố thanh toán tiền sách ở quầy.", riddle: "To give money for goods or services." },
+      { word: "buy", ipa: "/baɪ/", meaning: "mua", emoji: "🛍️", example: "We want to buy a present for Mum.", exampleVi: "Chúng tớ muốn mua quà cho mẹ.", riddle: "To get something by paying money for it." },
+      { word: "sell", ipa: "/sel/", meaning: "bán", emoji: "🏷️", example: "That shop sells school uniforms.", exampleVi: "Cửa hàng đó bán đồng phục học sinh.", riddle: "To give something to someone in exchange for money." },
+      { word: "expensive", ipa: "/ɪkˈspen.sɪv/", meaning: "đắt tiền", emoji: "💎", example: "That big robot is too expensive.", exampleVi: "Con rô-bốt lớn kia đắt quá.", riddle: "Costing a lot of money." },
+      { word: "cheap", ipa: "/tʃiːp/", meaning: "rẻ", emoji: "🏷️", example: "These pencils are cheap and good.", exampleVi: "Những chiếc bút chì này rẻ và tốt.", riddle: "Not costing much money." },
+      { word: "striped", ipa: "/straɪpt/", meaning: "có sọc / vằn", emoji: "🦓", example: "She wore a blue and white striped shirt.", exampleVi: "Cô ấy mặc áo sơ-mi sọc xanh trắng.", riddle: "Having lines or bands of colour." },
+      { word: "spotted", ipa: "/ˈspɒt.ɪd/", meaning: "có chấm bi / đốm", emoji: "🐞", example: "I like that red dress with white spots.", exampleVi: "Tớ thích chiếc váy đỏ chấm bi trắng kia.", riddle: "Covered with small round marks or dots." },
+      { word: "curly", ipa: "/ˈkɜː.li/", meaning: "xoăn / quăn", emoji: " curls", example: "My little sister has curly brown hair.", exampleVi: "Em gái tớ có mái tóc nâu xoăn.", riddle: "Having curls or waves, especially hair." },
+      { word: "straight", ipa: "/streɪt/", meaning: "thẳng", emoji: "📏", example: "Draw a straight line with your ruler.", exampleVi: "Kẻ một đường thẳng bằng thước kẻ nhé.", riddle: "Not curved or bent." },
+      { word: "loud", ipa: "/laʊd/", meaning: "to / ồn ào", emoji: "🔊", example: "The music at the parade was very loud.", exampleVi: "Nhạc ở cuộc diễu hành rất to.", riddle: "Making a lot of noise; easy to hear." },
+      { word: "quiet", ipa: "/ˈkwaɪ.ət/", meaning: "yên tĩnh / khẽ", emoji: "🤫", example: "Please be quiet in the reading room.", exampleVi: "Làm ơn giữ yên lặng trong phòng đọc nhé.", riddle: "Making very little or no noise." },
+      { word: "careful", ipa: "/ˈkeə.fəl/", meaning: "/ cẩn thận", emoji: "⚠️", example: "Be careful when crossing the wet floor.", exampleVi: "Cẩn thận khi bước qua sàn ướt nhé.", riddle: "Paying close attention to avoid mistakes or danger." },
+      { word: "quick", ipa: "/kwɪk/", meaning: "nhanh nhẹn", emoji: "⚡", example: "A cheetah is very quick.", exampleVi: "Báo gê-pa chạy rất nhanh.", riddle: "Fast; taking very little time." }
+    ]
+  },
+  {
+    id: "school_hobbies",
+    name: "Trường học & Sở thích",
+    en: "School & Hobbies",
+    icon: "🎨",
+    words: [
+      { word: "comic", ipa: "/ˈkɒm.ɪk/", meaning: "truyện tranh", emoji: "🗯️", example: "I read a funny comic book before sleep.", exampleVi: "Tớ đọc một cuốn truyện tranh vui trước khi ngủ.", riddle: "A magazine or book with stories told in pictures." },
+      { word: "movie", ipa: "/ˈmuː.vi/", meaning: "phim điện ảnh", emoji: "🎥", example: "We watched an adventure movie on Friday.", exampleVi: "Chúng tớ xem phim phiêu lưu vào thứ Sáu.", riddle: "A film or story shown on a screen." },
+      { word: "cartoon", ipa: "/kɑːˈtuːn/", meaning: "phim hoạt hình", emoji: "🐭", example: "My little brother loves animal cartoons.", exampleVi: "Em trai tớ thích phim hoạt hình động vật.", riddle: "An animated film or drawing that is often funny." },
+      { word: "band", ipa: "/bænd/", meaning: "ban nhạc / dải băng", emoji: "🎸", example: "Our school band plays at concerts.", exampleVi: "Ban nhạc trường tớ biểu diễn ở các buổi hòa nhạc.", riddle: "A small group of musicians playing together." },
+      { word: "concert", ipa: "/ˈkɒn.sət/", meaning: "buổi hòa nhạc", emoji: "🎼", example: "We went to a children's music concert.", exampleVi: "Chúng tớ đi xem buổi hòa nhạc thiếu nhi.", riddle: "A public performance of music." },
+      { word: "circus", ipa: "/ˈsɜː.kəs/", meaning: "rạp xiếc", emoji: "🎪", example: "Clowns and acrobats perform at the circus.", exampleVi: "Hề và diễn viên nhào lộn biểu diễn ở rạp xiếc.", riddle: "A show with clowns, acrobats, and tricks." },
+      { word: "party", ipa: "/ˈpɑː.ti/", meaning: "bữa tiệc", emoji: "🥳", example: "We played games at the class party.", exampleVi: "Chúng tớ chơi trò chơi ở tiệc của lớp.", riddle: "A fun gathering of people to celebrate or enjoy time together." },
+      { word: "present", ipa: "/ˈprez.ənt/", meaning: "món quà / hiện tại", emoji: "🎁", example: "She opened her birthday present happily.", exampleVi: "Cô ấy vui vẻ mở món quà sinh nhật.", riddle: "Something you give to someone on a special day." },
+      { word: "holiday", ipa: "/ˈhɒl.ə.deɪ/", meaning: "kỳ nghỉ", emoji: "🧳", example: "Where did you go for your summer holiday?", exampleVi: "Kỳ nghỉ hè bạn đã đi đâu?", riddle: "A time of rest and travel away from school or work." },
+      { word: "picnic", ipa: "/ˈpɪk.nɪk/", meaning: "buổi dã ngoại", emoji: "🧺", example: "We had a picnic under the big tree.", exampleVi: "Chúng tớ ăn dã ngoại dưới gốc cây lớn.", riddle: "A meal eaten outdoors, often in a park or countryside." },
+      { word: "camping", ipa: "/ˈkæm.pɪŋ/", meaning: "đi cắm trại", emoji: "⛺", example: "Camping in the mountains is exciting.", exampleVi: "Cắm trại trên núi thật thú vị.", riddle: "Staying in a tent outdoors." },
+      { word: "fishing", ipa: "/ˈfɪʃ.ɪŋ/", meaning: "câu cá", emoji: "🎣", example: "Dad and I went fishing by the river.", exampleVi: "Bố và tớ đi câu cá bên bờ sông.", riddle: "Trying to catch fish with a rod and line." },
+      { word: "sailing", ipa: "/ˈseɪ.lɪŋ/", meaning: "chèo thuyền buồm", emoji: "⛵", example: "Sailing is fun when there is a gentle breeze.", exampleVi: "Đi thuyền buồm thật vui khi có làn gió nhẹ.", riddle: "Travelling in a boat with sails." },
+      { word: "skating", ipa: "/ˈskeɪ.tɪŋ/", meaning: "trượt băng / trượt ván", emoji: "🛼", example: "Ice skating needs good balance.", exampleVi: "Trượt băng cần giữ thăng bằng tốt.", riddle: "Gliding on ice or rollerskates." },
+      { word: "swimming", ipa: "/ˈswɪm.ɪŋ/", meaning: "bơi lội", emoji: "🏊", example: "Swimming is great exercise for the whole body.", exampleVi: "Bơi lội là bài tập tuyệt vời cho toàn thân.", riddle: "Moving through water using your arms and legs." },
+      { word: "homework", ipa: "/ˈhəʊm.wɜːk/", meaning: "bài tập về nhà", emoji: "📝", example: "I finish my homework before dinner.", exampleVi: "Tớ làm xong bài tập về nhà trước bữa tối.", riddle: "School work that a teacher gives you to do at home." },
+      { word: "project", ipa: "/ˈprɒdʒ.ekt/", meaning: "dự án / bài dự án", emoji: "📊", example: "Our group made a poster for the science project.", exampleVi: "Nhóm tớ làm áp phích cho dự án khoa học.", riddle: "A piece of school or research work on a topic." },
+      { word: "lesson", ipa: "/ˈles.ən/", meaning: "bài học / tiết học", emoji: "📖", example: "Today's English lesson is about animals.", exampleVi: "Bài học tiếng Anh hôm nay về động vật.", riddle: "A period of teaching or learning a subject." },
+      { word: "mistake", ipa: "/mɪˈsteɪk/", meaning: "lỗi sai", emoji: "✏️", example: "Everyone makes mistakes when learning something new.", exampleVi: "Ai cũng mắc lỗi khi học điều mới.", riddle: "Something you do or write that is not correct." },
+      { word: "idea", ipa: "/aɪˈdɪə/", meaning: "ý tưởng", emoji: "💡", example: "That is a brilliant idea for the game!", exampleVi: "Đó là một ý tưởng tuyệt vời cho trò chơi!", riddle: "A plan, thought, or suggestion in your mind." },
+      { word: "hobby", ipa: "/ˈhɒb.i/", meaning: "sở thích", emoji: "🧩", example: "Drawing is my favourite hobby.", exampleVi: "Vẽ là sở thích yêu thích của tớ.", riddle: "An activity you enjoy doing in your free time." },
+      { word: "team", ipa: "/tiːm/", meaning: "đội / nhóm", emoji: "⚽", example: "Our football team won the match.", exampleVi: "Đội bóng của chúng tớ đã thắng trận.", riddle: "A group of people working or playing together." },
+      { word: "winner", ipa: "/ˈwɪn.ər/", meaning: "người chiến thắng", emoji: "🏆", example: "The winner got a gold medal.", exampleVi: "Người chiến thắng nhận được huy chương vàng.", riddle: "The person or team that comes first in a game or race." },
+      { word: "prize", ipa: "/praɪz/", meaning: "giải thưởng", emoji: "🥇", example: "She won a prize for the best drawing.", exampleVi: "Cô ấy giành giải thưởng cho bức vẽ đẹp nhất.", riddle: "Something given to someone who wins a contest." },
+      { word: "map", ipa: "/mæp/", meaning: "bản đồ", emoji: "🗺️", example: "Use the map to find the treasure.", exampleVi: "Dùng bản đồ để tìm kho báu nhé.", riddle: "A drawing of an area showing roads, rivers, or places." }
+    ]
+  },
+  {
+    id: "transport_travel",
+    name: "Giao thông & Du lịch",
+    en: "Transport & Travel",
+    icon: "✈️",
+    words: [
+      { word: "helicopter", ipa: "/ˈhel.ɪˌkɒp.tər/", meaning: "máy bay trực thăng", emoji: "🚁", example: "The helicopter landed near the hospital.", exampleVi: "Trực thăng hạ cánh gần bệnh viện.", riddle: "An aircraft with spinning blades on top that can fly straight up." },
+      { word: "lorry", ipa: "/ˈlɒr.i/", meaning: "xe tải", emoji: "🚚", example: "A big lorry carried fruit to the market.", exampleVi: "Một chiếc xe tải lớn chở trái cây tới chợ.", riddle: "A large vehicle used for carrying heavy goods by road." },
+      { word: "tractor", ipa: "/ˈtræk.tər/", meaning: "máy kéo nông trại", emoji: "🚜", example: "The farmer drives a green tractor.", exampleVi: "Người nông dân lái chiếc máy kéo màu xanh.", riddle: "A strong vehicle with big wheels used on farms." },
+      { word: "motorbike", ipa: "/ˈməʊ.tə.baɪk/", meaning: "xe máy", emoji: "🏍️", example: "Ride a motorbike carefully and wear a helmet.", exampleVi: "Đi xe máy cẩn thận và đội mũ bảo hiểm nhé.", riddle: "A two-wheeled vehicle with an engine." },
+      { word: "scooter", ipa: "/ˈskuː.tər/", meaning: "xe tay ga / xe trượt chân", emoji: "🛴", example: "He rides his scooter to the park.", exampleVi: "Cậu ấy đi xe trượt tới công viên.", riddle: "A small two-wheeled vehicle you stand on or ride." },
+      { word: "ticket", ipa: "/ˈtɪk.ɪt/", meaning: "vé", emoji: "🎟️", example: "Buy a train ticket before getting on.", exampleVi: "Mua vé tàu trước khi lên tàu nhé.", riddle: "A small piece of paper or pass showing you paid to travel or enter." },
+      { word: "passenger", ipa: "/ˈpæs.ɪn.dʒər/", meaning: "hành khách", emoji: "🧳", example: "Passengers waited on the train platform.", exampleVi: "Hành khách đợi ở sân ga.", riddle: "A person travelling in a bus, train, plane, or car." },
+      { word: "driver", ipa: "/ˈdraɪ.vər/", meaning: "tài xế / người lái", emoji: "🧑‍✈️", example: "The bus driver smiled at the children.", exampleVi: "Bác tài xế xe buýt mỉm cười với bọn trẻ.", riddle: "A person who drives a vehicle." },
+      { word: "pilot", ipa: "/ˈpaɪ.lət/", meaning: "phi công", emoji: "👨‍✈️", example: "The pilot flew the plane safely.", exampleVi: "Phi công lái máy bay hạ cánh an toàn.", riddle: "A person who flies an aeroplane or helicopter." },
+      { word: "airport", ipa: "/ˈeə.pɔːt/", meaning: "sân bay", emoji: "🛫", example: "We arrived at the airport two hours early.", exampleVi: "Chúng tớ tới sân bay sớm hai tiếng.", riddle: "A place where aeroplanes take off and land." },
+      { word: "journey", ipa: "/ˈdʒɜː.ni/", meaning: "chuyến đi / hành trình", emoji: "🧭", example: "Our train journey took three hours.", exampleVi: "Chuyến đi tàu của chúng tớ mất ba tiếng.", riddle: "Travelling from one place to another." },
+      { word: "trip", ipa: "/trɪp/", meaning: "chuyến đi chơi / chuyến đi ngắn", emoji: "🎒", example: "We had a great class trip to the museum.", exampleVi: "Chúng tớ có chuyến tham quan bảo tàng tuyệt vời.", riddle: "A short journey somewhere, often for fun or learning." },
+      { word: "arrive", ipa: "/əˈraɪv/", meaning: "tới nơi / đến", emoji: "🏁", example: "The bus arrived at school at seven.", exampleVi: "Xe buýt tới trường lúc bảy giờ.", riddle: "To reach a place at the end of a journey." },
+      { word: "leave", ipa: "/liːv/", meaning: "rời đi / để lại", emoji: "🚪", example: "We leave home at seven-thirty every day.", exampleVi: "Mỗi ngày chúng tớ rời nhà lúc bảy rưỡi.", riddle: "To go away from a place or person." },
+      { word: "stop", ipa: "/stɒp/", meaning: "dừng lại / trạm dừng", emoji: "🛑", example: "The bus stops right outside our school.", exampleVi: "Xe buýt dừng ngay trước cổng trường tớ.", riddle: "To no longer move or happen." },
+      { word: "travel", ipa: "/ˈtræv.əl/", meaning: "đi du lịch / di chuyển", emoji: "🌍", example: "They love to travel to new countries.", exampleVi: "Họ thích đi du lịch tới các quốc gia mới.", riddle: "To go from one place to another, often far away." },
+      { word: "map_route", ipa: "/ruːt/", meaning: "tuyến đường / lộ trình", emoji: "🛤️", example: "This is the fastest route to the beach.", exampleVi: "Đây là tuyến đường nhanh nhất ra biển.", riddle: "A way or path taken to get from one place to another." },
+      { word: "far", ipa: "/fɑːr/", meaning: "xa", emoji: "🔭", example: "Is the supermarket far from here?", exampleVi: "Siêu thị có xa chỗ này không?", riddle: "At a great distance away." },
+      { word: "near", ipa: "/nɪər/", meaning: "gần", emoji: "📍", example: "The post office is near the bank.", exampleVi: "Bưu điện ở gần ngân hàng.", riddle: "Close to someone or something." },
+      { word: "above", ipa: "/əˈbʌv/", meaning: "ở phía trên", emoji: "⬆️", example: "A bird is flying above the trees.", exampleVi: "Một chú chim đang bay phía trên ngọn cây.", riddle: "In or to a higher place than something else." },
+      { word: "below", ipa: "/bɪˈləʊ/", meaning: "ở phía dưới", emoji: "⬇️", example: "The valley is below the mountain peak.", exampleVi: "Thung lũng nằm phía dưới đỉnh núi.", riddle: "In or to a lower place than something else." },
+      { word: "opposite", ipa: "/ˈɒp.ə.zɪt/", meaning: "đối diện", emoji: "↔️", example: "The park is opposite our house.", exampleVi: "Công viên nằm đối diện nhà tớ.", riddle: "Facing someone or something on the other side." },
+      { word: "round", ipa: "/raʊnd/", meaning: "tròn / vòng quanh", emoji: "⭕", example: "The earth goes round the sun.", exampleVi: "Trái đất quay quanh Mặt Trời.", riddle: "Shaped like a circle or ball." },
+      { word: "square_shape", ipa: "/skweər/", meaning: "hình vuông / ngay ngắn", emoji: "🟦", example: "A square has four equal sides.", exampleVi: "Hình vuông có bốn cạnh bằng nhau.", riddle: "Having four straight equal sides and four right angles." },
+      { word: "fast", ipa: "/fɑːst/", meaning: "nhanh", emoji: "🏎️", example: "Trains can travel very fast.", exampleVi: "Tàu hỏa có thể chạy rất nhanh.", riddle: "Moving or happening quickly." }
+    ]
+  },
+  {
+    id: "feelings_people",
+    name: "Cảm xúc & Con người",
+    en: "Feelings & People",
+    icon: "😊",
+    words: [
+      { word: "afraid", ipa: "/əˈfreɪd/", meaning: "sợ hãi", emoji: "😨", example: "Do not be afraid of the dark.", exampleVi: "Đừng sợ bóng tối nhé.", riddle: "Feeling fear or worry that something bad might happen." },
+      { word: "angry", ipa: "/ˈæŋ.ɡri/", meaning: "tức giận", emoji: "😠", example: "Why does that boy look angry?", exampleVi: "Sao cậu bé kia trông có vẻ tức giận?", riddle: "Feeling strong annoyance or displeasure." },
+      { word: "bored", ipa: "/bɔːd/", meaning: "buồn chán", emoji: "😒", example: "I am bored because it is raining all day.", exampleVi: "Tớ thấy chán vì trời mưa cả ngày.", riddle: "Feeling tired and unhappy because nothing interesting is happening." },
+      { word: "excited", ipa: "/ɪkˈsaɪ.tɪd/", meaning: "hào hứng / phấn khích", emoji: "🤩", example: "The kids are excited about the trip.", exampleVi: "Bọn trẻ hào hứng về chuyến đi.", riddle: "Feeling happy, eager, and full of energy." },
+      { word: "surprised", ipa: "/səˈpraɪzd/", meaning: "ngạc nhiên", emoji: "😮", example: "We were surprised by the birthday cake.", exampleVi: "Chúng tớ ngạc nhiên trước chiếc bánh sinh nhật.", riddle: "Feeling amazed because something unexpected happened." },
+      { word: "clever", ipa: "/ˈklev.ər/", meaning: "thông minh / khéo léo", emoji: "🧠", example: "Dolphins and crows are clever animals.", exampleVi: "Cá heo và quạ là những loài vật thông minh.", riddle: "Quick to learn and understand things." },
+      { word: "brave", ipa: "/breɪv/", meaning: "dũng cảm", emoji: "🦸", example: "Firefighters are very brave.", exampleVi: "Lính cứu hỏa rất dũng cảm.", riddle: "Ready to face danger or pain without showing fear." },
+      { word: "kind", ipa: "/kaɪnd/", meaning: "tử tế / tốt bụng", emoji: "💖", example: "It is kind to share your toys.", exampleVi: "Chia sẻ đồ chơi là việc tử tế.", riddle: "Friendly, generous, and caring toward others." },
+      { word: "polite", ipa: "/pəˈlaɪt/", meaning: "lễ phép / lịch sự", emoji: "🙏", example: "Saying 'please' and 'thank you' is polite.", exampleVi: "Nói 'làm ơn' và 'cảm ơn' là lịch sự.", riddle: "Having good manners and respecting others." },
+      { word: "rude", ipa: "/ruːd/", meaning: "thô lỗ / bất lịch sự", emoji: "🙅", example: "Interrupting people when they speak is rude.", exampleVi: "Ngắt lời người khác khi họ đang nói là thô lỗ.", riddle: "Not polite; showing poor manners." },
+      { word: "noisy", ipa: "/ˈnɔɪ.zi/", meaning: "ồn ào", emoji: "🥁", example: "The playground gets noisy at break time.", exampleVi: "Sân chơi trở nên ồn ào vào giờ ra chơi.", riddle: "Making a lot of noise." },
+      { word: "quiet_person", ipa: "/ˈkwaɪ.ət/", meaning: "trầm tính / ít nói", emoji: "🤫", example: "Our new classmate is very quiet.", exampleVi: "Bạn cùng lớp mới của tớ rất ít nói.", riddle: "Not talking much or making loud sounds." },
+      { word: "famous", ipa: "/ˈfeɪ.məs/", meaning: "nổi tiếng", emoji: "🌟", example: "That singer is famous around the world.", exampleVi: "Ca sĩ đó nổi tiếng khắp thế giới.", riddle: "Known and recognized by many people." },
+      { word: "friendly", ipa: "/ˈfrend.li/", meaning: "thân thiện", emoji: "🤗", example: "The shopkeeper gave us a friendly smile.", exampleVi: "Người bán hàng mỉm cười thân thiện với chúng tớ.", riddle: "Kind and pleasant to be with." },
+      { word: "funny", ipa: "/ˈfʌn.i/", meaning: "vui nhộn / buồn cười", emoji: "🤣", example: "My uncle tells really funny jokes.", exampleVi: "Chú tớ kể những câu chuyện cười thật vui.", riddle: "Making you smile or laugh." },
+      { word: "pirate", ipa: "/ˈpaɪ.rət/", meaning: "cướp biển", emoji: "🏴‍☠️", example: "The story is about a pirate looking for gold.", exampleVi: "Câu chuyện kể về cướp biển tìm vàng.", riddle: "A person who attacks ships at sea in stories." },
+      { word: "monster", ipa: "/ˈmɒn.stər/", meaning: "quái vật", emoji: "👾", example: "The friendly monster in the book had blue fur.", exampleVi: "Con quái vật thân thiện trong truyện có bộ lông xanh.", riddle: "An imaginary scary or strange creature." },
+      { word: "ghost", ipa: "/ɡəʊst/", meaning: "bóng ma", emoji: "👻", example: "They told ghost stories around the campfire.", exampleVi: "Họ kể chuyện ma quanh lửa trại.", riddle: "The spirit of a dead person in stories." },
+      { word: "witch", ipa: "/wɪtʃ/", meaning: "phù thủy", emoji: "🧙‍♀️", example: "In fairy tales, a witch sometimes rides a broom.", exampleVi: "Trong truyện cổ tích, phù thủy đôi khi cưỡi chổi.", riddle: "A woman with magic powers in stories." },
+      { word: "clown", ipa: "/klaʊn/", meaning: "chú hề", emoji: "🤡", example: "The clown had a red nose and big shoes.", exampleVi: "Chú hề có mũi đỏ và đôi giày to.", riddle: "A funny performer with painted face and bright clothes." },
+      { word: "superhero", ipa: "/ˈsuː.pəˌhɪə.rəʊ/", meaning: "siêu anh hùng", emoji: "🦸‍♂️", example: "The superhero helps people in trouble.", exampleVi: "Siêu anh hùng giúp đỡ mọi người gặp khó khăn.", riddle: "A character with special powers who helps others." },
+      { word: "parent", ipa: "/ˈpeər.ənt/", meaning: "cha hoặc mẹ", emoji: "👪", example: "Parents come to our school sports day.", exampleVi: "Bố mẹ tới dự ngày hội thể thao của trường tớ.", riddle: "A mother or father." },
+      { word: "grandparent", ipa: "/ˈɡræn.peər.ənt/", meaning: "ông hoặc bà", emoji: "👵", example: "My grandparents live in the countryside.", exampleVi: "Ông bà tớ sống ở vùng quê.", riddle: "The parent of your father or mother." },
+      { word: "cousin", ipa: "/ˈkʌz.ən/", meaning: "anh/chị/em họ", emoji: "👧", example: "My cousin is visiting us this weekend.", exampleVi: "Anh/chị/em họ tớ tới chơi cuối tuần này.", riddle: "A child of your aunt or uncle." },
+      { word: "uncle", ipa: "/ˈʌŋ.kəl/", meaning: "chú / cậu / bác trai", emoji: "👨", example: "Uncle Nam bought me a new football.", exampleVi: "Chú Nam mua cho tớ quả bóng đá mới.", riddle: "The brother of your mother or father, or your aunt's husband." }
+    ]
+  },
+  {
+    id: "home_objects",
+    name: "Đồ vật trong nhà",
+    en: "Home & Everyday Objects",
+    icon: "🛋️",
+    words: [
+      { word: "blanket", ipa: "/ˈblæŋ.kɪt/", meaning: "cái chăn", emoji: "🛌", example: "Pull the blanket up when you feel cold.", exampleVi: "Kéo chăn lên khi bạn thấy lạnh nhé.", riddle: "A warm cover used on a bed." },
+      { word: "pillow", ipa: "/ˈpɪl.əʊ/", meaning: "cái gối", emoji: "💤", example: "I rest my head on a soft pillow.", exampleVi: "Tớ gối đầu lên chiếc gối mềm.", riddle: "A soft cushion you rest your head on in bed." },
+      { word: "towel", ipa: "/ˈtaʊəl/", meaning: "cái khăn tắm / khăn lau", emoji: "🧻", example: "Dry your face with a clean towel.", exampleVi: "Lau khô mặt bằng khăn sạch nhé.", riddle: "A piece of cloth used for drying skin or dishes." },
+      { word: "toothbrush", ipa: "/ˈtuːθ.brʌʃ/", meaning: "bàn chải đánh răng", emoji: "🪥", example: "Put toothpaste on your toothbrush.", exampleVi: "Cho kem đánh răng lên bàn chải nhé.", riddle: "A small brush used for cleaning your teeth." },
+      { word: "toothpaste", ipa: "/ˈtuːθ.peɪst/", meaning: "kem đánh răng", emoji: " tube", example: "Mint toothpaste makes your breath fresh.", exampleVi: "Kem đánh răng bạc hà giúp hơi thở thơm mát.", riddle: "Paste put on a toothbrush to clean teeth." },
+      { word: "soap", ipa: "/səʊp/", meaning: "xà phòng", emoji: "🧼", example: "Use soap and water to wash your hands.", exampleVi: "Dùng xà phòng và nước để rửa tay nhé.", riddle: "Something used with water for washing and cleaning." },
+      { word: "shampoo", ipa: "/ʃæmˈpuː/", meaning: "dầu gội đầu", emoji: "🧴", example: "Wash your hair with mild shampoo.", exampleVi: "Gội đầu bằng dầu gội dịu nhẹ nhé.", riddle: "Liquid soap used for washing your hair." },
+      { word: "comb", ipa: "/kəʊm/", meaning: "cái lược", emoji: "🪮", example: "Comb your hair neatly before school.", exampleVi: "Chải tóc gọn gàng trước khi đi học nhé.", riddle: "A flat piece of plastic or metal with teeth for tidying hair." },
+      { word: "brush", ipa: "/brʌʃ/", meaning: "cái chổi / bàn chải / cọ vẽ", emoji: "🖌️", example: "Dip the paintbrush in yellow paint.", exampleVi: "Nhúng cọ vẽ vào màu vàng nhé.", riddle: "A tool with bristles used for cleaning, painting, or hair." },
+      { word: "bin", ipa: "/bɪn/", meaning: "thùng rác", emoji: "🗑️", example: "Throw waste paper into the bin.", exampleVi: "Vứt giấy vụn vào thùng rác nhé.", riddle: "A container for putting rubbish in." },
+      { word: "cage", ipa: "/keɪdʒ/", meaning: "cái lồng", emoji: "🐦", example: "Clean the bird's cage every week.", exampleVi: "Dọn lồng chim mỗi tuần nhé.", riddle: "A structure of bars or wires where birds or animals are kept." },
+      { word: "basket", ipa: "/ˈbɑː.skɪt/", meaning: "cái giỏ / rổ", emoji: "🧺", example: "We put apples in the picnic basket.", exampleVi: "Chúng tớ cho táo vào giỏ dã ngoại.", riddle: "A container made of woven strips used for carrying things." },
+      { word: "bottle_water", ipa: "/ˈbɒt.əl/", meaning: "bình nước", emoji: "🫗", example: "Refill your water bottle before class.", exampleVi: "Đổ đầy bình nước trước giờ học nhé.", riddle: "A container for carrying drinking water." },
+      { word: "key", ipa: "/kiː/", meaning: "chìa khóa", emoji: "🔑", example: "Put the front door key in your bag.", exampleVi: "Cất chìa khóa cửa trước vào cặp nhé.", riddle: "A metal piece shaped to open or lock a door." },
+      { word: "map_poster", ipa: "/ˈpəʊ.stər/", meaning: "tranh áp phích", emoji: "🖼️", example: "There is a space poster on my wall.", exampleVi: "Có một tấm áp phích không gian trên tường nhà tớ.", riddle: "A large printed picture put on a wall." },
+      { word: "CD", ipa: "/ˌsiːˈdiː/", meaning: "đĩa CD", emoji: "💿", example: "We listened to a song CD in the car.", exampleVi: "Chúng tớ nghe đĩa nhạc CD trên ô tô.", riddle: "A round disc that stores music, data, or films." },
+      { word: "DVD", ipa: "/ˌdiː.viːˈdiː/", meaning: "đĩa DVD", emoji: "📀", example: "We watched a cartoon DVD on Sunday.", exampleVi: "Chúng tớ xem đĩa hoạt hình DVD vào Chủ nhật.", riddle: "A disc used for storing video or movies." },
+      { word: "video", ipa: "/ˈvɪd.i.əʊ/", meaning: "video", emoji: "📹", example: "Let's make a short video of our dance.", exampleVi: "Cùng quay video ngắn về điệu nhảy của mình nhé.", riddle: "A moving picture recording with sound." },
+      { word: "internet", ipa: "/ˈɪn.tə.net/", meaning: "mạng Internet", emoji: "🌐", example: "We search for facts on the internet with Mum.", exampleVi: "Chúng tớ tìm thông tin trên mạng cùng mẹ.", riddle: "The worldwide network connecting computers." },
+      { word: "email", ipa: "/ˈiː.meɪl/", meaning: "thư điện tử / gửi email", emoji: "📧", example: "I sent an email to my pen friend.", exampleVi: "Tớ gửi email cho người bạn qua thư.", riddle: "A message sent electronically over a computer network." },
+      { word: "lift_home", ipa: "/stɑːr/", meaning: "cầu thang bộ", emoji: "🪜", example: "Walk up the stairs to the second floor.", exampleVi: "Đi bộ lên cầu thang tới tầng hai nhé.", riddle: "Steps inside a building that go from one floor to another." },
+      { word: "roof", ipa: "/ruːf/", meaning: "mái nhà", emoji: "🏠", example: "Snow covered the roof of the cabin.", exampleVi: "Tuyết phủ kín mái căn nhà gỗ.", riddle: "The covering on top of a building." },
+      { word: "wall", ipa: "/wɔːl/", meaning: "bức tường", emoji: "🧱", example: "We hung our paintings on the wall.", exampleVi: "Chúng tớ treo tranh vẽ lên tường.", riddle: "A vertical structure that divides or encloses a room or space." },
+      { word: "floor", ipa: "/flɔːr/", meaning: "sàn nhà / tầng", emoji: "⬜", example: "Please do not leave toys on the floor.", exampleVi: "Đừng để đồ chơi bừa trên sàn nhé.", riddle: "The surface you walk on inside a room, or a level of a building." },
+      { word: "door", ipa: "/dɔːr/", meaning: "cánh cửa", emoji: "🚪", example: "Close the door quietly when you leave.", exampleVi: "Đóng cửa nhẹ nhàng khi bạn ra ngoài nhé.", riddle: "A hinged barrier you open and close to enter or exit." }
+    ]
+  },
+  {
+    id: "time_numbers",
+    name: "Thời gian, Số đếm & Vị trí",
+    en: "Time, Numbers & Positions",
+    icon: "🕰️",
+    words: [
+      { word: "hundred", ipa: "/ˈhʌn.drəd/", meaning: "một trăm (100)", emoji: "💯", example: "There are one hundred pages in this book.", exampleVi: "Có một trăm trang trong cuốn sách này.", riddle: "The number 100." },
+      { word: "thousand", ipa: "/ˈθaʊ.zənd/", meaning: "một nghìn (1,000)", emoji: "🔢", example: "A thousand fans cheered at the stadium.", exampleVi: "Một nghìn khán giả reo hò ở sân vận động.", riddle: "The number 1,000." },
+      { word: "first", ipa: "/fɜːst/", meaning: "thứ nhất / đầu tiên", emoji: "1️⃣", example: "January is the first month of the year.", exampleVi: "Tháng Một là tháng đầu tiên trong năm.", riddle: "Coming before all others in time or order." },
+      { word: "second", ipa: "/ˈsek.ənd/", meaning: "thứ hai / giây", emoji: "2️⃣", example: "He finished second in the running race.", exampleVi: "Cậu ấy về nhì trong cuộc chạy đua.", riddle: "Coming right after the first." },
+      { word: "third", ipa: "/θɜːd/", meaning: "thứ ba", emoji: "3️⃣", example: "Our classroom is on the third floor.", exampleVi: "Lớp học của tớ ở tầng ba.", riddle: "Coming right after the second." },
+      { word: "last", ipa: "/lɑːst/", meaning: "cuối cùng / vừa qua", emoji: "🔚", example: "We went to the zoo last week.", exampleVi: "Tuần trước chúng tớ đi sở thú.", riddle: "Coming at the end, or most recent." },
+      { word: "next", ipa: "/nekst/", meaning: "tiếp theo / kế bên", emoji: "➡️", example: "What are we doing next weekend?", exampleVi: "Cuối tuần tới chúng ta làm gì nhỉ?", riddle: "Coming immediately after this one." },
+      { word: "before", ipa: "/bɪˈfɔːr/", meaning: "trước khi / trước", emoji: "⏪", example: "Wash your hands before dinner.", exampleVi: "Rửa tay trước bữa tối nhé.", riddle: "Earlier than a time or event." },
+      { word: "after", ipa: "/ˈɑːf.tər/", meaning: "sau khi / sau", emoji: "⏩", example: "We play outside after school.", exampleVi: "Chúng tớ chơi ngoài trời sau giờ học.", riddle: "Later than a time or event." },
+      { word: "during", ipa: "/ˈdjʊə.rɪŋ/", meaning: "trong suốt / trong lúc", emoji: "⏱️", example: "We stayed quiet during the film.", exampleVi: "Chúng tớ giữ im lặng suốt bộ phim.", riddle: "Throughout the time that something happens." },
+      { word: "always", ipa: "/ˈɔːl.weɪz/", meaning: "luôn luôn", emoji: "♾️", example: "She always smiles when she greets us.", exampleVi: "Cô ấy luôn mỉm cười khi chào chúng tớ.", riddle: "At all times; every time." },
+      { word: "sometimes", ipa: "/ˈsʌm.taɪmz/", meaning: "/ thỉnh thoảng", emoji: "🌗", example: "We sometimes walk to school.", exampleVi: "Thỉnh thoảng chúng tớ đi bộ tới trường.", riddle: "Not always and not never; on some occasions." },
+      { word: "never", ipa: "/ˈnev.ər/", meaning: "không bao giờ", emoji: "🚫", example: "I never drink fizzy soda.", exampleVi: "Tớ không bao giờ uống nước ngọt có ga.", riddle: "Not ever; at no time." },
+      { word: "often", ipa: "/ˈɒf.ən/", meaning: "thường xuyên", emoji: "🔁", example: "How often do you visit the library?", exampleVi: "Bạn thường đến thư viện bao lâu một lần?", riddle: "Many times; frequently." },
+      { word: "again", ipa: "/əˈɡen/", meaning: "lại một lần nữa", emoji: "🔂", example: "Can you say that word again, please?", exampleVi: "Bạn nói lại từ đó thêm lần nữa được không?", riddle: "Once more; another time." },
+      { word: "ago", ipa: "/əˈɡəʊ/", meaning: "cách đây (thời gian)", emoji: "🕰️", example: "We moved to this town two years ago.", exampleVi: "Chúng tớ chuyển về thị trấn này hai năm trước.", riddle: "Before the present time." },
+      { word: "when", ipa: "/wen/", meaning: "khi nào / lúc nào", emoji: "❓", example: "When is your English test?", exampleVi: "Khi nào bạn có bài kiểm tra tiếng Anh?", riddle: "At what time." },
+      { word: "why", ipa: "/waɪ/", meaning: "tại sao", emoji: "🤔", example: "Why is the sky blue?", exampleVi: "Tại sao bầu trời lại có màu xanh?", riddle: "For what reason." },
+      { word: "how_often", ipa: "/haʊ ˈɒf.ən/", meaning: "bao lâu một lần", emoji: "📆", example: "How often do you play badminton?", exampleVi: "Bạn chơi cầu lông bao lâu một lần?", riddle: "Used to ask about frequency." },
+      { word: "top", ipa: "/tɒp/", meaning: "đỉnh / trên cùng", emoji: "🔝", example: "Write your name at the top of the page.", exampleVi: "Viết tên bạn ở đầu/trên cùng trang giấy nhé.", riddle: "The highest part or place of something." },
+      { word: "bottom", ipa: "/ˈbɒt.əm/", meaning: "đáy / dưới cùng", emoji: "🔽", example: "There are shells at the bottom of the pool.", exampleVi: "Có vỏ sò ở đáy hồ bơi.", riddle: "The lowest part of something." },
+      { word: "middle", ipa: "/ˈmɪd.əl/", meaning: "ở giữa", emoji: "🎯", example: "The teacher stood in the middle of the circle.", exampleVi: "Cô giáo đứng ở giữa vòng tròn.", riddle: "The centre or halfway point." },
+      { word: "inside", ipa: "/ˌɪnˈsaɪd/", meaning: "bên trong", emoji: "📦", example: "Let's go inside because it is raining.", exampleVi: "Vào bên trong thôi vì trời đang mưa.", riddle: "In or into an enclosed space." },
+      { word: "outside", ipa: "/ˌaʊtˈsaɪd/", meaning: "bên ngoài", emoji: "🌳", example: "The children are playing outside.", exampleVi: "Bọn trẻ đang chơi ở bên ngoài.", riddle: "Not inside a building or room." },
+      { word: "into", ipa: "/ˈɪn.tuː/", meaning: "vào bên trong", emoji: "📥", example: "Put your books into your schoolbag.", exampleVi: "Cho sách vào cặp sách của bạn đi.", riddle: "Moving from outside to the inside of something." }
+    ]
+  },
+  {
+    id: "sports_actions",
+    name: "Thể thao & Vận động",
+    en: "Sports & Movement",
+    icon: "🏅",
+    words: [
+      { word: "badminton", ipa: "/ˈbæd.mɪn.tən/", meaning: "cầu lông", emoji: "🏸", example: "We play badminton in the school gym.", exampleVi: "Chúng tớ chơi cầu lông ở nhà thi đấu trường.", riddle: "A game played with rackets and a shuttlecock over a net." },
+      { word: "baseball", ipa: "/ˈbeɪs.bɔːl/", meaning: "bóng chày", emoji: "⚾", example: "He hit the ball with a baseball bat.", exampleVi: "Cậu ấy đánh bóng bằng gậy bóng chày.", riddle: "A bat-and-ball game played between two teams of nine players." },
+      { word: "basketball", ipa: "/ˈbɑː.skɪt.bɔːl/", meaning: "bóng rổ", emoji: "🏀", example: "Tall players are often good at basketball.", exampleVi: "Người chơi cao thường giỏi bóng rổ.", riddle: "A game where two teams try to throw a ball through a high hoop." },
+      { word: "hockey", ipa: "/ˈhɒk.i/", meaning: "khúc côn cầu", emoji: "🏑", example: "They practise hockey on the grass pitch.", exampleVi: "Họ tập khúc côn cầu trên sân cỏ.", riddle: "A game played on grass or ice using curved sticks and a ball or puck." },
+      { word: "football_match", ipa: "/mætʃ/", meaning: "trận đấu", emoji: "🏟️", example: "The football match starts at four o'clock.", exampleVi: "Trận bóng đá bắt đầu lúc bốn giờ.", riddle: "A game or contest between two people or teams." },
+      { word: "goal", ipa: "/ɡəʊl/", meaning: "bàn thắng / khung thành", emoji: "🥅", example: "She scored a great goal in the last minute.", exampleVi: "Cô ấy ghi bàn thắng đẹp ở phút cuối.", riddle: "A point scored in sports like football or hockey." },
+      { word: "net", ipa: "/net/", meaning: "cái lưới", emoji: "🎾", example: "The tennis ball hit the top of the net.", exampleVi: "Quả bóng quần vợt chạm mép lưới trên.", riddle: "Mesh used in sports like tennis, badminton, or goals." },
+      { word: "bat_sport", ipa: "/bæt/", meaning: "gậy đánh bóng / vợt", emoji: "🏏", example: "Hold the bat with both hands.", exampleVi: "Cầm gậy bằng cả hai tay nhé.", riddle: "A wooden or metal piece used to hit a ball in sports." },
+      { word: "rope", ipa: "/rəʊp/", meaning: "sợi dây thừng", emoji: "🪢", example: "They pulled the thick rope together.", exampleVi: "Họ cùng kéo sợi dây thừng dày.", riddle: "Strong thick cord made of twisted threads." },
+      { word: "pool", ipa: "/puːl/", meaning: "bể bơi / vũng nước", emoji: "🏊‍♂️", example: "The swimming pool water is clear and cool.", exampleVi: "Nước bể bơi trong và mát.", riddle: "An area of water made for swimming." },
+      { word: "jump", ipa: "/dʒʌmp/", meaning: "nhảy / bật nhảy", emoji: "🦘", example: "Frogs can jump far into the pond.", exampleVi: "Ếch có thể nhảy xa xuống ao.", riddle: "To push yourself off the ground into the air." },
+      { word: "hop", ipa: "/hɒp/", meaning: "nhảy lò cò", emoji: "🐇", example: "Can you hop on one foot to the line?", exampleVi: "Bạn nhảy lò cò một chân tới vạch được không?", riddle: "To move by jumping on one foot." },
+      { word: "run", ipa: "/rʌn/", meaning: "chạy", emoji: "🏃‍♂️", example: "The dogs run fast across the park.", exampleVi: "Những chú chó chạy nhanh qua công viên.", riddle: "To move faster than walking by putting one foot in front of the other." },
+      { word: "walk", ipa: "/wɔːk/", meaning: "đi bộ", emoji: "🚶", example: "We walk to school every morning.", exampleVi: "Sáng nào chúng tớ cũng đi bộ tới trường.", riddle: "To move along by putting one foot after the other on the ground." },
+      { word: "move", ipa: "/muːv/", meaning: "di chuyển / chuyển động", emoji: "🔄", example: "Do not move while I take your photo.", exampleVi: "Đừng cử động khi tớ chụp ảnh cho bạn nhé.", riddle: "To change position or go from one place to another." },
+      { word: "catch", ipa: "/kætʃ/", meaning: "bắt / hứng", emoji: "🧤", example: "Catch the ball with both hands!", exampleVi: "Bắt lấy quả bóng bằng cả hai tay nào!", riddle: "To grab and hold something moving through the air." },
+      { word: "throw", ipa: "/θrəʊ/", meaning: "ném", emoji: "⚾", example: "Throw the ball gently to your partner.", exampleVi: "Ném bóng nhẹ nhàng cho bạn cùng chơi nhé.", riddle: "To send something through the air using your hand." },
+      { word: "kick", ipa: "/kɪk/", meaning: "đá", emoji: "⚽", example: "Kick the ball towards the goal.", exampleVi: "Đá bóng về phía khung thành nào.", riddle: "To hit something with your foot." },
+      { word: "win", ipa: "/wɪn/", meaning: "chiến thắng", emoji: "🏆", example: "Practice helps you win the game.", exampleVi: "Luyện tập giúp bạn thắng trò chơi.", riddle: "To be the best or first in a game or competition." },
+      { word: "lose", ipa: "/luːz/", meaning: "thua / đánh mất", emoji: "😔", example: "Do not lose your temper when you lose a game.", exampleVi: "Đừng cáu giận khi thua trò chơi nhé.", riddle: "To fail to win, or not be able to find something." },
+      { word: "practice", ipa: "/ˈpræk.tɪs/", meaning: "luyện tập", emoji: "🎯", example: "We practise singing every Wednesday.", exampleVi: "Chúng tớ tập hát vào mỗi thứ Tư.", riddle: "To do an activity regularly to get better at it." },
+      { word: "exercise", ipa: "/ˈek.sə.saɪz/", meaning: "tập thể dục / bài tập", emoji: "🤸", example: "Morning exercise keeps us healthy.", exampleVi: "Tập thể dục buổi sáng giúp chúng ta khỏe mạnh.", riddle: "Physical activity that keeps your body fit and healthy." },
+      { word: "stretch", ipa: "/stretʃ/", meaning: "vươn vai / giãn cơ", emoji: "🙆", example: "Stretch your arms up before running.", exampleVi: "Giơ tay giãn cơ lên trước khi chạy nhé.", riddle: "To straighten and extend your body or limbs." },
+      { word: "rest", ipa: "/rest/", meaning: "nghỉ ngơi", emoji: "🛋️", example: "Sit down and rest for a few minutes.", exampleVi: "Ngồi xuống nghỉ vài phút đi.", riddle: "To relax or sleep to recover energy." },
+      { word: "shout_cheer", ipa: "/tʃɪər/", meaning: "reo hò / cổ vũ", emoji: "📣", example: "The crowd cheered loudly for the team.", exampleVi: "Đám đông reo hò lớn cổ vũ cho đội.", riddle: "To shout happily to support or praise someone." }
+    ]
+  },
+  {
+    id: "descriptions_stories",
+    name: "Mô tả & Kể chuyện",
+    en: "Descriptions & Storytelling",
+    icon: "📖",
+    words: [
+      { word: "afraid_brave", ipa: "/əˈmeɪ.zɪŋ/", meaning: "tuyệt vời / đáng kinh ngạc", emoji: "🤩", example: "We saw an amazing magic show.", exampleVi: "Chúng tớ xem một màn ảo thuật tuyệt vời.", riddle: "Causing great surprise or wonder; very good." },
+      { word: "boring", ipa: "/ˈbɔː.rɪŋ/", meaning: "nhàm chán", emoji: "🥱", example: "That long speech was a bit boring.", exampleVi: "Bài phát biểu dài đó hơi nhàm chán.", riddle: "Not interesting; making you feel bored." },
+      { word: "exciting", ipa: "/ɪkˈsaɪ.tɪŋ/", meaning: "thú vị / gay cấn", emoji: "🎢", example: "Riding the roller coaster was exciting.", exampleVi: "Ngồi tàu lượn siêu tốc thật thú vị.", riddle: "Making you feel happy, eager, and thrilled." },
+      { word: "difficult", ipa: "/ˈdɪf.ɪ.kəlt/", meaning: "khó khăn", emoji: "🧩", example: "This puzzle is difficult, let's solve it together.", exampleVi: "Câu đố này khó, cùng giải nhé.", riddle: "Hard to do, understand, or solve." },
+      { word: "easy", ipa: "/ˈiː.zi/", meaning: "dễ dàng", emoji: "👌", example: "Adding two and two is easy.", exampleVi: "Cộng hai với hai thì dễ mà.", riddle: "Not difficult; done without much effort." },
+      { word: "clever_smart", ipa: "/smɑːt/", meaning: "thông minh / bảnh bao", emoji: "🎓", example: "That is a smart answer to the question.", exampleVi: "Đó là câu trả lời thông minh cho câu hỏi.", riddle: "Intelligent, or looking neat and tidy." },
+      { word: "careless", ipa: "/ˈkeə.ləs/", meaning: "bất cẩn / cẩu thả", emoji: "🤦", example: "Be careful not to make careless mistakes.", exampleVi: "Cẩn thận đừng mắc lỗi bất cẩn nhé.", riddle: "Not paying enough attention, causing mistakes." },
+      { word: "safe", ipa: "/seɪf/", meaning: "an toàn", emoji: "🛡️", example: "Wear a helmet to stay safe on a bike.", exampleVi: "Đội mũ bảo hiểm để an toàn khi đi xe đạp.", riddle: "Protected from harm or danger." },
+      { word: "dangerous", ipa: "/ˈdeɪn.dʒər.əs/", meaning: "nguy hiểm", emoji: "⚡", example: "It is dangerous to play near deep water.", exampleVi: "Chơi gần vùng nước sâu thì nguy hiểm.", riddle: "Likely to cause harm or injury." },
+      { word: "famous_place", ipa: "/ˈmɒd.ən/", meaning: "hiện đại", emoji: "🏙️", example: "The city has many modern buildings.", exampleVi: "Thành phố có nhiều tòa nhà hiện đại.", riddle: "New and using up-to-date designs or ideas." },
+      { word: "old_ancient", ipa: "/ˈeɪn.ʃənt/", meaning: "cổ xưa / rất cũ", emoji: "🏺", example: "The museum has ancient pots and coins.", exampleVi: "Bảo tàng có những chiếc bình và đồng xu cổ.", riddle: "Very old, from a long time ago." },
+      { word: "pretty", ipa: "/ˈprɪt.i/", meaning: "xinh xắn / dễ thương", emoji: "🌸", example: "Pretty butterflies flew over the garden.", exampleVi: "Những chú bướm xinh xắn bay qua khu vườn.", riddle: "Attractive and pleasant to look at." },
+      { word: "ugly", ipa: "/ˈʌɡ.li/", meaning: "xấu xí", emoji: "👹", example: "In the story, the ugly duckling became a swan.", exampleVi: "Trong truyện, vịt con xấu xí hóa thành thiên nga.", riddle: "Unpleasant to look at." },
+      { word: "fat", ipa: "/fæt/", meaning: "mập / béo / chất béo", emoji: "🐷", example: "The little pig is round and fat.", exampleVi: "Chú lợn nhỏ tròn và mập.", riddle: "Having a lot of body weight or fat." },
+      { word: "thin", ipa: "/θɪn/", meaning: "gầy / mỏng", emoji: "📄", example: "This notebook is very thin and light.", exampleVi: "Quyển vở này rất mỏng và nhẹ.", riddle: "Having little width or little body fat." },
+      { word: "tall", ipa: "/tɔːl/", meaning: "cao", emoji: "🦒", example: "My older brother is tall enough to reach the shelf.", exampleVi: "Anh trai tớ đủ cao để với tới kệ.", riddle: "Of great height." },
+      { word: "short_height", ipa: "/ʃɔːt/", meaning: "thấp / ngắn", emoji: "📏", example: "The pencil is too short to hold easily.", exampleVi: "Cây bút chì quá ngắn để cầm dễ dàng.", riddle: "Not tall or not long." },
+      { word: "heavy", ipa: "/ˈhev.i/", meaning: "nặng", emoji: "🏋️‍♂️", example: "This box of books is very heavy.", exampleVi: "Thùng sách này rất nặng.", riddle: "Weighing a lot; hard to lift." },
+      { word: "light_weight", ipa: "/laɪt/", meaning: "nhẹ / ánh sáng", emoji: "🪶", example: "A feather is very light.", exampleVi: "Chiếc lông vũ rất nhẹ.", riddle: "Not heavy; easy to lift." },
+      { word: "full", ipa: "/fʊl/", meaning: "đầy / no", emoji: "🫙", example: "My glass is full of orange juice.", exampleVi: "Ly của tớ đầy nước cam.", riddle: "Holding as much as possible, or having eaten enough." },
+      { word: "empty", ipa: "/ˈemp.ti/", meaning: "trống rỗng", emoji: "📭", example: "The box is empty now.", exampleVi: "Chiếc hộp giờ trống rỗng rồi.", riddle: "Having nothing inside." },
+      { word: "noisy_place", ipa: "/ˈbrɔːd.kɑːst/", meaning: "câu chuyện / chương trình", emoji: "📚", example: "Tell me a story about your holiday.", exampleVi: "Kể cho tớ nghe một câu chuyện về kỳ nghỉ của bạn đi.", riddle: "A tale of real or imaginary events." },
+      { word: "begin", ipa: "/bɪˈɡɪn/", meaning: "bắt đầu", emoji: "▶️", example: "The concert begins at eight o'clock.", exampleVi: "Buổi hòa nhạc bắt đầu lúc tám giờ.", riddle: "To start doing something." },
+      { word: "end", ipa: "/end/", meaning: "kết thúc / phần cuối", emoji: "⏹️", example: "The story has a happy ending.", exampleVi: "Câu chuyện có một cái kết có hậu.", riddle: "The final part of something, or to finish." },
+      { word: "happen", ipa: "/ˈhæp.ən/", meaning: "xảy ra", emoji: "✨", example: "What happened at the park yesterday?", exampleVi: "Hôm qua ở công viên đã xảy ra chuyện gì vậy?", riddle: "To take place or occur." }
     ]
   }
 ];
