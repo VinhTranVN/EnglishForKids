@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <!-- Google tag (gtag.js) - Thay G-XXXXXXXXXX bằng Measurement ID thực tế của bạn -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYPTB6TY8Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYPTB6TY8Z', {
+      page_title: document.title,
+      page_path: window.location.pathname + window.location.search
+    });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -797,7 +808,17 @@
       return `Ví dụ minh họa cho từ “${w.word}” (${w.meaning}).`;
     }
 
+    function trackEvent(eventName, params = {}) {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", eventName, {
+          level: currentConfig ? currentConfig.key : "unknown",
+          ...params
+        });
+      }
+    }
+
     function switchSection(sec) {
+      trackEvent("switch_section", { section: sec });
       currentSection = sec;
       document.getElementById("tabVocab").classList.toggle("active", sec === "vocab");
       document.getElementById("tabGrammar").classList.toggle("active", sec === "grammar");
@@ -831,6 +852,7 @@
     }
 
     function openTopic(topicId) {
+      trackEvent("select_topic", { topic_id: topicId });
       selectedTopicId = topicId;
       vocabMode = "flashcard";
       cardIndex = 0;

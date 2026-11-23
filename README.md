@@ -26,66 +26,79 @@ Mỗi từ vựng bao gồm: **Từ tiếng Anh**, **Phiên âm IPA**, **Nghĩa 
 
 | Cấp độ | Tham số URL | Chủ đề tiêu biểu | Chế độ luyện tập |
 | :--- | :--- | :--- | :--- |
-| **🌟 Pre A1 Starters** | `?level=starters` | Gia đình, Con vật, Cơ thể, Quần áo & Màu sắc, Ngôi nhà, Trường học, Đồ ăn, Đồ chơi, Hoạt động hằng ngày... | • **Flashcard lật thẻ** (nghe từ & nghe ví dụ)<br>• **Đố định nghĩa** (chọn từ theo gợi ý)<br>• **Chính tả (Spelling)** (ghép chữ cái)<br>• **Ôn từ khó** |
-| **🚀 A1 Movers** | `?level=movers` | Hoạt động hằng ngày, Địa điểm thị trấn, Sức khỏe & Cảm xúc, Thời tiết & Bốn mùa, Thực phẩm & Mua sắm, Thể thao, Động vật hoang dã... | • Đầy đủ 4 chế độ tương tác như trên với kho từ mở rộng nâng cao từ Starters |
-| **✈️ A2 Flyers** | `?level=flyers` | Nghề nghiệp, Du lịch & Phương tiện, Thời tiết & Thiên nhiên, Tính từ miêu tả, Đồ vật & Công nghệ, Môi trường & Đời sống... | • Đầy đủ 4 chế độ tương tác chuẩn định dạng Reading & Writing Part 1 của Cambridge Flyers |
+| **🌟 Pre A1 Starters** | `?level=starters` | Gia đình, Con vật, Cơ thể, Quần áo & Màu sắc, Ngôi nhà, Trường học, Đồ ăn, Đồ chơi, Hoạt động hằng ngày... | 🃏 Flashcard • 🧠 Đố định nghĩa • ⌨️ Chính tả • 🔁 Ôn từ khó |
+| **🚀 A1 Movers** | `?level=movers` | 12 chủ đề mở rộng: Sức khỏe, Thời tiết, Thành phố & Nông thôn, Thể thao, Nghề nghiệp, Thiên nhiên... | 🃏 Flashcard • 🧠 Đố định nghĩa • ⌨️ Chính tả • 🔁 Ôn từ khó |
+| **✈️ A2 Flyers** | `?level=flyers` | 15 chủ đề nâng cao (450+ từ): Vũ trụ, Khoa học, Môi trường, Du lịch, Vật liệu, Nghệ thuật, Lịch sử... | 🃏 Flashcard • 🧠 Đố định nghĩa • ⌨️ Chính tả • 🔁 Ôn từ khó |
 
 ### 2. Phân hệ Ngữ Pháp (Grammar)
-* **Pre A1 Starters:** Động từ *To Be (am/is/are)*, *Have got / Has got*, Mạo từ *A/An* & Danh từ số nhiều, *This/That/These/Those*, *There is/There are*, Hiện tại đơn, Hiện tại tiếp diễn, *Can/Can't*, Giới từ chỉ vị trí (*in, on, under, behind, next to*), Sở hữu cách & Câu hỏi *Wh-*.
-* **A1 Movers:** Thì quá khứ đơn (*Past Simple*), *Was/Were*, So sánh hơn & So sánh nhất, *Have to / Mustn't*, Trạng từ cách thức, Liên từ (*because, so, but*), Lượng từ (*some, any, a lot of*), Giới từ thời gian/nơi chốn (*in, on, at*), *Like/Enjoy + V-ing* & *Want + to V*.
-* **A2 Flyers:** Quá khứ đơn & Quá khứ tiếp diễn (*when / while*), Thì hiện tại hoàn thành (*just, already, yet, ever, never, for, since*), Tương lai với *Will* & *Be going to*, Động từ khiếm khuyết (*should, must, might, may, could*), Câu điều kiện loại 0 & loại 1, Đại từ quan hệ (*who, which, where*) & Câu hỏi đuôi (*Tag questions*).
-* **4 chế độ luyện ngữ pháp:**
-  1. 📖 **Thẻ công thức & Mẹo nhớ:** Tóm tắt cấu trúc, cách dùng và ví dụ có phát âm.
-  2. 🎯 **Trắc nghiệm ngữ pháp:** Chấm điểm tức thì kèm giải thích chi tiết bằng tiếng Việt.
-  3. 🧱 **Ghép câu hoàn chỉnh (Sentence Builder):** Sắp xếp các từ xáo trộn thành câu tiếng Anh đúng ngữ pháp.
-  4. 🔁 **Ôn câu sai:** Tự động lưu lại các câu làm sai để bé luyện lại đến khi thành thạo.
+Hệ thống hóa các điểm ngữ pháp trọng tâm của từng kỳ thi Cambridge YLE:
+* **📖 Thẻ Công Thức:** Tóm tắt cấu trúc, mẹo ghi nhớ nhanh và câu ví dụ có nút phát âm mẫu.
+* **🎯 Trắc Nghiệm:** Bài tập chọn đáp án đúng kèm giải thích chi tiết bằng tiếng Việt ngay sau khi chọn.
+* **🧱 Ghép Câu (Sentence Builder):** Sắp xếp các từ xáo trộn thành câu tiếng Anh hoàn chỉnh dựa trên câu gợi ý tiếng Việt.
+* **🔁 Ôn Câu Sai:** Tự động lưu lại những câu trắc nghiệm bé làm sai để luyện lại đến khi thành thạo.
 
 ---
 
-## 🗂️ Cấu trúc thư mục dự án
+## 📁 Cấu trúc thư mục dự án
 
 ```text
-EnglishForKids/
-├── index.html                  # Trang chủ chọn cấp độ & tổng hợp sao tích lũy
-├── learn.html                  # Trang học tập dùng chung cho cả 3 cấp độ (?level=...)
-├── README.md                   # Tài liệu giới thiệu & hướng dẫn dự án
+├── index.html                  # Trang chủ chọn cấp độ & hiển thị tổng sao tích lũy
+├── learn.html                  # Giao diện học tập dùng chung cho cả 3 cấp độ
+├── README.md                   # Tài liệu hướng dẫn & mô tả dự án
 ├── StarterKids/
-│   ├── vocab_starters.js       # Dữ liệu từ vựng Pre A1 Starters (window.STARTERS_VOCAB_TOPICS)
-│   └── grammar_starters.js     # Dữ liệu ngữ pháp Pre A1 Starters (window.STARTERS_GRAMMAR_LESSONS)
+│   ├── vocab_starters.js       # Dữ liệu từ vựng Pre A1 Starters
+│   └── grammar_starters.js     # Dữ liệu ngữ pháp Pre A1 Starters
 ├── MoverKids/
-│   ├── vocab_movers.js         # Dữ liệu từ vựng A1 Movers (window.MOVERS_VOCAB_TOPICS)
-│   └── grammar_movers.js       # Dữ liệu ngữ pháp A1 Movers (window.MOVERS_GRAMMAR_LESSONS)
+│   ├── vocab_movers.js         # Dữ liệu từ vựng A1 Movers
+│   └── grammar_movers.js       # Dữ liệu ngữ pháp A1 Movers
 └── FlyerKids/
-    ├── vocab_flyers.js         # Dữ liệu từ vựng A2 Flyers (window.FLYERS_VOCAB_TOPICS)
-    └── grammar_flyers.js       # Dữ liệu ngữ pháp A2 Flyers (window.FLYERS_GRAMMAR_LESSONS)
+    ├── vocab_flyers.js         # Dữ liệu từ vựng A2 Flyers
+    └── grammar_flyers.js       # Dữ liệu ngữ pháp A2 Flyers
 ```
 
 ---
 
-## 🚀 Hướng dẫn sử dụng & Triển khai
+## 📊 Cấu hình Google Analytics 4 (GA4) — Lưu ý quan trọng khi Clone / Fork
 
-### 1. Chạy trực tiếp hoặc đưa lên GitHub Pages
-1. Đẩy toàn bộ thư mục dự án lên repository GitHub.
-2. Vào **Settings → Pages** trên GitHub, chọn nhánh nguồn (ví dụ `main` / thư mục `/root`) và lưu lại.
-3. Truy cập đường dẫn GitHub Pages của bạn:
-   * Trang chủ: `https://<username>.github.io/<repo>/`
-   * Vào thẳng từng cấp độ:
-     * `.../learn.html?level=starters`
-     * `.../learn.html?level=movers`
-     * `.../learn.html?level=flyers`
+Cả hai file `index.html` và `learn.html` đều đã tích hợp sẵn mã theo dõi **Google Analytics 4 (`gtag.js`)** và các sự kiện tương tác (`switch_section`, `select_topic`).
 
-### 2. Cài đặt như App trên iPhone / iPad
-1. Mở trang web bằng trình duyệt **Safari**.
-2. Bấm biểu tượng **Chia sẻ (Share)** ở thanh dưới cùng → chọn **Thêm vào MH chính (Add to Home Screen)**.
-3. Ứng dụng sẽ hiển thị toàn màn hình và tự động lưu tiến độ học tập trên thiết bị.
+> ⚠️ **Lưu ý nếu bạn clone hoặc fork dự án này về chạy riêng:**  
+> Hãy **thay đổi Measurement ID (`G-...`)** trong mã nguồn bằng **GA4 Measurement ID của chính bạn** trước khi triển khai!  
+> Nếu giữ nguyên ID mặc định của tác giả, toàn bộ lượt truy cập và tương tác từ trang web của bạn sẽ gửi nhầm về hệ thống thống kê của tác giả (và ngược lại, bạn sẽ không xem được dữ liệu người dùng trên tài khoản Google Analytics của mình).
+
+### Cách cập nhật GA4 ID của bạn:
+1. Truy cập [Google Analytics](https://analytics.google.com/) → vào **Admin (Quản trị) → Data Streams (Luồng dữ liệu) → Web** và sao chép **Measurement ID** (có dạng `G-XXXXXXXXXX`).
+2. Mở 2 file **`index.html`** và **`learn.html`**.
+3. Tìm đoạn mã `gtag.js` ở đầu thẻ `<head>` và thay thế toàn bộ `G-XXXXXXXXXX` (hoặc ID hiện có trong file) bằng mã `G-...` của bạn:
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_ID_HERE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YOUR_ID_HERE', {
+    page_title: document.title,
+    page_path: window.location.pathname + window.location.search
+  });
+</script>
+```
 
 ---
 
-## 🛠️ Hướng dẫn mở rộng & Tùy chỉnh
+## 🚀 Hướng dẫn triển khai & Sử dụng
 
-* **Thêm từ vựng hoặc bài ngữ pháp mới:** Mở file `vocab_*.js` hoặc `grammar_*.js` của cấp độ tương ứng và thêm phần tử mới theo đúng định dạng JSON có sẵn, không cần chỉnh sửa `learn.html`.
-* **Thêm cấp độ mới (ví dụ: A2 Key / KET):**
-  1. Tạo thư mục mới (ví dụ `KetKids/`) chứa `vocab_ket.js` và `grammar_ket.js`.
-  2. Khai báo thêm khóa `ket` trong đối tượng `LEVEL_CONFIG` ở đầu thẻ `<script>` của `learn.html`.
-  3. Thêm thẻ cấp độ mới vào mảng `LEVELS` trong `index.html`.
-* **Theo dõi lượt truy cập (Google Analytics 4):** Chỉ cần dán đoạn mã `gtag.js` một lần duy nhất vào thẻ `<head>` của `index.html` và `learn.html` để thống kê đầy đủ lượt học theo từng cấp độ.
+1. **Chạy trực tiếp / GitHub Pages:**
+   * Đưa toàn bộ thư mục lên repository GitHub.
+   * Vào **Settings → Pages**, chọn nhánh `main` (thư mục `/root`) và lưu lại để nhận đường dẫn truy cập online.
+2. **Cài đặt như ứng dụng trên iPhone / iPad:**
+   * Mở đường dẫn trang chủ bằng trình duyệt **Safari**.
+   * Nhấn nút **Chia sẻ (Share)** → chọn **Thêm vào MH chính (Add to Home Screen)**.
+
+---
+
+## ✉️ Liên hệ & Góp ý
+
+Nếu bạn có góp ý về nội dung bài học, bổ sung từ vựng hoặc báo lỗi hiển thị, vui lòng liên hệ tác giả qua email:  
+📧 **vlab.smartapps@gmail.com**
